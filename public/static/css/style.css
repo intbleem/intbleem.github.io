@@ -1,5 +1,5 @@
 body {
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto;
     padding: 0;
     font-family: 'Noto Serif', "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
@@ -95,10 +95,6 @@ h1, h2, h3 {
 
 .tags-list a:hover {
     text-decoration: underline;
-}
-
-.tag-name {
-    padding-left: 15px;
 }
 
 .article-list a:hover {
