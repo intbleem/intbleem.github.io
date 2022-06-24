@@ -73,59 +73,47 @@
     </div>
 
     <div class="article-body">
-        **1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example**
-
-```bash
-	docker pull elasticsearch:7.6.0
-```
-
-**2. Create a container and run it.**
-
-if your command is:
+        <p><strong>1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example</strong></p>
+<div class="codehilite"><pre><span></span><code>    docker pull elasticsearch:7.6.0
+</code></pre></div>
 
 
-```bash
-   docker run -d --name es -p 9200:9200 -p 9300:9300 elasticsearch:7.6.0
-```
-It may exit shortly after starting. To find out the reason, view logs by log command:
+<p><strong>2. Create a container and run it.</strong></p>
+<p>if your command is:</p>
+<div class="codehilite"><pre><span></span><code>   docker run -d --name es -p <span class="m">9200</span>:9200 -p <span class="m">9300</span>:9300 elasticsearch:7.6.0
+</code></pre></div>
 
-```bash
-   docker logs es
-```
-Some error message like ``max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]`` may appear. Go the following command:
 
-```bash
-   # change the variable
-   sysctl -w vm.max_map_count=262144
-   # check the variable value
+<p>It may exit shortly after starting. To find out the reason, view logs by log command:</p>
+<div class="codehilite"><pre><span></span><code>   docker logs es
+</code></pre></div>
+
+
+<p>Some error message like <code>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</code> may appear. Go the following command:</p>
+<div class="codehilite"><pre><span></span><code>   <span class="c1"># change the variable</span>
+   sysctl -w vm.max_map_count<span class="o">=</span><span class="m">262144</span>
+   <span class="c1"># check the variable value</span>
    sysctl -n vm.max_map_count
-```
+</code></pre></div>
 
-If the error message is ``the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured``, which means the container has wrong configuration and can be corrected by setting those prompted environment variables or setting to standalone development mode by ``discovery.type=single-node``.
 
-   In short, the correct command is:
+<p>If the error message is <code>the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured</code>, which means the container has wrong configuration and can be corrected by setting those prompted environment variables or setting to standalone development mode by <code>discovery.type=single-node</code>.</p>
+<p>In short, the correct command is:</p>
+<div class="codehilite"><pre><span></span><code>   docker run -d --name es -p <span class="m">9200</span>:9200 -p <span class="m">9300</span>:9300 -e discovery.type<span class="o">=</span>single-node elasticsearch:7.6.0
+</code></pre></div>
 
-```bash
-   docker run -d --name es -p 9200:9200 -p 9300:9300 -e discovery.type=single-node elasticsearch:7.6.0
-```
 
-## Using IK Chinese segmentation plugin.
+<h2>Using IK Chinese segmentation plugin.</h2>
+<p><strong>1. Download the plugin.</strong></p>
+<p>The plugin version must equal the Elasticsearch version. Version 7.6.0 download link is <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip</a>。</p>
+<p><strong>2. Unzip to an empty directory, which is referred to as  <em><code>$IK</code></em></strong>.</p>
+<p><strong>3. Copy the <em><code>$IK</code></em> into the directory of the container's plugin.</strong></p>
+<div class="codehilite"><pre><span></span><code>   docker cp <span class="nv">$IK</span> es:/usr/share/elasticsearch/plugins/ik
+</code></pre></div>
 
-**1. Download the plugin.**
 
-The plugin version must equal the Elasticsearch version. Version 7.6.0 download link is <https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip>。
-
-**2. Unzip to an empty directory, which is referred to as  *`$IK`***.
-
-**3. Copy the *`$IK`* into the directory of the container's plugin.**
-
-```bash
-   docker cp $IK es:/usr/share/elasticsearch/plugins/ik
-```
-
-This plugin provides analyzer and tokenizer named `ik_smart` and `ik_max_word` where `ik_smart` splits by the coarsest granularity, while `ik_max_word` will exhaust all kinds of split combinations.
-
-Find more info at [IK](https://github.com/medcl/elasticsearch-analysis-ik).
+<p>This plugin provides analyzer and tokenizer named <code>ik_smart</code> and <code>ik_max_word</code> where <code>ik_smart</code> splits by the coarsest granularity, while <code>ik_max_word</code> will exhaust all kinds of split combinations.</p>
+<p>Find more info at <a href="https://github.com/medcl/elasticsearch-analysis-ik">IK</a>.</p>
     </div>
 
     <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
