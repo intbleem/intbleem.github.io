@@ -1,0 +1,36 @@
+#navSearch input {
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    width: 180px;
+    display: inline-block;
+    border: none;
+}
+
+#navSearch {
+    width: 600px;
+    height: 100px;
+}
+
+#submitInput {
+    color: #555;
+    background-color: #C3C1C2;
+}
+
+#navSearch {
+    border: 2px solid #C3C1C2;
+    border-radius: 7px;
+    background-color: #f0e9ec;
+}
+
+.fa-search {
+    color: #838181;
+}
+
+.navSearchDiv {
+    display: inline-block;
+    float: right;
+    padding-right: 10px;
+}

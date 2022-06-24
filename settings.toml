@@ -1,0 +1,26 @@
+
+
+SITE_NAME = "zo9n"
+SITE_KEYWORDS = "Python,Django,backend,blog,web,MySQL optimization,website optimization,random thoughts,coding"
+SITE_DESCRIPTION = "This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."
+SITE_URL = "https://zo9n.com"
+
+STATIC_FOLDER = "default/static"
+TEMPLATES_FOLDER = "default/templates"
+
+
+LINKS = [
+    ['zhanghaoran', 'http://blog.zhanghaoran.ren/']
+]
+
+ANALYTICS_CODE = """
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c696e854dd2bc74586dcd5a02a852ef9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+"""
