@@ -303,7 +303,7 @@ nav {
 
 .article-tags {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 20px;
     line-height: 12px;
 }
 
@@ -338,5 +338,9 @@ nav {
 
     .article-list {
         font-size: 1rem;
+    }
+
+    .article-tags {
+        margin-left: 10px;
     }
 }
