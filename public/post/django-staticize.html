@@ -11,7 +11,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
 
     
-    <title>迷之操作｜Django版静态Note生成器 | zo9n</title>
+    <title>迷之操作｜Django版静态Note生成器 | 2Dosth</title>
 
     <meta name="description" content="This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."/>
     <meta name="keywords" content="django,note"/>
@@ -30,7 +30,7 @@
 <body data-new-gr-c-s-check-loaded="14.991.0">
 
 <nav>
-    <div class="site-name"><a href="/">zo9n</a></div>
+    <div class="site-name"><a href="/">2Dosth</a></div>
     
     <ul class="menu">
         <li><a href="/">Home</a></li>
@@ -166,7 +166,7 @@
 <p>仅需这些代码就可以搭建一个轻量的图片上传服务器，Flask真香～</p>
 <p>接下来就是配置Typora，在图片复制进来的时候自动上传到服务器</p>
 <p>在Typora→Preferences→Image→Image Uploader选择<strong>Custom Command</strong>，同时在When Insert选择<strong>Upload image</strong></p>
-<p><img alt="image-20211223220641784" src="https://img.zo9n.com/img/2021/12/kwhpUo4f.png" /></p>
+<p><img alt="image-20211223220641784" src="https://static.19961002.xyz/img/2021/12/kwhpUo4f.png" /></p>
 <p>部署到服务器，接下来我们选择使用脚本来上传，那么就需要一个脚本来对接我们的图片服务器</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
@@ -183,14 +183,14 @@
 
 
 <p>点击Test Uploader就可以测试一下我们脚本是否可以正常上传</p>
-<p><img alt="image-20211226194312905" src="https://img.zo9n.com/img/2021/12/swQeFOjS.png" /></p>
+<p><img alt="image-20211226194312905" src="https://static.19961002.xyz/img/2021/12/swQeFOjS.png" /></p>
 <p>现在来看一下效果如何，复制一张图片到Typora。</p>
-<p><img alt="自动上传" src="https://img.zo9n.com/img/2021/12/LAbunMRk.gif" /></p>
+<p><img alt="自动上传" src="https://static.19961002.xyz/img/2021/12/LAbunMRk.gif" /></p>
 <p><strong>配置WebHook让远程服务器自动拉取更新代码</strong></p>
 <p>所谓webhook，就是用户可以自定义一种回调函数，通过这种回调函数来改变web应用的行为，这些回调函数可以是web应用的开发者，也可以是第三方用户，并且与原始的web应用没有关联。</p>
 <p>这里采用的是Flask搭建一个webhook服务，并通过该服务触发脚本来完成整个流程操作</p>
 <p>首先在GitHub上开通webhook，并添加secret，选择settings→webhooks</p>
-<p><img alt="image-20211226185903705" src="https://img.zo9n.com/img/2021/12/gWxHhzsb.png" /></p>
+<p><img alt="image-20211226185903705" src="https://static.19961002.xyz/img/2021/12/gWxHhzsb.png" /></p>
 <p>使用Flask搭建一个简易的webhook服务，其中要注意对请求来源做验证，GitHub官方已经提供了验证方法</p>
 <blockquote>
 <p><strong>Note:</strong> For backward-compatibility, we also include the <code>X-Hub-Signature</code> header that is generated using the SHA-1 hash function. If possible, we recommend that you use the <code>X-Hub-Signature-256</code> header for improved security. The example below demonstrates using the <code>X-Hub-Signature-256</code> header.</p>
