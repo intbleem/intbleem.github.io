@@ -1,7 +1,8 @@
 ---
 title: Run Elasticsearch by docker
 slug: docker-elasticsearch
-tags: [tech, elasticsearch]
+tags: [elasticsearch, docker]
+category: Tech
 date: 2021-04-30
 status: publish
 ---

@@ -1,7 +1,8 @@
 ---
 title: Linux中的软链接和硬链接
 slug: Linux-hardlink-softlink
-tags: [tech,Linux]
+tags: [Linux,unix]
+category: Tech
 date: 2020-11-24
 status: publish
 ---

@@ -1,4 +1,8 @@
-I'm **zo9n**, a Web back end developer who is not bald, likes to code, loves the *One Piece* and a man who dreams of becoming the king of sea.
+2dosth is a blog about web development and my own life which includes the experience of coding, the imagination in my head, and what I saw and heard. 
+
+
+
+The reason why the name of this website is "2dosth" is that it reads like "to do something" , so that I want to use it to motivate me to act more, not just think every day.
 
 
 
@@ -6,7 +10,7 @@ You can contact me, if you like:
 
 
 
-- Email：[**1149327410@qq.com**](mailto:1149327410@qq.com "1149327410@qq.com")
+- Email：[**intbleem@gmail.com**](mailto:intbleem@gmail.com "intbleem@gmail.com")
 
   
 
@@ -16,11 +20,7 @@ You can contact me, if you like:
 
 
 
-About this site, the main content is to record my own life which includes the experience of coding, the imagination in my head, and what I saw and heard. 
 
-
-
-Besides, sometimes I may write something in bad English because I also want to improve my English by writing in English.
 
 
 

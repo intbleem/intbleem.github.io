@@ -1,7 +1,8 @@
 ---
 title: 迷之操作｜Django版静态Note生成器
 slug: django-staticize
-tags: [tech,django,note]
+tags: [django,note]
+category: Tech
 date: 2021-12-26
 status: publish
 ---
@@ -143,7 +144,7 @@ if __name__ == '__main__':
 
 在Typora→Preferences→Image→Image Uploader选择**Custom Command**，同时在When Insert选择**Upload image**
 
-![image-20211223220641784](https://img.zo9n.com/img/2021/12/kwhpUo4f.png)
+![image-20211223220641784](https://static.19961002.xyz/img/2021/12/kwhpUo4f.png)
 
 部署到服务器，接下来我们选择使用脚本来上传，那么就需要一个脚本来对接我们的图片服务器
 
@@ -165,11 +166,11 @@ done
 
 点击Test Uploader就可以测试一下我们脚本是否可以正常上传
 
-![image-20211226194312905](https://img.zo9n.com/img/2021/12/swQeFOjS.png)
+![image-20211226194312905](https://static.19961002.xyz/img/2021/12/swQeFOjS.png)
 
 现在来看一下效果如何，复制一张图片到Typora。
 
-![自动上传](https://img.zo9n.com/img/2021/12/LAbunMRk.gif)
+![自动上传](https://static.19961002.xyz/img/2021/12/LAbunMRk.gif)
 
 
 
@@ -185,7 +186,7 @@ done
 
 首先在GitHub上开通webhook，并添加secret，选择settings→webhooks
 
-![image-20211226185903705](https://img.zo9n.com/img/2021/12/gWxHhzsb.png)
+![image-20211226185903705](https://static.19961002.xyz/img/2021/12/gWxHhzsb.png)
 
 使用Flask搭建一个简易的webhook服务，其中要注意对请求来源做验证，GitHub官方已经提供了验证方法
 

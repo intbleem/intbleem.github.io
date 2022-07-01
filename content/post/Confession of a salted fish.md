@@ -1,7 +1,8 @@
 ---
 title: Confession of a salted fish
 slug: confession-of-a-salted-fish
-tags: [thought, English]
+tags: [English]
+category: Review
 date: 2021-04-10
 status: publish
 ---

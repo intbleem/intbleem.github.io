@@ -1,9 +1,9 @@
 
 
-SITE_NAME = "zo9n"
-SITE_KEYWORDS = "Python,Django,backend,blog,web,MySQL optimization,website optimization,random thoughts,coding"
+SITE_NAME = "2Dosth"
+SITE_KEYWORDS = "2Dosth,node,vue,Python,Django,backend,blog,web,mysql,random thoughts,coding"
 SITE_DESCRIPTION = "This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."
-SITE_URL = "https://zo9n.com"
+SITE_URL = "https://2Dosth.com"
 
 STATIC_FOLDER = "default/static"
 TEMPLATES_FOLDER = "default/templates"
@@ -18,9 +18,10 @@ ANALYTICS_CODE = """
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?c696e854dd2bc74586dcd5a02a852ef9";
+  hm.src = "https://hm.baidu.com/hm.js?c7f70ec56346e1ef095ec0104e479a46";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 """

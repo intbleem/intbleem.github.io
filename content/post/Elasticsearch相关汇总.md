@@ -1,7 +1,8 @@
 ---
 title: Elasticsearch相关汇总
 slug: elasticsearch-nested
-tags: [tech, elasticsearch]
+tags: [elasticsearch]
+category: Tech
 date: 2021-12-04
 status: publish
 ---

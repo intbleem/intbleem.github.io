@@ -1,7 +1,8 @@
 ---
 title: 理想主义下的web3
 slug: web3
-tags: [thought]
+tags: [web3]
+category: Thought
 date: 2022-06-08
 status: publish
 ---

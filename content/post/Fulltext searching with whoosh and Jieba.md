@@ -1,7 +1,8 @@
 ---
 title: Fulltext searching with whoosh and Jieba
 slug: fulltext-searching-with-whoosh-and-jieba
-tags: [tech, jieba, whoosh]
+tags: [jieba, whoosh]
+category: Tech
 date: 2021-03-22
 status: publish
 ---
