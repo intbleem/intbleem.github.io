@@ -114,19 +114,18 @@ var _hmt = _hmt || [];
 <p>配置完成之后可以使用 <strong>ping</strong>命令测试是否可以ping通，如果可以，那就说明配置没问题。</p>
 <h2>V2Ray安装和配置</h2>
 <p>网上已经有很多一键安装脚本，这里选用的是 <a href="https://github.com/v2fly/fhs-install-v2ray/blob/master/README.zh-Hans-CN.md">https://github.com/v2fly/fhs-install-v2ray</a>，此脚本需要在root用户下运行，并且会安装如下文件：</p>
-<div class="codehilite"><pre><span></span><code><span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">v2ray</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">v2ctl</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">geoip</span><span class="o">.</span><span class="n">dat</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">geosite</span><span class="o">.</span><span class="n">dat</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">json</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">access</span><span class="o">.</span><span class="n">log</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">error</span><span class="o">.</span><span class="n">log</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">v2ray</span><span class="o">.</span><span class="n">service</span>
-<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">v2ray</span><span class="err">@</span><span class="o">.</span><span class="n">service</span>
-</code></pre></div>
-
-
+<blockquote>
+<p>installed: /usr/local/bin/v2ray
+installed: /usr/local/bin/v2ctl
+installed: /usr/local/share/v2ray/geoip.dat
+installed: /usr/local/share/v2ray/geosite.dat
+installed: /usr/local/etc/v2ray/config.json
+installed: /var/log/v2ray/
+installed: /var/log/v2ray/access.log
+installed: /var/log/v2ray/error.log
+installed: /etc/systemd/system/v2ray.service
+installed: /etc/systemd/system/v2ray@.service</p>
+</blockquote>
 <p>此脚本会配置自动运行脚本。自动运行脚本会在系统重启之后，自动运行 V2Ray。目前自动运行脚本只支持带有 Systemd 的系统，以及 Debian / Ubuntu 全系列。</p>
 <p>其中路径<code>/usr/local/etc/v2ray/config.json</code>就是配置文件的路径，安装完成之后只用修改这个文件即可。</p>
 <p>关于V2Ray的配置网上已经有很多，我们只需要下载一个，其中需要修改的地方改成我们自己的即可。可以参考我的配置：</p>
