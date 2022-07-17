@@ -12,12 +12,17 @@
 
     
     <title>bulk_create内存异常排查 | 2Dosth</title>
-
-    <meta name="description" content="This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."/>
+    <meta name="description" content="<p><strong>背景</strong></p>
+<p>因为需要往项目数据库上传大量数据，数据是以文件的方式存储，所以采用django的<strong>bulk_create</strong>批量读取并上传，但是在上传过程中发现，上传程序占用的内存一直在上升，甚至到最后直接把内存占满了。</p>
+<p><strong>排查问题</strong></p>
+<p>刚开始首先怀疑的就是程序代码..."/>
     <meta name="keywords" content="django,MySQLdb"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="bulk_create内存异常排查"/>
-
+    <meta property="og:description" content="<p><strong>背景</strong></p>
+<p>因为需要往项目数据库上传大量数据，数据是以文件的方式存储，所以采用django的<strong>bulk_create</strong>批量读取并上传，但是在上传过程中发现，上传程序占用的内存一直在上升，甚至到最后直接把内存占满了。</p>
+<p><strong>排查问题</strong></p>
+<p>刚开始首先怀疑的就是程序代码..."/>
 
 
     <meta property="og:locale" content="zh-Hans">
