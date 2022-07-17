@@ -114,18 +114,19 @@ var _hmt = _hmt || [];
 <p>配置完成之后可以使用 <strong>ping</strong>命令测试是否可以ping通，如果可以，那就说明配置没问题。</p>
 <h2>V2Ray安装和配置</h2>
 <p>网上已经有很多一键安装脚本，这里选用的是 <a href="https://github.com/v2fly/fhs-install-v2ray/blob/master/README.zh-Hans-CN.md">https://github.com/v2fly/fhs-install-v2ray</a>，此脚本需要在root用户下运行，并且会安装如下文件：</p>
-<blockquote>
-<p>installed: /usr/local/bin/v2ray
-installed: /usr/local/bin/v2ctl
-installed: /usr/local/share/v2ray/geoip.dat
-installed: /usr/local/share/v2ray/geosite.dat
-installed: /usr/local/etc/v2ray/config.json
-installed: /var/log/v2ray/
-installed: /var/log/v2ray/access.log
-installed: /var/log/v2ray/error.log
-installed: /etc/systemd/system/v2ray.service
-installed: /etc/systemd/system/v2ray@.service</p>
-</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">v2ray</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">v2ctl</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">geoip</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">geosite</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">json</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">access</span><span class="o">.</span><span class="n">log</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">error</span><span class="o">.</span><span class="n">log</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">v2ray</span><span class="o">.</span><span class="n">service</span>
+<span class="n">installed</span><span class="p">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">v2ray</span><span class="err">@</span><span class="o">.</span><span class="n">service</span>
+</code></pre></div>
+
+
 <p>此脚本会配置自动运行脚本。自动运行脚本会在系统重启之后，自动运行 V2Ray。目前自动运行脚本只支持带有 Systemd 的系统，以及 Debian / Ubuntu 全系列。</p>
 <p>其中路径<code>/usr/local/etc/v2ray/config.json</code>就是配置文件的路径，安装完成之后只用修改这个文件即可。</p>
 <p>关于V2Ray的配置网上已经有很多，我们只需要下载一个，其中需要修改的地方改成我们自己的即可。可以参考我的配置：</p>
@@ -262,25 +263,30 @@ installed: /etc/systemd/system/v2ray@.service</p>
 
 <p>第一个-d加一个带www的域名，第二个-d加一个不带www的域名，-m后面加你的电子邮箱。注意前后要带空格。</p>
 <p>运行这条命令后，如果显示：</p>
-<blockquote>
-<p>IMPORTANT NOTES:
-- Congratulations! Your certificate and chain have been saved at:
-  /etc/letsencrypt/live/www.hrw1rdzqa7c5a8u3ibkn.website/fullchain.pem
-  Your key file has been saved at:
-  /etc/letsencrypt/live/www.hrw1rdzqa7c5a8u3ibkn.website/privkey.pem
-  Your cert will expire on 2020-06-04. To obtain a new or tweaked
-  version of this certificate in the future, simply run certbot
-  again. To non-interactively renew <em>all</em> of your certificates, run
-  "certbot renew"
-- Your account credentials have been saved in your Certbot
-  configuration directory at /etc/letsencrypt. You should make a
-  secure backup of this folder now. This configuration directory will
-  also contain certificates and private keys obtained by Certbot so
-  making regular backups of this folder is ideal.
-- If you like Certbot, please consider supporting our work by:</p>
-<p>Donating to ISRG / Let's Encrypt:  https://letsencrypt.org/donate
-  Donating to EFF:                    https://eff.org</p>
-</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="n">IMPORTANT</span> <span class="nl">NOTES:</span>
+
+<span class="o">-</span> <span class="n">Congratulations</span><span class="o">!</span> <span class="n">Your</span> <span class="n">certificate</span> <span class="k">and</span> <span class="n">chain</span> <span class="n">have</span> <span class="n">been</span> <span class="n">saved</span> <span class="nl">at:</span>
+  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">live</span><span class="o">/</span><span class="n">www</span><span class="p">.</span><span class="n">hrw1rdzqa7c5a8u3ibkn</span><span class="p">.</span><span class="n">website</span><span class="o">/</span><span class="n">fullchain</span><span class="p">.</span><span class="n">pem</span>
+  <span class="n">Your</span> <span class="n">key</span> <span class="n">file</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="nl">at:</span>
+  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">live</span><span class="o">/</span><span class="n">www</span><span class="p">.</span><span class="n">hrw1rdzqa7c5a8u3ibkn</span><span class="p">.</span><span class="n">website</span><span class="o">/</span><span class="n">privkey</span><span class="p">.</span><span class="n">pem</span>
+  <span class="n">Your</span> <span class="n">cert</span> <span class="n">will</span> <span class="n">expire</span> <span class="n">on</span> <span class="mh">2020</span><span class="o">-</span><span class="mh">06</span><span class="o">-</span><span class="mf">04.</span> <span class="n">To</span> <span class="n">obtain</span> <span class="n">a</span> <span class="n">new</span> <span class="k">or</span> <span class="n">tweaked</span>
+  <span class="n">version</span> <span class="n">of</span> <span class="n">this</span> <span class="n">certificate</span> <span class="n">in</span> <span class="n">the</span> <span class="n">future</span><span class="p">,</span> <span class="n">simply</span> <span class="n">run</span> <span class="n">certbot</span>
+  <span class="n">again</span><span class="p">.</span> <span class="n">To</span> <span class="n">non</span><span class="o">-</span><span class="n">interactively</span> <span class="n">renew</span> <span class="o">*</span><span class="n">all</span><span class="o">*</span> <span class="n">of</span> <span class="n">your</span> <span class="n">certificates</span><span class="p">,</span> <span class="n">run</span>
+  <span class="s">&quot;certbot renew&quot;</span>
+
+<span class="o">-</span> <span class="n">Your</span> <span class="n">account</span> <span class="n">credentials</span> <span class="n">have</span> <span class="n">been</span> <span class="n">saved</span> <span class="n">in</span> <span class="n">your</span> <span class="n">Certbot</span>
+  <span class="n">configuration</span> <span class="n">directory</span> <span class="n">at</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="p">.</span> <span class="n">You</span> <span class="n">should</span> <span class="n">make</span> <span class="n">a</span>
+  <span class="n">secure</span> <span class="n">backup</span> <span class="n">of</span> <span class="n">this</span> <span class="n">folder</span> <span class="n">now</span><span class="p">.</span> <span class="n">This</span> <span class="n">configuration</span> <span class="n">directory</span> <span class="n">will</span>
+  <span class="n">also</span> <span class="n">contain</span> <span class="n">certificates</span> <span class="k">and</span> <span class="n">private</span> <span class="n">keys</span> <span class="n">obtained</span> <span class="n">by</span> <span class="n">Certbot</span> <span class="n">so</span>
+  <span class="n">making</span> <span class="n">regular</span> <span class="n">backups</span> <span class="n">of</span> <span class="n">this</span> <span class="n">folder</span> <span class="n">is</span> <span class="n">ideal</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">If</span> <span class="n">you</span> <span class="n">like</span> <span class="n">Certbot</span><span class="p">,</span> <span class="n">please</span> <span class="n">consider</span> <span class="n">supporting</span> <span class="n">our</span> <span class="n">work</span> <span class="nl">by:</span>
+
+  <span class="n">Donating</span> <span class="n">to</span> <span class="n">ISRG</span> <span class="o">/</span> <span class="n">Let</span><span class="p">&#39;</span><span class="n">s</span> <span class="nl">Encrypt:</span>  <span class="nl">https:</span><span class="c1">//letsencrypt.org/donate</span>
+  <span class="n">Donating</span> <span class="n">to</span> <span class="nl">EFF:</span>                    <span class="nl">https:</span><span class="c1">//eff.org</span>
+</code></pre></div>
+
+
 <p>表示证书生成成功。</p>
 <p>注意：在生成证书的时候容易出现问题，就比如我在生成证书的时候就出现如下错误：</p>
 <div class="codehilite"><pre><span></span><code>x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE<span class="o">=</span><span class="m">2</span> -g -fdebug-prefix-map<span class="o">=</span>/build/python2.7-PPrPZj/python2.7-2.7.15<span class="o">=</span>. -fstack-protector-strong -Wformat -Werror<span class="o">=</span>format-security -fPIC -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE -I/usr/include/ffi -I/usr/include/libffi -I/usr/include/python2.7 -c c/_cffi_backend.c -o build/temp.linux-x86_64-2.7/c/_cffi_backend.o
@@ -310,21 +316,23 @@ installed: /etc/systemd/system/v2ray@.service</p>
 
 
 <p>如果显示：</p>
-<blockquote>
-<p>V2Ray 4.x.x (V2Fly, a community-driven edition of V2Ray.)
-A unified platform for anti-censorship.
-Configuration OK.</p>
-</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nv">V2Ray</span> <span class="mi">4</span>.<span class="nv">x</span>.<span class="nv">x</span> <span class="ss">(</span><span class="nv">V2Fly</span>, <span class="nv">a</span> <span class="nv">community</span><span class="o">-</span><span class="nv">driven</span> <span class="nv">edition</span> <span class="nv">of</span> <span class="nv">V2Ray</span>.<span class="ss">)</span>
+<span class="nv">A</span> <span class="nv">unified</span> <span class="nv">platform</span> <span class="k">for</span> <span class="nv">anti</span><span class="o">-</span><span class="nv">censorship</span>.
+<span class="nv">Configuration</span> <span class="nv">OK</span>.
+</code></pre></div>
+
+
 <p>测试nginx配置是否正常</p>
 <div class="codehilite"><pre><span></span><code>nginx -t
 </code></pre></div>
 
 
 <p>如果显示：</p>
-<blockquote>
-<p>nginx: the configuration file /etc/nginx/ngin短网址nf syntax is ok
-nginx: configuration file /etc/nginx/ngin短网址nf test is successful</p>
-</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="n">nginx</span><span class="o">:</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="sr">/etc/nginx/</span><span class="n">ngin短网址nf</span> <span class="n">syntax</span> <span class="k">is</span> <span class="n">ok</span>
+<span class="n">nginx</span><span class="o">:</span> <span class="n">configuration</span> <span class="n">file</span> <span class="sr">/etc/nginx/</span><span class="n">ngin短网址nf</span> <span class="n">test</span> <span class="k">is</span> <span class="n">successful</span>
+</code></pre></div>
+
+
 <p>说明配置没有问题。</p>
 <p>测试V2Ray和Nginx配置正常之后即可启动服务了。启动服务通过<code>service</code>命令启动</p>
 <p>启动V2Ray：</p>
