@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+<title>{{ SITE_NAME }}</title>
+<meta name="description" content="{{ SITE_DESCRIPTION }}"/>
+<meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="{{ SITE_NAME }}"/>
+<meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+<meta property="og:url" content="{{ SITE_URL }}"/>
+<meta property="og:site_name" content="{{ SITE_NAME }}"/>
+{% endblock %}
+
+{% block main_content %}
+<div class="container post-list">
+    {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
+    <h2 class="archive-title">{{ year }}</h2>
+    <ul>
+        {% for article in list %}
+
+        <li class="article-list">
+            <div class="list-date article-list-item">
+                                <span>
+                                    {{ article.date.strftime("%b %d")}}
+                                </span>
+            </div>
+            <div class="list-title article-list-item">
+                            <span>
+                                <a href="/post/{{ article.slug }}.html" title="{{ article.title }}"
+                                   itemprop="url">{{ article.title }}</a>
+                            </span>
+            </div>
+
+            <div class="list-category article-list-item">
+                <div class="tag_detail">
+                    <a href="/category/{{ article.category }}.html"><span>{{ article.category }}</span></a>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
+

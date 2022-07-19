@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for article in articles %}
+<url>
+    <loc>{{ SITE_URL }}/post/{{ article.slug }}.html</loc>
+    {% if article.date %}<lastmod>{{ article.date.strftime("%Y-%m-%d") }}</lastmod>{% endif %}
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+{% endfor %}
+</urlset>
