@@ -104,7 +104,7 @@ var _hmt = _hmt || [];
 <p>V2Ray+websocket+tls+web是目前最稳定的翻Q技术之一，即使在敏感时期也稳如泰山。和SSR的流量混淆不同，V2Ray+ws+tls用真正的https流量FQ，没有必要做任何混淆。在长城看来，流量和不计其数的https流量没有任何区别。但是如果GFW尝试主动嗅探的话，发现流量的目的地没有真正的网站，从而被识破然后被Q。所以要在这个服务外面加一个真正的网站做掩护，从而假装是访问真正的网站。</p>
 <h2>Cloudflare配置DNS</h2>
 <p>这次部署过程中，使用的是Cloudflare作为DNS服务器，Cloudflare是世界上最大的CDN提供商，全球半数的网站都在使用Cloudflare。使用不用担心隐私泄露或钓鱼风险，而且也可以提供免费的CDN服务，只不过对于国内来说，访问速度可能会慢一点。</p>
-<p><img alt="jFu3MfCB" src="http://static.19961002.xyz/img/2022/jFu3MfCB.png" /></p>
+<p><img alt="jFu3MfCB" src="https://static.19961002.xyz/img/2022/jFu3MfCB.png" /></p>
 <ul>
 <li>DNS类型为A类型</li>
 <li>名称为要解析的域名地址，可以顶级，也可以是二级域名</li>
@@ -350,7 +350,7 @@ var _hmt = _hmt || [];
 <p>在网上找一些静态网页模版，放在目录<code>/usr/share/nginx/html/</code>下即可，最好是找一些全英文的网站，存在中文的话可能会增加一些被墙的概率。</p>
 <h2>客户端配置</h2>
 <p>这里使用的客户端是著名的代理软件Shadowsockets（小火箭），这是一款iOS生态下全平台通用的一款软件，配置也相对简单。</p>
-<p><img alt="XUEexvP4" src="http://static.19961002.xyz/img/2022/XUEexvP4.png" /></p>
+<p><img alt="XUEexvP4" src="https://static.19961002.xyz/img/2022/XUEexvP4.png" /></p>
 <p>点【服务器】按钮，选择【添加VMess】服务器。</p>
 <ul>
 <li>地址：域名地址，当然也可以IP地址</li>
@@ -360,7 +360,7 @@ var _hmt = _hmt || [];
 <li>算法：随便选。</li>
 <li>传输方式：选WebSocket；Host：域名地址；路径：即前面的随机字符串，注意前面必须要加上斜杠“/”</li>
 </ul>
-<p><img alt="image-20220720124353424" src="http://static.19961002.xyz/img/2022/image-20220720124353424.png" /></p>
+<p><img alt="image-20220720124353424" src="https://static.19961002.xyz/img/2022/image-20220720124353424.png" /></p>
 <ul>
 <li>别名：随便填。</li>
 <li>TLS：打开</li>

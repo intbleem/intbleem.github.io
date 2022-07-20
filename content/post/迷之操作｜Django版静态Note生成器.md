@@ -144,7 +144,7 @@ if __name__ == '__main__':
 
 在Typora→Preferences→Image→Image Uploader选择**Custom Command**，同时在When Insert选择**Upload image**
 
-![kwhpUo4f](http://static.19961002.xyz/img/2022/kwhpUo4f.png)
+![kwhpUo4f](https://static.19961002.xyz/img/2022/kwhpUo4f.png)
 
 部署到服务器，接下来我们选择使用脚本来上传，那么就需要一个脚本来对接我们的图片服务器
 
@@ -166,11 +166,11 @@ done
 
 点击Test Uploader就可以测试一下我们脚本是否可以正常上传
 
-![swQeFOjS](http://static.19961002.xyz/img/2022/swQeFOjS.png)
+![swQeFOjS](https://static.19961002.xyz/img/2022/swQeFOjS.png)
 
 现在来看一下效果如何，复制一张图片到Typora。
 
-![LAbunMRk](http://static.19961002.xyz/img/2022/LAbunMRk.gif)
+![LAbunMRk](https://static.19961002.xyz/img/2022/LAbunMRk.gif)
 
 
 
@@ -186,7 +186,7 @@ done
 
 首先在GitHub上开通webhook，并添加secret，选择settings→webhooks
 
-![gWxHhzsb](http://static.19961002.xyz/img/2022/gWxHhzsb.png)
+![gWxHhzsb](https://static.19961002.xyz/img/2022/gWxHhzsb.png)
 
 使用Flask搭建一个简易的webhook服务，其中要注意对请求来源做验证，GitHub官方已经提供了验证方法
 
