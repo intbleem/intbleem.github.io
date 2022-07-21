@@ -128,8 +128,8 @@ var _hmt = _hmt || [];
 </code></pre></div>
 
 
-<p><img alt="image-20211214203538282" src="https://img.itsso.cool/img/2021/18/RFK6GbLQ.png" /></p>
-<p><img alt="image-20211214204822195" src="https://img.itsso.cool/img/2021/18/ewSJd0CP.png" /></p>
+<p><img src="https://static.19961002.xyz/img/2022/RFK6GbLQ.png" /></p>
+<p><img src="https://static.19961002.xyz/img/2022/ewSJd0CP.png" /></p>
 <p>发现内存主要的增长是在第一行，而且后面也主要和MySQLdb有关，那么就去看看到底是怎么回事，点开源码在发现<code>django/utils/encoding.py:62</code></p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">force_str</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">strings_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;strict&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
 
 <p>发现问题完美的得到解决，完美！</p>
 <p>后来在官方文档中发现，已经有这个方法的相关文档</p>
-<p><img alt="image-20211214212141076" src="https://img.itsso.cool/img/2021/18/dmTAMrGI.png" /></p>
+<p><img src="https://static.19961002.xyz/img/2022/dmTAMrGI.png" /></p>
 <p>文档中还说只有在<code>DEBUG=True</code>时，这些sql语句才会保存起来以便有需要的时候查看sql。</p>
 <p>这也解答了我心中的一个疑问，系统运行时产生的sql为什么要保存起来呢，现在看来是我知识浅薄了。</p>
 <p>所以最终这个问题的解决方案有两个：</p>

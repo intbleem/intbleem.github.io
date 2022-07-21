@@ -45,9 +45,11 @@ def batch_insert(filepath):
                   % (index, frame.filename, frame.lineno, stat.size / 1024))
 ```
 
-![image-20211214203538282](https://img.itsso.cool/img/2021/18/RFK6GbLQ.png)
+![RFK6GbLQ](https://static.19961002.xyz/img/2022/RFK6GbLQ.png)
 
-![image-20211214204822195](https://img.itsso.cool/img/2021/18/ewSJd0CP.png)
+
+
+![ewSJd0CP](https://static.19961002.xyz/img/2022/ewSJd0CP.png)
 
 发现内存主要的增长是在第一行，而且后面也主要和MySQLdb有关，那么就去看看到底是怎么回事，点开源码在发现`django/utils/encoding.py:62`
 
@@ -192,7 +194,9 @@ Regulation.objects.bulk_create(rules)
 
 后来在官方文档中发现，已经有这个方法的相关文档
 
-![image-20211214212141076](https://img.itsso.cool/img/2021/18/dmTAMrGI.png)
+
+
+![dmTAMrGI](https://static.19961002.xyz/img/2022/dmTAMrGI.png)
 
 文档中还说只有在`DEBUG=True`时，这些sql语句才会保存起来以便有需要的时候查看sql。
 
