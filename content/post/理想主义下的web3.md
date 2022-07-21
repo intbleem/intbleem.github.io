@@ -82,6 +82,8 @@ status: publish
 
 web3的未来就交给时间来验证吧，毕竟时代的车轮总是在向前推进。
 
+There is no web3 in China.
+
 
 
 
