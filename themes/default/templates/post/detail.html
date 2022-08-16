@@ -2,11 +2,11 @@
 
 {% block header %}
     <title>{{ article.title }} | {{ SITE_NAME }}</title>
-    <meta name="description" content="{{ article.body | truncate(length=200) }}"/>
+    <meta name="description" content="{{ article.content | truncate(length=200) }}"/>
     <meta name="keywords" content="{{ (",").join(article.tags) }}"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{ article.title }}"/>
-    <meta property="og:description" content="{{ article.body | truncate(length=200) }}"/>
+    <meta property="og:description" content="{{ article.content | truncate(length=200) }}"/>
 {% endblock %}
 
 {% block main_content %}
@@ -33,7 +33,7 @@
         {{ article.body | safe }}
     </div>
 
-    <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="dns-prefetch" href="//cdn.mathjax.org"/>
-    <script src="/static/js/math.js"></script>
+{#    <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>#}
+{#    <link rel="dns-prefetch" href="//cdn.mathjax.org"/>#}
+{#    <script src="/static/js/math.js"></script>#}
 {% endblock %}

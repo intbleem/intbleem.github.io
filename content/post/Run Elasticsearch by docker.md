@@ -6,6 +6,8 @@ category: Tech
 date: 2021-04-30
 status: publish
 ---
+
+
 **1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example**
 
 ```bash
