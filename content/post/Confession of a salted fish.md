@@ -5,6 +5,7 @@ tags: [English]
 category: Review
 date: 2021-04-10
 status: publish
+subtitle: It's total bullshit.
 ---
 Today, I listened to the sound of the drum all day that didn't stop till evening. So I was thinking whose child was training so hard. By contrast, I played all day, which made me feel guilty.
 

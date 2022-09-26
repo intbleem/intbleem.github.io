@@ -14,64 +14,33 @@
 {% block main_content %}
     <div class="container post-list">
         {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
-        <h2 class="archive-title">{{ year }}</h2>
-        <ul>
-            {% for article in list %}
+            <h2 class="archive-title">{{ year }}</h2>
+            <ul>
+                {% for article in list %}
 
-            <li class="article-list">
-                <div class="list-date article-list-item">
-                                    <span>
-                                        {{ article.date.strftime("%b %d")}}
-                                    </span>
-                </div>
-                <div class="list-title article-list-item">
+                    <li class="article-list">
+                        <div class="list-date article-list-item">
+                            <span>
+                                {{ article.date.strftime("%b %d") }}
+                            </span>
+                        </div>
+                        <div class="list-title article-list-item">
+                            <span>
+                                <a href="/post/{{ article.slug }}.html" title="{{ article.title }}"
+                                   itemprop="url">{{ article.title }}</a>
+                            </span>
+
+                            {% if article.subtitle %}
                                 <span>
-                                    <a href="/post/{{ article.slug }}.html" title="{{ article.title }}"
-                                       itemprop="url">{{ article.title }}</a>
+                                    &nbsp;<em class="list-summary" style="font-size: 14px">{{ article.subtitle }}</em>
                                 </span>
-                </div>
+                            {% endif %}
 
-{#                <div class="list-category article-list-item">#}
-{#                    <div class="tag_detail">#}
-{#                        <a href="/category/{{ article.category }}.html"><span>{{ article.category }}</span></a>#}
-{#                    </div>#}
-{#                </div>#}
-            </li>
-            {% endfor %}
-        </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
         {% endfor %}
     </div>
-{#    <div class="container">#}
-{#        <article>#}
-{#            <div class="post-list">#}
-{#                {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}#}
-{#                    <h2>{{ year }}</h2>#}
-{#                    <ul>#}
-{#                        {% for article in list %}#}
-{#                            <li>#}
-{#                                <div style="display: flex; justify-content: space-between">#}
-{##}
-{#                                    <span class="article-list-title article-list-item">#}
-{#                                        <a href="/post/{{ article.slug }}.html" title="{{ article.title }}"#}
-{#                                           itemprop="url">{{ article.title }}</a>#}
-{#                                    </span>#}
-{##}
-{#                                    <span class="article-list-date article-list-item">#}
-{#                                        <span>#}
-{#                                            {{ article.date.strftime("%b %d") }}#}
-{#                                        </span>#}
-{#                                </span>#}
-{##}
-{##}
-{#                                </div>#}
-{##}
-{##}
-{#                            </li>#}
-{#                        {% endfor %}#}
-{#                    </ul>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </article>#}
-{#    </div>#}
 {% endblock %}
 

@@ -75,7 +75,7 @@ h1, h2, h3, strong {
     display: table;
     table-layout: fixed;
     width: 100%;
-    margin: 12px 0;
+    margin: 16px 0;
     font-size: 1.2rem;
 }
 
@@ -92,7 +92,7 @@ h1, h2, h3, strong {
 }
 
 .article-body {
-    line-height: 1.65;
+    line-height: 1.8em;
     margin-top: 2.5em;
     font-family: charter, -apple-system, Georgia, Cambria, "Times New Roman", Times, serif;
     word-break: break-all;
@@ -240,6 +240,11 @@ nav {
     width: 70%;
 }
 
+.list-summary {
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .list-category .tag_detail {
     text-align: center;
     padding: 3px 0;
@@ -317,5 +322,9 @@ nav {
 
     .article-tags {
         margin-left: 10px;
+    }
+
+    .list-summary {
+        display: none;
     }
 }
