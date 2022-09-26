@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+    <title>Tags | {{ SITE_NAME }}</title>
+    <meta name="description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ SITE_NAME }}"/>
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta property="og:url" content="{{ SITE_URL }}"/>
+    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+{% endblock %}
+
+{% block main_content %}
+    <div class="container post-list">
+        <ul>
+            {% for tag in tags|sort(attribute="count", reverse=True) %}
+                <li class="tags-list">
+                    <a href="/tag/{{ tag.name }}.html">{{ tag.name }} ({{ tag.count }})</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+

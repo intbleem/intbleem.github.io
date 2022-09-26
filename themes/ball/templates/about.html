@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+{% block header %}
+    <title>About | {{ SITE_NAME }}</title>
+    <meta name="description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:title" content="{{ SITE_NAME }}"/>
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta property="og:url" content="{{ SITE_URL }}"/>
+    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+
+{% endblock %}
+
+{% block main_content %}
+    <div class="about-page article-body">
+        {{ body|safe }}
+    </div>
+{% endblock %}

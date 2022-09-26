@@ -1,0 +1,40 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+    <title>{{ article.title }} | {{ SITE_NAME }}</title>
+    <meta name="description" content="{{ article.content | truncate(length=200) }}"/>
+    <meta name="keywords" content="{{ (",").join(article.tags) }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="{{ article.title }}"/>
+    <meta property="og:description" content="{{ article.content | truncate(length=200) }}"/>
+{% endblock %}
+
+{% block main_content %}
+    <div class="header-line"></div>
+    <div class="article-meta">
+        <h1 class="title">{{ article.title }}</h1>
+        <div class="article-attrs">
+
+            <span class="date"><time>{{ article.date.strftime("%b %d, %Y") }}</time></span>
+
+            <div class="article-tags">
+                <ul>
+                    {% for tag in article.tags %}
+                        <li>
+                            <a href="/tag/{{ tag }}.html"># {{ tag }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="article-body">
+        {{ article.body | safe }}
+    </div>
+
+{#    <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>#}
+{#    <link rel="dns-prefetch" href="//cdn.mathjax.org"/>#}
+{#    <script src="/static/js/math.js"></script>#}
+{% endblock %}
