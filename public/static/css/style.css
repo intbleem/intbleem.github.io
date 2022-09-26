@@ -66,6 +66,10 @@ h1, h2, h3, strong {
     text-align: center
 }
 
+.article-meta h1 {
+    margin: 1rem 0 0 0 ;
+}
+
 .article-list-item {
     display: table-cell;
     padding-right: 10px;
@@ -93,7 +97,6 @@ h1, h2, h3, strong {
 
 .article-body {
     line-height: 1.8em;
-    margin-top: 2.5em;
     font-family: charter, -apple-system, Georgia, Cambria, "Times New Roman", Times, serif;
     word-break: break-all;
 }
@@ -118,7 +121,7 @@ h1, h2, h3, strong {
 
 .article-attrs {
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     font-style: italic;
 
 }

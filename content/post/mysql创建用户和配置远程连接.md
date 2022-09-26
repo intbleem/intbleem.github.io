@@ -1,5 +1,5 @@
 ---
-title: mysql创建用户和配置远程连接
+title: MySQL创建用户和配置远程连接
 slug: mysql-remote-connection
 tags: [MySQL, remote]
 category: Tech
