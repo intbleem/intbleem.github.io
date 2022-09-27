@@ -67,7 +67,7 @@ h1, h2, h3, strong {
 }
 
 .article-meta h1 {
-    margin: 1rem 0 0 0 ;
+    margin: 0;
 }
 
 .article-list-item {
@@ -123,18 +123,19 @@ h1, h2, h3, strong {
     text-align: left;
     font-size: 14px;
     font-style: italic;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-weight: bold;
 }
 
 .article-attrs .date {
     font-weight: bold;
 }
 
-.article-attrs .author {
-    font-weight: 600;
-    margin-right: 10px;
+.article-detail-date {
+    margin: 12px 0 0;
 }
-
 footer a {
     text-decoration: none;
     color: #333;
@@ -260,6 +261,7 @@ nav {
     border-width: 2px;
     border-color: #482936;
     border-style: solid none none none;
+    margin: 20px 0;
 }
 
 .about-page ul, .links ul {
