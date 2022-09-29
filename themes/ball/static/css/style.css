@@ -1,14 +1,18 @@
+:root {
+    --main-color: #555;
+}
+
 body {
     max-width: 680px;
     margin: auto;
     padding: 1em;
-    font-family: "Arvo", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+    /*font-family: "Arvo", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;*/
+    font-family: "Segoe UI", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
 
 .site-name {
     font-size: 2.2rem;
     font-family: 'Playball', cursive, sans-serif;
-    font-weight: 700;
     text-align: center;
 }
 
@@ -18,7 +22,7 @@ body {
 }
 
 em {
-    color: #666;
+    color: #777;
 }
 
 .menu li {
@@ -28,22 +32,18 @@ em {
 
 main a {
     text-decoration: none;
-    color: black;
+    color: var(--main-color);
 }
 
 main {
     hyphens: auto;
     font-size: 18px;
-    color: #222;
+    color: var(--main-color);
     min-height: 480px;
 }
 
 nav hr {
     display: none;
-}
-
-h1, h2, h3, strong {
-    color: #222;
 }
 
 .article-body h1, h2, h3 {
@@ -59,7 +59,6 @@ h1, h2, h3, strong {
     text-decoration: none;
     padding: 5px;
     border-radius: 5px;
-    color: black;
 }
 
 .article-meta, .menu, footer {
@@ -79,8 +78,8 @@ h1, h2, h3, strong {
     display: table;
     table-layout: fixed;
     width: 100%;
-    margin: 16px 0;
-    font-size: 1.2rem;
+    margin: 18px 0;
+    /*font-size: 1.2rem;*/
 }
 
 .article-list a:hover {
@@ -90,15 +89,17 @@ h1, h2, h3, strong {
 
 .title {
     text-align: left;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.2em;
-    font-weight: 600;
+    font-weight: 400;
+    color: #222;
 }
 
 .article-body {
     line-height: 1.8em;
-    font-family: charter, -apple-system, Georgia, Cambria, "Times New Roman", Times, serif;
+    /*font-family: charter, -apple-system, Georgia, Cambria, "Times New Roman", Times, serif;*/
     word-break: break-all;
+    font-size: 16px;
 }
 
 .article-body ul {
@@ -122,11 +123,13 @@ h1, h2, h3, strong {
 .article-attrs {
     text-align: left;
     font-size: 14px;
-    font-style: italic;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-start;*/
+    margin-top: 30px;
+    margin-bottom: 20px;
     font-weight: bold;
+    color: #222;
 }
 
 .article-attrs .date {
@@ -136,15 +139,19 @@ h1, h2, h3, strong {
 .article-detail-date {
     margin: 12px 0 0;
 }
+
 footer a {
     text-decoration: none;
-    color: #333;
-
+    color: var(--main-color);
 }
 
 footer {
     font-size: 14px;
-    color: #333;
+    color: var(--main-color);
+}
+
+.category-name h1{
+    font-weight: 400;
 }
 
 hr {
@@ -203,7 +210,6 @@ code {
 }
 
 article a, .terms a, .links a {
-    color: #000;
     text-decoration: none;
     padding-bottom: 2px;
     border-bottom: 1px solid;
@@ -215,7 +221,7 @@ article a, .terms a, .links a {
 }
 
 .tags a {
-    color: #000;
+    color: var(--main-color);
     text-decoration: none;
     line-height: 1.8em;
 }
@@ -236,7 +242,6 @@ nav {
 
 
 .list-date {
-    color: #000;
     width: 16%;
 }
 
@@ -245,8 +250,8 @@ nav {
 }
 
 .list-summary {
-    font-size: 14px;
     font-weight: 300;
+    font-size: 0.9rem;
 }
 
 .list-category .tag_detail {
@@ -258,7 +263,7 @@ nav {
 
 .header-line {
     width: 100%;
-    border-width: 2px;
+    border-width: 1px;
     border-color: #482936;
     border-style: solid none none none;
     margin: 20px 0;
@@ -281,6 +286,7 @@ nav {
     list-style: none;
     padding-right: 20px;
     margin-top: 10px;
+    font-size: 16px;
 }
 
 .tags-list a:hover {
@@ -289,14 +295,21 @@ nav {
 
 .article-tags {
     display: inline-block;
-    margin-left: 20px;
     line-height: 12px;
 }
 
 .article-tags li {
     list-style: none;
-    margin-left: 10px;
+    margin-right: 10px;
     float: left;
+}
+
+.article-tags a {
+    color: #222;
+}
+
+.article-tags ul {
+    padding-inline-start: 0
 }
 
 @media only screen and (max-width: 600px) {

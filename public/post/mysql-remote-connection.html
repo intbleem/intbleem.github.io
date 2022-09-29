@@ -119,26 +119,7 @@ var _hmt = _hmt || [];
     <div class="header-line"></div>
     <div class="article-meta">
         <h1 class="title">MySQL创建用户和配置远程连接</h1>
-        <div class="article-attrs">
-            <div class="article-detail-date">
-                <time>Dec 29, 2020</time>
-            </div>
 
-            <div class="article-tags">
-                <ul>
-                    
-                        <li>
-                            <a href="/tag/MySQL.html"># MySQL</a>
-                        </li>
-                    
-                        <li>
-                            <a href="/tag/remote.html"># remote</a>
-                        </li>
-                    
-                </ul>
-            </div>
-
-        </div>
     </div>
 
     <div class="article-body">
@@ -381,6 +362,27 @@ skip-name-resolve
 <em>–skip-networking.</em></p>
 </blockquote>
 <p>根据文档说明，如果你的mysql主机查询DNS很慢或是有很多客户端主机时会导致连接很慢，由于我们的开发机器是不能够连接外网的，所以DNS解析是不可能完成的，从而也就明白了为什么连接那么慢了。同时，请注意在增加该配置参数后，mysql的授权表中的host字段就不能够使用域名而只能够使用 ip地址了，因为这是禁止了域名解析的结果。</p>
+    </div>
+
+    <div class="article-attrs">
+        <div class="article-detail-date">
+            <time>Posted on 2020-12-29</time>
+        </div>
+
+        <div class="article-tags">
+            <ul>
+                
+                    <li>
+                        <a href="/tag/MySQL.html"># MySQL</a>
+                    </li>
+                
+                    <li>
+                        <a href="/tag/remote.html"># remote</a>
+                    </li>
+                
+            </ul>
+        </div>
+
     </div>
 
     

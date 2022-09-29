@@ -119,26 +119,7 @@ var _hmt = _hmt || [];
     <div class="header-line"></div>
     <div class="article-meta">
         <h1 class="title">Linux中的软链接和硬链接</h1>
-        <div class="article-attrs">
-            <div class="article-detail-date">
-                <time>Nov 24, 2020</time>
-            </div>
 
-            <div class="article-tags">
-                <ul>
-                    
-                        <li>
-                            <a href="/tag/Linux.html"># Linux</a>
-                        </li>
-                    
-                        <li>
-                            <a href="/tag/unix.html"># unix</a>
-                        </li>
-                    
-                </ul>
-            </div>
-
-        </div>
     </div>
 
     <div class="article-body">
@@ -250,6 +231,27 @@ ln oldfile newfile
 
 
 <p>当然软链接的用户数据也可以是另一个软链接的路径，其解析过程是递归的。但需注意：软链接创建时原文件的路径指向使用绝对路径较好。使用相对路径创建的软链接被移动后该软链接文件将成为一个死链接（如下所示的软链接 a 使用了相对路径，因此不宜被移动），因为链接数据块中记录的亦是相对路径指向。</p>
+    </div>
+
+    <div class="article-attrs">
+        <div class="article-detail-date">
+            <time>Posted on 2020-11-24</time>
+        </div>
+
+        <div class="article-tags">
+            <ul>
+                
+                    <li>
+                        <a href="/tag/Linux.html"># Linux</a>
+                    </li>
+                
+                    <li>
+                        <a href="/tag/unix.html"># unix</a>
+                    </li>
+                
+            </ul>
+        </div>
+
     </div>
 
     
