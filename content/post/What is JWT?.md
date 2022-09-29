@@ -1,7 +1,7 @@
 ---
 title: What is JWT?
 slug: jwt
-tags: [JWT]
+tags: [JWT, 技术笔记]
 category: Tech
 date: 2021-03-12
 status: publish

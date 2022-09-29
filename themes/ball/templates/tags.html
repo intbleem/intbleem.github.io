@@ -13,10 +13,10 @@
 
 {% block main_content %}
     <div class="container post-list">
-        <ul>
+        <ul class="tags-list-ul">
             {% for tag in tags|sort(attribute="count", reverse=True) %}
                 <li class="tags-list">
-                    <a href="/tag/{{ tag.name }}.html">{{ tag.name }} ({{ tag.count }})</a>
+                    <a href="/tag/{{ tag.name }}.html">{{ tag.name }}</a>
                 </li>
             {% endfor %}
         </ul>

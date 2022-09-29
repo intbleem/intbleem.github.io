@@ -17,7 +17,7 @@
 
 {% block main_content %}
     <div class="category-name">
-        <h1>{{ category_name }}</h1>
+        <h1># {{ category_name }}</h1>
     </div>
     <div class="container post-list">
         {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}

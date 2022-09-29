@@ -1,7 +1,7 @@
 ---
 title: OAuth2简述
 slug: oauth2
-tags: [OAuth2, authorization]
+tags: [OAuth2, Authorization, 技术笔记]
 category: Tech
 date: 2021-03-12
 status: publish

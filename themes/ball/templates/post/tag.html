@@ -22,8 +22,8 @@
 {% endblock %}
 
 {% block main_content %}
-    <div class="category-name">
-        <h1>{{ tag_name }}</h1>
+    <div class="tag-name">
+        <h1># {{ tag_name }}</h1>
     </div>
     <div class="container post-list">
         {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}

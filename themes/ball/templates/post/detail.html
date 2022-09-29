@@ -25,11 +25,17 @@
             <time>Posted on {{ article.date.strftime("%Y-%m-%d") }}</time>
         </div>
 
+        <div class="article-category">
+            <span>
+                Archived in <a href="/category/{{ article.category }}.html">{{ article.category }}</a>
+            </span>
+        </div>
+
         <div class="article-tags">
             <ul>
                 {% for tag in article.tags %}
                     <li>
-                        <a href="/tag/{{ tag }}.html"># {{ tag }}</a>
+                        # <a href="/tag/{{ tag }}.html">{{ tag }}</a>
                     </li>
                 {% endfor %}
             </ul>

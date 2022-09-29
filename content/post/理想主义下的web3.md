@@ -1,7 +1,7 @@
 ---
 title: 理想主义下的web3
 slug: web3
-tags: [web3]
+tags: [web3, 炒币, 理想主义]
 category: Thought
 date: 2022-06-08
 status: publish

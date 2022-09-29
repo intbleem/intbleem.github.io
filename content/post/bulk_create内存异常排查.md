@@ -1,7 +1,7 @@
 ---
 title: bulk_create内存异常排查
 slug: django-bulk-create
-tags: [django,MySQLdb]
+tags: [Django,MySQLdb,技术笔记]
 category: Tech
 date: 2021-12-14
 status: publish
