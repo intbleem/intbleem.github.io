@@ -1,11 +1,11 @@
 ---
 title: Confession of a salted fish
 slug: confession-of-a-salted-fish
-tags: [英语练习, 胡扯]
+tags: [英语练习, 在扯淡]
 category: Review
 date: 2021-04-10
 status: publish
-subtitle: It's total bullshit.
+subtitle: It's all bullshit. Nothing else.
 ---
 Today, I listened to the sound of the drum all day that didn't stop till evening. So I was thinking whose child was training so hard. By contrast, I played all day, which made me feel guilty.
 

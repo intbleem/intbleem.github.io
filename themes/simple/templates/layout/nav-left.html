@@ -1,0 +1,21 @@
+<aside class="sidebar ">
+    <ul>
+        <li class="sd-item sd-intro">
+        </li>
+
+        <li class="sd-item sd-category">
+            {% include 'blog/category.html' %}
+        </li>
+    </ul>
+</aside>
+
+<aside class="sidebar tagcloud">
+    {% include 'blog/tags.html' %}
+</aside>
+
+<script>
+    function submit() {
+        var form = document.getElementById('submitForm');
+        form.submit()
+    }
+</script>
