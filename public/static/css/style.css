@@ -6,8 +6,8 @@ body {
     max-width: 680px;
     margin: auto;
     padding: 1em;
-    /*font-family: "Arvo", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;*/
-    font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+    /*font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";*/
+    font-family: Roboto, Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .site-name {
@@ -46,13 +46,14 @@ nav hr {
     display: none;
 }
 
-.article-body h1, h2, h3 {
+.article-body h1, .article-body h2, .article-body h3 {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .archive-title {
     font-size: 1.8rem;
+    font-weight: 500;
 }
 
 .menu a {
@@ -81,7 +82,7 @@ nav hr {
     display: table;
     table-layout: fixed;
     width: 100%;
-    margin: 12px 0;
+    margin: 14px 0;
     font-size: 1.2rem;
 }
 
@@ -99,10 +100,10 @@ nav hr {
 }
 
 .article-body {
-    line-height: 1.8em;
+    line-height: 1.8;
     /*font-family: charter, -apple-system, Georgia, Cambria, "Times New Roman", Times, serif;*/
     word-break: break-all;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .article-body ul {
@@ -112,6 +113,7 @@ nav hr {
 .article-body h2 {
     padding-bottom: 2px;
     border-bottom: 1px solid #e4e3e3;
+    font-size: 1.5rem;
 }
 
 .article-body a {
@@ -154,7 +156,8 @@ footer {
 }
 
 .category-name h1, .tag-name h1 {
-    font-weight: 400;
+    /*font-weight: 400;*/
+    font-size: 2rem;
 }
 
 hr {
@@ -265,7 +268,7 @@ nav {
 
 .header-line {
     width: 100%;
-    border-width: 1px;
+    border-width: 2px;
     border-color: #482936;
     border-style: solid none none none;
     margin: 20px 0;
