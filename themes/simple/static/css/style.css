@@ -13,7 +13,6 @@
     font-size: 36px;
     color: #000;
     text-decoration: none;
-    font-weight: 600;
 }
 
 .header-nav {
@@ -43,7 +42,7 @@
     position: relative;
     display: block;
     padding-right: 25px;
-    color: #121111;
+    color: #000000;
     border-bottom: 1px solid transparent;
 }
 
@@ -51,7 +50,7 @@
     display: block;
     margin: 12px 0 10px;
     font-size: 14px;
-    color: #615b5b;
+    color: #6f6767;
 }
 
 .article-list-footer {
@@ -92,7 +91,7 @@ main a {
 
 h5 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -137,9 +136,9 @@ a {
 
 .article-header h1 {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -.03em;
-    color: #222;
+    color: #000000;
 }
 
 .header-links {
