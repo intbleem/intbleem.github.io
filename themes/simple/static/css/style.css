@@ -13,6 +13,7 @@
     font-size: 36px;
     color: #000;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .header-nav {
@@ -32,6 +33,10 @@
     display: block;
     padding: 50px 0;
     border-bottom: 1px solid #ebeaea;
+}
+
+.article-list li:last-child {
+    border-bottom: 0;
 }
 
 .article-list-item a h5 {
@@ -209,11 +214,13 @@ footer a {
     text-decoration: none;
 }
 
+
 footer {
     font-size: 14px;
-    text-align: center;
-    margin-bottom: 35px;
-
+    text-align: left;
+    margin-bottom: 40px;
+    border-top: 1px solid #ebeaea;
+    color: #ada8a8;
 }
 
 pre {
@@ -286,12 +293,23 @@ ul {
 }
 
 
-.about-page ul, .links ul {
-    padding-left: 30px;
+/*.about-page ul, .links ul {*/
+/*    padding-left: 30px;*/
+/*}*/
+
+/*.links {*/
+/*    margin: 50px 0;*/
+/*}*/
+
+.links ul {
+    list-style: none;
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+    display: flex;
 }
 
-.links {
-    margin: 50px 0;
+.links ul li {
+    margin-right: 20px;
 }
 
 .about-page {
