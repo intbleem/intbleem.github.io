@@ -13,14 +13,16 @@
     <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
     <meta property="og:url" content="{{ SITE_URL }}"/>
     <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+
+    <link rel="canonical" href="{{ SITE_URL }}/category/{{ category_name }}">
+
 {% endblock %}
 
 {% block main_content %}
-     <div class="container post-list">
-        {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
-            <ul class="article-list">
+    <div class="container post-list">
+        <ul class="article-list">
+            {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
                 {% for article in list %}
-
                     <li class="article-list-item">
                         <a href="/post/{{ article.slug }}.html" title="{{ article.title }}"
                            itemprop="url"><h5>{{ article.title }}</h5></a>
@@ -42,8 +44,8 @@
                         </div>
                     </li>
                 {% endfor %}
-            </ul>
-        {% endfor %}
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}
 

@@ -7,6 +7,19 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{ article.title }}"/>
     <meta property="og:description" content="{{ article.content | truncate(length=200) }}"/>
+    <meta property="og:url" content="{{ SITE_URL }}/post/{{ article.slug }}">
+    <meta property="og:site_name" content="2dosth">
+    <meta property="article:tag" content="{{ (",").join(article.tags) }}">
+    <meta property="article:category" content="{{ article.category }}">
+    <meta property="article:published_date" content="{{ article.date }}">
+
+    <link rel="canonical" href="{{ SITE_URL }}/post/{{ article.slug }}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="{{ article.content | truncate(length=200) }}">
+    <meta name="twitter:title" content="{{ article.title }}">
+    <meta name="twitter:site" content="@2dosth">
+    <meta name="twitter:creator" content="@2dosth">
 {% endblock %}
 
 {% block main_content %}

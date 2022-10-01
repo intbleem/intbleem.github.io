@@ -2,15 +2,10 @@
     box-sizing: border-box;
 }
 
-.menu {
-    float: right;
-}
-
 .site-name {
-    font-family: cursive, serif;
+    font-family: Palatino, Georgia, cursive, serif;
     display: inline-block;
     font-size: 36px;
-    font-weight: 700;
     color: #000;
     text-decoration: none;
 }
@@ -107,10 +102,9 @@ a {
     color: #615b5b;
 }
 
-
 .article {
     display: block;
-    margin: 100px 0;
+    margin: 100px 0 50px 0;
 }
 
 .article-header {
@@ -161,11 +155,9 @@ a {
     text-decoration: none;
 }
 
-
 main {
     hyphens: auto;
     font-size: 18px;
-    /*color: var(--main-color);*/
     min-height: 480px;
 }
 
@@ -240,7 +232,7 @@ iframe, img, video {
 blockquote {
     padding: 0 0 4px 15px;
     margin: 0 10px 10px 0;
-    font-family: lato, Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-style: italic;
     line-height: 1.6;
     color: #666;
