@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    color: #fff;
+    background-color: #121111;
+}
+
 .site-name {
     font-family: Palatino, Georgia, cursive, serif;
     display: inline-block;
