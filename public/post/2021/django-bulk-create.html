@@ -15,13 +15,13 @@
     
     <title>Django批量创建时出现bulk_create内存异常 | 2dosth</title>
     <meta name="description" content=""/>
-    <meta name="keywords" content="Django,MySQLdb,技术笔记"/>
+    <meta name="keywords" content="T,e,c,h"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Django批量创建时出现bulk_create内存异常"/>
     <meta property="og:description" content=""/>
     <meta property="og:url" content="https://2dosth.com/post/django-bulk-create">
     <meta property="og:site_name" content="2dosth">
-    <meta property="article:tag" content="Django,MySQLdb,技术笔记">
+    <meta property="article:tag" content="T,e,c,h">
     <meta property="article:category" content="Tech">
     <meta property="article:published_date" content="2021-12-14">
 
@@ -123,24 +123,30 @@ var _hmt = _hmt || [];
     <article class="article">
         <header class="article-header">
             <h1>Django批量创建时出现bulk_create内存异常</h1>
-            <p></p>
+            
+                <p></p>
+            
+
             <div class="article-list-footer">
                 <span class="article-list-date">December 14, 2021</span>
                 <span class="article-list-divider">-</span>
                 <div class="article-list-category">
                     <a href="/category/Tech.html">Tech</a>
                 </div>
-                <span class="article-list-divider">-</span>
-                <div class="article-list-tags">
-                    
-                        <a href="/tag/Django.html">Django</a>
-                    
-                        <a href="/tag/MySQLdb.html">MySQLdb</a>
-                    
-                        <a href="/tag/技术笔记.html">技术笔记</a>
-                    
-                </div>
+                
+                    <span class="article-list-divider">-</span>
+                    <div class="article-list-tags">
+                        
+                            <a href="/tag/Django.html">Django</a>
+                        
+                            <a href="/tag/MySQLdb.html">MySQLdb</a>
+                        
+                            <a href="/tag/技术笔记.html">技术笔记</a>
+                        
+                    </div>
+                
             </div>
+
         </header>
 
         <div class="article-body">
@@ -174,8 +180,12 @@ var _hmt = _hmt || [];
 </code></pre></div>
 
 
-<p><img data-src="https://static.19961002.xyz/img/2022/RFK6GbLQ.png" src="https://static.19961002.xyz/img/2022/RFK6GbLQ.png" /></p>
-<p><img data-src="https://static.19961002.xyz/img/2022/ewSJd0CP.png" src="https://static.19961002.xyz/img/2022/ewSJd0CP.png" /></p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/RFK6GbLQ.png" src="https://static.19961002.xyz/img/2022/RFK6GbLQ.png" /></div>
+</p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/ewSJd0CP.png" src="https://static.19961002.xyz/img/2022/ewSJd0CP.png" /></div>
+</p>
 <p>发现内存主要的增长是在第一行，而且后面也主要和MySQLdb有关，那么就去看看到底是怎么回事，点开源码在发现<code>django/utils/encoding.py:62</code></p>
 <div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">force_str</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">strings_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;strict&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -299,7 +309,9 @@ var _hmt = _hmt || [];
 
 <p>发现问题完美的得到解决，完美！</p>
 <p>后来在官方文档中发现，已经有这个方法的相关文档</p>
-<p><img data-src="https://static.19961002.xyz/img/2022/dmTAMrGI.png" src="https://static.19961002.xyz/img/2022/dmTAMrGI.png" /></p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/dmTAMrGI.png" src="https://static.19961002.xyz/img/2022/dmTAMrGI.png" /></div>
+</p>
 <p>文档中还说只有在<code>DEBUG=True</code>时，这些sql语句才会保存起来以便有需要的时候查看sql。</p>
 <p>这也解答了我心中的一个疑问，系统运行时产生的sql为什么要保存起来呢，现在看来是我知识浅薄了。</p>
 <p>所以最终这个问题的解决方案有两个：</p>

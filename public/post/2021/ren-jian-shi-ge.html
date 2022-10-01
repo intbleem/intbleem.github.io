@@ -13,23 +13,23 @@
     <meta property="og:locale" content="zh-Hans">
 
     
-    <title>What is JWT? | 2dosth</title>
+    <title>我不报歉｜人间失格 | 2dosth</title>
     <meta name="description" content=""/>
-    <meta name="keywords" content="JWT,技术笔记"/>
+    <meta name="keywords" content="R,e,a,d,i,n,g"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="What is JWT?"/>
+    <meta property="og:title" content="我不报歉｜人间失格"/>
     <meta property="og:description" content=""/>
-    <meta property="og:url" content="https://2dosth.com/post/jwt">
+    <meta property="og:url" content="https://2dosth.com/post/ren-jian-shi-ge">
     <meta property="og:site_name" content="2dosth">
-    <meta property="article:tag" content="JWT,技术笔记">
-    <meta property="article:category" content="Tech">
-    <meta property="article:published_date" content="2021-03-12">
+    <meta property="article:tag" content="R,e,a,d,i,n,g">
+    <meta property="article:category" content="Reading">
+    <meta property="article:published_date" content="2021-11-14">
 
-    <link rel="canonical" href="https://2dosth.com/post/jwt">
+    <link rel="canonical" href="https://2dosth.com/post/ren-jian-shi-ge">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="">
-    <meta name="twitter:title" content="What is JWT?">
+    <meta name="twitter:title" content="我不报歉｜人间失格">
     <meta name="twitter:site" content="@2dosth">
     <meta name="twitter:creator" content="@2dosth">
 
@@ -122,87 +122,54 @@ var _hmt = _hmt || [];
     
     <article class="article">
         <header class="article-header">
-            <h1>What is JWT?</h1>
-            <p></p>
+            <h1>我不报歉｜人间失格</h1>
+            
+                <p>直面自我，做一只狡猾的狐狸。</p>
+            
+
             <div class="article-list-footer">
-                <span class="article-list-date">March 12, 2021</span>
+                <span class="article-list-date">November 14, 2021</span>
                 <span class="article-list-divider">-</span>
                 <div class="article-list-category">
-                    <a href="/category/Tech.html">Tech</a>
+                    <a href="/category/Reading.html">Reading</a>
                 </div>
-                <span class="article-list-divider">-</span>
-                <div class="article-list-tags">
-                    
-                        <a href="/tag/JWT.html">JWT</a>
-                    
-                        <a href="/tag/技术笔记.html">技术笔记</a>
-                    
-                </div>
+                
+                    <span class="article-list-divider">-</span>
+                    <div class="article-list-tags">
+                        
+                            <a href="/tag/读书笔记.html">读书笔记</a>
+                        
+                            <a href="/tag/丧文化.html">丧文化</a>
+                        
+                            <a href="/tag/人间不值得.html">人间不值得</a>
+                        
+                    </div>
+                
             </div>
+
         </header>
 
         <div class="article-body">
-            <h2>What is JWT?</h2>
+            <p>《人间失格》作为著名的“丧”文化代表，其实在读高中的时候就早已耳闻，只不过那时候学校赶的紧，再加上自己也不喜欢看书，就不了了之了。后来随着年纪的增长，虽说已经有大把的时间可以读完这本书，但这时自己又抗拒又害怕那种“丧”，所以也就一直没有去看过。</p>
+<p>至于为什么又突然看起来这本书了，可能是最近心情低落，而我又偏喜欢在心情不好的时候找些比较致郁的东西来听或者看，这样反而会觉得有那么一丝愉悦......</p>
+<p>断断续续用了将近两天的时间看完，书的内容确实很阴郁，整篇采用第一人称的方式，就好像一个坐在你面前的人，在絮絮叨叨他的一生。</p>
+<p>可能是没有什么文学素养，再或者是觉得他人的悲惨与自己无关，总之看的过程很平静，就好像是在观看一场一个人的悲惨演出而已。唯一一次动容的时刻，是在直治自杀之后写给姐姐的遗书里有这一段话。</p>
 <blockquote>
-<p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
-Although JWTs can be encrypted to also provide secrecy between parties, we will focus on signed tokens. Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties. When tokens are signed using public/private key pairs, the signature also certifies that only the party holding the private key is the one that signed it.</p>
+<p>我早就该死了。只是，唯一让我牵挂不下的便是慈爱的妈妈，想到这个我才没有去死。人，就像享有自由生存的权利一样，也享有决定自己什么时候死的权利，可是我觉得，只要母亲在世，这个死的权利是不得行使的，否则就等于是亲手将自己的母亲杀死。</p>
 </blockquote>
-<h2>Application scenarios</h2>
-<h3>Single Sign On</h3>
-<p>This is the most common scenario to use JWT. In a multi-system service architecture, after a user logged in to one system at first time, there is no need to log in repeatedly when using other systems.</p>
-<h3>Authorization</h3>
-<p>After a user logged in, every subsequent request contains JWT. When the JWT is verified, the user is allowed to access the resource he should access.</p>
-<h2>Components of JWT</h2>
-<p>JWT consists of three parts: Header, Payload, Signature, and they are connected with a dot.</p>
-<ul>
-<li>The Header consists of two parts: the type of token and the signing algorithm being used, e.g. :</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-    <span class="err">&#39;alg&#39;</span><span class="p">:</span> <span class="s2">&quot;HS256&quot;</span><span class="p">,</span>
-    <span class="err">&#39;</span><span class="kc">t</span><span class="err">yp&#39;</span><span class="p">:</span> <span class="s2">&quot;JWT&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-
-<ul>
-<li>The Payload is actually a place to store valid information which has three types of claims. </li>
-</ul>
-<p>Registered claims: Predefined claims which are not mandatory but recommended. Such as <code>iss(issuer)</code> and <code>exp(expiration time)</code></p>
-<p>Public claims: They can be defined at will.</p>
-<p>Private claims: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.</p>
-<ul>
-<li>The Signature is a digital signature to prevent data from being tampered.</li>
-</ul>
-<h2>How is JWT generated</h2>
-<p>JWT is divided into three parts. How do these three parts come together to form a completed JWT?</p>
-<ul>
-<li>The Header is encoded by base64 to get the first part.</li>
-<li>The Payload is encoded by base64 to get the second part.</li>
-<li>Through the algorithm in Header with a secret sign that encoded Header and encoded Payload and Connected with dot.</li>
-</ul>
-<p>Tips: Jwt is not encrypted, so it's better not to store some sensitive information directly in JWT.</p>
-<h2>Workflow of JWT</h2>
-<p>After successful login for the first time, the user will get a JWT. This JWT is the certificate for the user to interact with the server, that is, the server uses this token to determine which user the requester is.
-When the user wants to access the resources on the server, the token was sent, which is usually placed in <code>authorization</code>, using <code>bearer</code> schema.
-For example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Authorization</span><span class="o">:</span> <span class="n">Bearer</span> <span class="n">token</span>
-</code></pre></div>
-
-
-<h2>What are the advantages over traditional session authentication?</h2>
-<h3>Session authentication</h3>
-<p>Because HTTP is a stateless protocol, we provide our user name and password for authentication when we first access it. Then, in the second visit, we still need to carry out a user authentication. Because according to the HTTP protocol, we don't know who the originator of the request is, in order to identify which user initiated the request, we can only save a copy of the user's information on the server, and then pass the same information to the user, so that the user can save it in cookies. In the next request, you only need to carry the information in the cookies. According to the submitted cookies, the server can determine which user it is. This is the traditional authentication based on session.</p>
-<h3>Problems in session based authentication</h3>
-<p>Session: after each user has been authenticated by our application, our application needs to make a record on the server to facilitate the authentication of the next request. Generally speaking, the session is saved in memory. With the increase of authenticated users, the cost of the server will increase significantly.</p>
-<p>Scalability: after user authentication, the server makes authentication records. If the authentication records are saved in memory, it means that the next request of the user must be on this server, so that the authorized resources can be obtained. This also means that the expansion ability of the application is limited.</p>
-<p>CSRF: because user identification is based on cookie, if cookie is intercepted, users will be vulnerable to cross site request forgery attack.</p>
-<h3>What are the advantages of JWT based authentication</h3>
-<ul>
-<li>Tokens are stored in the client, completely stateless and scalable.</li>
-<li>Security: token is different from a cookie. Each request will send a token. Since no cookie is sent, it can also prevent CSRF attacks.</li>
-</ul>
+<p>大概是因为在漫长的阴郁里，突然出现了一抹温柔吧。</p>
+<p>其实看到叶藏费尽心思去迎合别人的时候，也好像看到了以前自己的影子。</p>
+<p>学着抽烟，因为大家都抽烟</p>
+<p>学着打架，因为兄弟们打架不能少了你</p>
+<p>学着寒暄扯皮，因为你要嘴皮子玩的溜</p>
+<p>不懂拒绝，因为拒绝可能会伤了对方的心</p>
+<p>…</p>
+<p>年轻人看到什么书就以为自己是什么样的人，越仔细回想，就越有代入感，幸好以前并没有看这本书。</p>
+<p>倘若叶藏可以摒弃自己的懦弱和骄傲，包容自己的不足，他是不是就不会变成那样，包括直治也是。</p>
+<p>把他们当作是一部反面教材，鞭策自己，包容自己，活出自我。这样是否也算是这本灰暗阴郁的书的正面意义呢。</p>
+<p>最后附上书中的一句话：</p>
 <blockquote>
-<p>reference from https://jwt.io/introduction</p>
+<p>一切都会过去的</p>
 </blockquote>
         </div>
 

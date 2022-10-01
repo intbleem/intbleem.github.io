@@ -15,13 +15,13 @@
     
     <title>科学有效的上网方法 | 2dosth</title>
     <meta name="description" content=""/>
-    <meta name="keywords" content="翻墙,云主机,V2Ray"/>
+    <meta name="keywords" content="T,e,c,h"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="科学有效的上网方法"/>
     <meta property="og:description" content=""/>
     <meta property="og:url" content="https://2dosth.com/post/ru-he-fq">
     <meta property="og:site_name" content="2dosth">
-    <meta property="article:tag" content="翻墙,云主机,V2Ray">
+    <meta property="article:tag" content="T,e,c,h">
     <meta property="article:category" content="Tech">
     <meta property="article:published_date" content="2022-07-15">
 
@@ -123,24 +123,30 @@ var _hmt = _hmt || [];
     <article class="article">
         <header class="article-header">
             <h1>科学有效的上网方法</h1>
-            <p>本来可以当老板，却非要自己瞎折腾。</p>
+            
+                <p>本来可以当老板，却非要自己瞎折腾。</p>
+            
+
             <div class="article-list-footer">
                 <span class="article-list-date">July 15, 2022</span>
                 <span class="article-list-divider">-</span>
                 <div class="article-list-category">
                     <a href="/category/Tech.html">Tech</a>
                 </div>
-                <span class="article-list-divider">-</span>
-                <div class="article-list-tags">
-                    
-                        <a href="/tag/翻墙.html">翻墙</a>
-                    
-                        <a href="/tag/云主机.html">云主机</a>
-                    
-                        <a href="/tag/V2Ray.html">V2Ray</a>
-                    
-                </div>
+                
+                    <span class="article-list-divider">-</span>
+                    <div class="article-list-tags">
+                        
+                            <a href="/tag/翻墙.html">翻墙</a>
+                        
+                            <a href="/tag/云主机.html">云主机</a>
+                        
+                            <a href="/tag/V2Ray.html">V2Ray</a>
+                        
+                    </div>
+                
             </div>
+
         </header>
 
         <div class="article-body">
@@ -150,7 +156,9 @@ var _hmt = _hmt || [];
 <p>V2Ray+websocket+tls+web是目前最稳定的翻Q技术之一，即使在敏感时期也稳如泰山。和SSR的流量混淆不同，V2Ray+ws+tls用真正的https流量FQ，没有必要做任何混淆。在长城看来，流量和不计其数的https流量没有任何区别。但是如果GFW尝试主动嗅探的话，发现流量的目的地没有真正的网站，从而被识破然后被Q。所以要在这个服务外面加一个真正的网站做掩护，从而假装是访问真正的网站。</p>
 <h2>Cloudflare配置DNS</h2>
 <p>这次部署过程中，使用的是Cloudflare作为DNS服务器，Cloudflare是世界上最大的CDN提供商，全球半数的网站都在使用Cloudflare。使用不用担心隐私泄露或钓鱼风险，而且也可以提供免费的CDN服务，只不过对于国内来说，访问速度可能会慢一点。</p>
-<p><img data-src="https://static.19961002.xyz/img/2022/jFu3MfCB.png" src="https://static.19961002.xyz/img/2022/jFu3MfCB.png" /></p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/jFu3MfCB.png" src="https://static.19961002.xyz/img/2022/jFu3MfCB.png" /></div>
+</p>
 <ul>
 <li>DNS类型为A类型</li>
 <li>名称为要解析的域名地址，可以顶级，也可以是二级域名</li>
@@ -396,7 +404,9 @@ var _hmt = _hmt || [];
 <p>在网上找一些静态网页模版，放在目录<code>/usr/share/nginx/html/</code>下即可，最好是找一些全英文的网站，存在中文的话可能会增加一些被墙的概率。</p>
 <h2>客户端配置</h2>
 <p>这里使用的客户端是著名的代理软件Shadowsockets（小火箭），这是一款iOS生态下全平台通用的一款软件，配置也相对简单。</p>
-<p><img data-src="https://static.19961002.xyz/img/2022/XUEexvP4.png" src="https://static.19961002.xyz/img/2022/XUEexvP4.png" /></p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/XUEexvP4.png" src="https://static.19961002.xyz/img/2022/XUEexvP4.png" /></div>
+</p>
 <p>点【服务器】按钮，选择【添加VMess】服务器。</p>
 <ul>
 <li>地址：域名地址，当然也可以IP地址</li>
@@ -406,7 +416,9 @@ var _hmt = _hmt || [];
 <li>算法：随便选。</li>
 <li>传输方式：选WebSocket；Host：域名地址；路径：即前面的随机字符串，注意前面必须要加上斜杠“/”</li>
 </ul>
-<p><img data-src="https://static.19961002.xyz/img/2022/image-20220720124353424.png" src="https://static.19961002.xyz/img/2022/image-20220720124353424.png" /></p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/image-20220720124353424.png" src="https://static.19961002.xyz/img/2022/image-20220720124353424.png" /></div>
+</p>
 <ul>
 <li>别名：随便填。</li>
 <li>TLS：打开</li>

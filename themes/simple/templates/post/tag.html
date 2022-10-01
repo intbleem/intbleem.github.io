@@ -30,23 +30,27 @@
             {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
                 {% for article in list %}
                     <li class="article-list-item">
-                        <a href="/post/{{ article.slug }}.html" title="{{ article.title }}"
+                        <a href="{{ article.url }}" title="{{ article.title }}"
                            itemprop="url"><h5>{{ article.title }}</h5></a>
-                        <p>
-                            {{ article.subtitle }}
-                        </p>
+                        {% if  article.subtitle %}
+                            <p>{{ article.subtitle }}</p>
+                        {% else %}
+                            <p></p>
+                        {% endif %}
                         <div class="article-list-footer">
                             <span class="article-list-date">{{ article.date.strftime("%B %d, %Y") }}</span>
                             <span class="article-list-divider">-</span>
                             <div class="article-list-category">
-                                <a href="/category/{{ article.category }}.html">{{ article.category }}</a>
+                                <a href="{{ article.category.url }}">{{ article.category.name }}</a>
                             </div>
-                            <span class="article-list-divider">-</span>
-                            <div class="article-list-tags">
-                                {% for tag in article.tags %}
-                                    <a href="/tag/{{ tag }}.html">{{ tag }}</a>
-                                {% endfor %}
-                            </div>
+                            {% if article.tags %}
+                                <span class="article-list-divider">-</span>
+                                <div class="article-list-tags">
+                                    {% for tag in article.tags %}
+                                        <a href="{{ tag.url }}">{{ tag.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
                         </div>
                     </li>
                 {% endfor %}
