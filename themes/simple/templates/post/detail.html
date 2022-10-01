@@ -7,13 +7,13 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{ article.title }}"/>
     <meta property="og:description" content="{{ article.content | truncate(length=200) }}"/>
-    <meta property="og:url" content="{{ SITE_URL }}/post/{{ article.slug }}">
+    <meta property="og:url" content="{{ SITE_URL }}{{ article.url }}">
     <meta property="og:site_name" content="2dosth">
     <meta property="article:tag" content="{{ (",").join(article.tdk_tags) }}">
     <meta property="article:category" content="{{ article.tdk_category }}">
     <meta property="article:published_date" content="{{ article.date }}">
 
-    <link rel="canonical" href="{{ SITE_URL }}/post/{{ article.slug }}">
+    <link rel="canonical" href="{{ SITE_URL }}{{ article.url }}">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="{{ article.content | truncate(length=200) }}">
