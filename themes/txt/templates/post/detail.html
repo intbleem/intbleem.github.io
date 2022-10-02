@@ -72,9 +72,9 @@
         <hr>
         <span>
             Date:&nbsp;{{ article.date }}<br>
-            Category:&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a> <br>
+            Category:&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br>
             Tags:&nbsp;{% for tag in article.tags %}
-            <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
+            <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;
         {% endfor %}
 
         </span>
