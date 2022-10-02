@@ -1,0 +1,82 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+    <title>{{ article.title }} | {{ SITE_NAME }}</title>
+    <meta name="description" content="{{ article.content | truncate(length=200) }}"/>
+    <meta name="keywords" content="{{ (",").join(article.tdk_tags) }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="{{ article.title }}"/>
+    <meta property="og:description" content="{{ article.content | truncate(length=200) }}"/>
+    <meta property="og:url" content="{{ SITE_URL }}{{ article.url }}">
+    <meta property="og:site_name" content="2dosth">
+    <meta property="article:tag" content="{{ (",").join(article.tdk_tags) }}">
+    <meta property="article:category" content="{{ article.tdk_category }}">
+    <meta property="article:published_date" content="{{ article.date }}">
+
+    <link rel="canonical" href="{{ SITE_URL }}{{ article.url }}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="{{ article.content | truncate(length=200) }}">
+    <meta name="twitter:title" content="{{ article.title }}">
+    <meta name="twitter:site" content="@2dosth">
+    <meta name="twitter:creator" content="@2dosth">
+    <style>
+
+        img {
+            max-width: 100%;
+        }
+
+        blockquote {
+            padding: 0 0 0 15px;
+            margin: 0 10px 0 0;
+            border-left: 1px solid #615b5b;
+        }
+
+        pre {
+            border: 1px solid #ccc;
+            padding: 1em;
+            overflow-x: auto;
+            background: #f7f7f7;
+        }
+
+        p code {
+            font-weight: bold;
+        }
+
+        table {
+            margin: auto;
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666
+        }
+
+        table thead th {
+            border-bottom: 1px solid #ddd
+        }
+
+        td, th {
+            padding: 5px
+        }
+
+        tfoot, thead, tr:nth-child(even) {
+            background: #eee
+        }
+
+    </style>
+{% endblock %}
+
+{% block main_content %}
+    <article class="article">
+        <h1>{{ article.title }}</h1>
+
+        {{ article.body | safe }}
+        <hr>
+        <span>
+            Date:&nbsp;{{ article.date }}<br>
+            Category:&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a> <br>
+            Tags:&nbsp;{% for tag in article.tags %}
+            <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
+        {% endfor %}
+
+        </span>
+    </article>
+{% endblock %}

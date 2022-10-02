@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+    {% if category_name %}
+        <title>{{ category_name }} | {{ SITE_NAME }}</title>
+        <meta name="description" content="{{ SITE_DESCRIPTION }}"/>
+    {% else %}
+        <title>{{ SITE_NAME }}</title>
+    {% endif %}
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ SITE_NAME }}"/>
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta property="og:url" content="{{ SITE_URL }}"/>
+    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+    <link rel="canonical" href="{{ SITE_URL }}/category/{{ category_name }}">
+{% endblock %}
+
+{% block main_content %}
+    <h1># {{ category_name }}</h1>
+        <div>
+        {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
+            {% for article in list %}
+                &nbsp;{{ article.date }}&nbsp;&nbsp;&nbsp;<a href="{{ article.url }}">{{ article.title }}</a>
+                <br>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
