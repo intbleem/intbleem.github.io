@@ -18,10 +18,11 @@
 
 {% block main_content %}
     <h1># {{ category_name }}</h1>
-        <div>
+    <div>
         {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
             {% for article in list %}
-                &nbsp;{{ article.date }}&nbsp;&nbsp;&nbsp;<a href="{{ article.url }}">{{ article.title }}</a>
+                <time>{{ article.date }}</time>
+                <a href="{{ article.url }}">{{ article.title }}</a>
                 <br>
             {% endfor %}
         {% endfor %}

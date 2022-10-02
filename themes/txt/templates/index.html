@@ -14,56 +14,14 @@
 {% endblock %}
 
 {% block main_content %}
-    <div>
-        {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
-            {% for article in list %}
-                &nbsp;{{ article.date }}&nbsp;&nbsp;&nbsp;<a href="{{ article.url }}">{{ article.title }}</a>
-                <br>
+        <div>
+            {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
+                {% for article in list %}
+                    <time>{{ article.date }}</time>
+                    <a href="{{ article.url }}">{{ article.title }}</a>
+                    <br>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    </div>
-
-
-{#    <div class="container post-list">#}
-{#        <ul class="article-list">#}
-{#            {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}#}
-{#                {% for article in list %}#}
-{#                    <li class="article-list-item">#}
-{#                        <a href="{{ article.url }}" title="{{ article.title }}"#}
-{#                           itemprop="url"><h5>{{ article.title }}</h5></a>#}
-{#                        {% if  article.subtitle %}#}
-{#                            <p>{{ article.subtitle }}</p>#}
-{#                        {% else %}#}
-{#                            <p></p>#}
-{#                        {% endif %}#}
-{#                        <div class="article-list-footer">#}
-{#                            <span class="article-list-date">{{ article.date.strftime("%B %d, %Y") }}</span>#}
-{#                            <span class="article-list-divider">-</span>#}
-{#                            <div class="article-list-category">#}
-{#                                <a href="{{ article.category.url }}">{{ article.category.name }}</a>#}
-{#                            </div>#}
-{#                            {% if article.tags %}#}
-{#                                <span class="article-list-divider">-</span>#}
-{#                                <div class="article-list-tags">#}
-{#                                    {% for tag in article.tags %}#}
-{#                                        <a href="{{ tag.url }}">{{ tag.name }}</a>#}
-{#                                    {% endfor %}#}
-{#                                </div>#}
-{#                            {% endif %}#}
-{#                        </div>#}
-{#                    </li>#}
-{#                {% endfor %}#}
-{#            {% endfor %}#}
-{#        </ul>#}
-{##}
-        {#        <div class="pagination">#}
-        {#            {% if page.has_prev %}#}
-        {#                <a href="{{ page.prev_page_path }}" class="prev-page">Prev</a>#}
-        {#            {% endif %}#}
-        {#            {% if page.has_next %}#}
-        {#                <a href="{{ page.next_page_path }}" class="next-page">Next</a>#}
-        {#            {% endif %}#}
-        {#        </div>#}
-{#    </div>#}
+        </div>
 {% endblock %}
 
