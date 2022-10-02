@@ -8,11 +8,12 @@
 }
 
 .site-name {
-    font-family: Palatino, Georgia, cursive, serif;
+    font-family: PingFangSC-Regular, Helvetica, Arial, sans-serif, Georgia, cursive, serif;
     display: inline-block;
     font-size: 36px;
     color: #000;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .header-nav {
@@ -42,7 +43,7 @@
     position: relative;
     display: block;
     padding-right: 25px;
-    color: #000000;
+    color: #555;
     border-bottom: 1px solid transparent;
 }
 
@@ -90,8 +91,8 @@ main a {
 
 
 h5 {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -108,7 +109,7 @@ a {
 
 .article-list-footer a {
     margin-right: 8px;
-    color: #615b5b;
+    /*color: #615b5b;*/
 }
 
 .article {
@@ -136,9 +137,9 @@ a {
 
 .article-header h1 {
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -.03em;
-    color: #000000;
+    color: #555;
 }
 
 .header-links {
@@ -181,7 +182,7 @@ main {
     line-height: 1.8;
     word-break: break-all;
     font-size: 16px;
-    color: #222;
+    color: #555;
 }
 
 .article-body ul {
