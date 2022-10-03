@@ -26,20 +26,23 @@
             word-wrap: break-word;
             text-align: justify;
             font-family: monospace;
+            max-width: 650px;
+            margin: 8px auto;
+            padding: 0 8px;
         }
     </style>
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.991.0">
 
-    {% include 'layout/navbar.html' %}
+{% include 'layout/navbar.html' %}
 
-    <main>
-        {% block main_content %}
-        {% endblock %}
-    </main>
+<main>
+    {% block main_content %}
+    {% endblock %}
+</main>
 
-    {% include 'layout/footer.html' %}
+{% include 'layout/footer.html' %}
 
 </body>
 </html>
