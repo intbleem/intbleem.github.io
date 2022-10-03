@@ -10,7 +10,7 @@ TEMPLATES_FOLDER = "txt/templates"
 
 
 LINKS = [
-    ['zhanghaoran.ren', 'http://blog.zhanghaoran.ren/']
+    ['zhanghaoran.ren', 'http://blog.zhanghaoran.ren/'],
 ]
 
 ANALYTICS_CODE = """

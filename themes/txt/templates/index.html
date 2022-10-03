@@ -13,15 +13,19 @@
     <link rel="alternate" type="application/atom+xml" href="/feed.xml">
 {% endblock %}
 
+{% block nav %}
+    $ ls -1r <b>{{ SITE_NAME }}</b>
+    <hr>
+{% endblock %}
 {% block main_content %}
-        <div>
-            {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
-                {% for article in list %}
-                    <time>{{ article.date }}</time>
-                    <a href="{{ article.url }}">{{ article.title }}</a>
-                    <br>
-                {% endfor %}
+    <div>
+        {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
+            {% for article in list %}
+                <time>{{ article.date }}</time>
+                <a href="{{ article.url }}">{{ article.title }}</a>
+                <br>
             {% endfor %}
-        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
 

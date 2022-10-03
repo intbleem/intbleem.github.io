@@ -64,10 +64,15 @@
     </style>
 {% endblock %}
 
+{% block nav %}
+    $ cat <a href="#" onclick="history.back(-1)">..</a>/{{ article.title }}
+    <hr>
+{% endblock %}
+
 {% block main_content %}
+
     <article class="article">
         <h1>{{ article.title }}</h1>
-
         {{ article.body | safe }}
         <hr>
         <span>
@@ -76,7 +81,7 @@
             Tags:&nbsp;{% for tag in article.tags %}
             <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;
         {% endfor %}
-
         </span>
     </article>
 {% endblock %}
+

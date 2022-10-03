@@ -24,8 +24,13 @@
 
 {% endblock %}
 
+{% block nav %}
+    $ ls -1r <a href="#" onclick="history.back(-1)">..</a>/{{ tag_name }}
+    <hr>
+{% endblock %}
+
 {% block main_content %}
-    <h1># {{ tag_name }}</h1>
+    <h3># {{ tag_name }}</h3>
     <div>
         {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
             {% for article in list %}
