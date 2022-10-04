@@ -11,9 +11,15 @@
     <meta property="og:site_name" content="{{ SITE_NAME }}"/>
 {% endblock %}
 
+
+{% block nav %}
+    <a href="/">..</a>
+    <br>
+{% endblock %}
+
 {% block main_content %}
-    <div class="container post-list">
-        <ul class="tags-list-ul">
+    <div>
+        <ul>
             {% for tag in tags|sort(attribute="count", reverse=True) %}
                 <li class="tags-list">
                     <a href="/tag/{{ tag.name }}.html">{{ tag.name }}</a>

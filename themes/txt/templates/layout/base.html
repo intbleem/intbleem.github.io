@@ -13,7 +13,9 @@
     <meta property="og:locale" content="zh-Hans">
 
     {% block header %}
-
+        <title>{{ SITE_NAME }}</title>
+        <meta name="description" content="{{ SITE_DESCRIPTION }}"/>
+        <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
     {% endblock %}
 
     {% if ANALYTICS_CODE %}
@@ -22,9 +24,6 @@
 
     <style>
         body {
-            {#word-break: break-all;#}
-            {#word-wrap: break-word;#}
-            {#text-align: justify;#}
             font-family: monospace;
             max-width: 650px;
             margin: 8px auto;
@@ -34,7 +33,7 @@
     </style>
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.991.0">
+<body>
 
 {% block nav %}
     {% include 'layout/navbar.html' %}
