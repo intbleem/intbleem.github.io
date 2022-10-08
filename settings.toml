@@ -3,7 +3,7 @@
 SITE_NAME = "Zoroz"
 SITE_KEYWORDS = "2Dosth,node,vue,Python,Django,backend,blog,web,mysql,random thoughts,coding"
 SITE_DESCRIPTION = "This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."
-SITE_URL = "https://zoroz.com"
+SITE_URL = "https://zoroz.me"
 
 STATIC_FOLDER = "txt/static"
 TEMPLATES_FOLDER = "txt/templates"

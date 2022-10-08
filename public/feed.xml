@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Zoroz</title><link>https://zoroz.com</link><description>This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><lastBuildDate>Sat, 08 Oct 2022 03:45:08 +0000</lastBuildDate><item><title>国庆长假回家过</title><link>https://zoroz.com/post/2022/guo-qing-hui-jia.html</link><description>&lt;p&gt;今天国庆节回老家去了，还记得上一次国庆节回家还是在大一的时候，那时候一个人去大学报道，在郑州陇海站被小偷把整个钱包都偷走了，里边放着一两千的现金、银行卡以及身份证，没办法只好等国庆回家办一张新的身份证。因为这件事也让我长了不少记性。&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Zoroz</title><link>https://zoroz.me</link><description>This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><lastBuildDate>Sat, 08 Oct 2022 03:48:27 +0000</lastBuildDate><item><title>国庆长假回家过</title><link>https://zoroz.me/post/2022/guo-qing-hui-jia.html</link><description>&lt;p&gt;今天国庆节回老家去了，还记得上一次国庆节回家还是在大一的时候，那时候一个人去大学报道，在郑州陇海站被小偷把整个钱包都偷走了，里边放着一两千的现金、银行卡以及身份证，没办法只好等国庆回家办一张新的身份证。因为这件事也让我长了不少记性。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;不要在钱包带太多现金，平常只用带够可以应急用的就够了&lt;/li&gt;
 &lt;li&gt;在人多嘈杂的环境下，要时刻注意自己的东西&lt;/li&gt;
@@ -24,7 +24,7 @@
 &lt;p&gt;这次回来感触最深的就是晚上一家人围着一个桌子吃晚饭的时候，说说笑笑，放下了所有在外饭局上的心思，就好像一个年龄稍大的小孩，放松且自然。&lt;/p&gt;
 &lt;p&gt;我平常不怎么爱回家，或许是野惯了，或许是回家有压力，又或许是嫌麻烦，理由可以找很多很多。&lt;/p&gt;
 &lt;p&gt;不过这次回去感觉还挺好的，或许是掌握了一个技能。&lt;/p&gt;
-&lt;p&gt;一个耳朵进，一个耳朵出。&lt;/p&gt;</description><guid isPermaLink="false">guo-qing-hui-jia</guid><pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate></item><item><title>上岸第一剑，先斩意中人</title><link>https://zoroz.com/post/2022/ren-sheng.html</link><description>&lt;p&gt;今天看完了路遥的&lt;em&gt;《人生》&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;一个耳朵进，一个耳朵出。&lt;/p&gt;</description><guid isPermaLink="false">guo-qing-hui-jia</guid><pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate></item><item><title>上岸第一剑，先斩意中人</title><link>https://zoroz.me/post/2022/ren-sheng.html</link><description>&lt;p&gt;今天看完了路遥的&lt;em&gt;《人生》&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;同情剧中的巧珍，那么的爱着高加林&lt;/p&gt;
 &lt;p&gt;单纯，勇敢，洒脱……&lt;/p&gt;
 &lt;p&gt;可是即使是这样，结果却还是被动的那一个&lt;br /&gt;
@@ -61,7 +61,7 @@
 &lt;p&gt;好像是在说人生处处都是选择，到处都是岔路口，不要做错误的选择。&lt;/p&gt;
 &lt;p&gt;可是现在我们看完整个故事是可以下结论说高加林的选择是错误的，但我们自己的人生又怎能知道那未来，又怎能确定当下的选择是正确与否。&lt;/p&gt;
 &lt;p&gt;或许这就是人生吧。&lt;/p&gt;
-&lt;p&gt;毕竟，我也不懂人生，我也才二十几岁，我也还年轻。&lt;/p&gt;</description><guid isPermaLink="false">ren-sheng</guid><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate></item><item><title>当潮流爱新鲜，当旁人爱标签</title><link>https://zoroz.com/post/2022/wu-tiao-jian.html</link><description>&lt;p&gt;时隔多年，又再一次听到了Eason的歌，回忆在脑海中翻滚。犹记得高中的时候，手机里放的最多的就是Eason的歌，这些俨然已经成为我青春的一部分。&lt;/p&gt;
+&lt;p&gt;毕竟，我也不懂人生，我也才二十几岁，我也还年轻。&lt;/p&gt;</description><guid isPermaLink="false">ren-sheng</guid><pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate></item><item><title>当潮流爱新鲜，当旁人爱标签</title><link>https://zoroz.me/post/2022/wu-tiao-jian.html</link><description>&lt;p&gt;时隔多年，又再一次听到了Eason的歌，回忆在脑海中翻滚。犹记得高中的时候，手机里放的最多的就是Eason的歌，这些俨然已经成为我青春的一部分。&lt;/p&gt;
 &lt;p&gt;那时候青春懵懂，不是很懂感情，好不容易遇到喜欢的女孩，终于鼓起勇气向对方表白，收到的却是干脆的拒绝，两个人也因此不再说话，即使说话也是恶意中伤的话。&lt;/p&gt;
 &lt;p&gt;被拒绝的感觉不好受，本来这个年纪就是矫情的年纪。&lt;/p&gt;
 &lt;p&gt;对于世上的不管是音乐亦或是电影，只要感到特别喜欢，那么一定是与自己的经历、思想、亦或是深藏的感情不谋而合，产生强烈的共振。&lt;/p&gt;
@@ -74,7 +74,7 @@
 &lt;p&gt;&lt;strong&gt;幸得伴着你我，是窝心的自然&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;当闲言再尖酸，给他妒忌多点&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;因世上的至爱，是不计较条件&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description><guid isPermaLink="false">wu-tiao-jian</guid><pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate></item><item><title>科学有效的上网方法</title><link>https://zoroz.com/post/2021/ru-he-fq.html</link><description>&lt;p&gt;看这这个挺高大上的标题，好像就像是标题党一样，其实真正的标题用正常人的话来说，就是如何科学的上网，只不过生活在大陆这个环境下，已经习惯了用各种隐晦的词来描述某些东西。算了，标题党就标题党吧。&lt;/p&gt;
+&lt;/blockquote&gt;</description><guid isPermaLink="false">wu-tiao-jian</guid><pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate></item><item><title>科学有效的上网方法</title><link>https://zoroz.me/post/2021/ru-he-fq.html</link><description>&lt;p&gt;看这这个挺高大上的标题，好像就像是标题党一样，其实真正的标题用正常人的话来说，就是如何科学的上网，只不过生活在大陆这个环境下，已经习惯了用各种隐晦的词来描述某些东西。算了，标题党就标题党吧。&lt;/p&gt;
 &lt;p&gt;写这篇的主要原因也是因为最近腾讯云把我的一个香港服务器给封禁了，理由也是意料之中的「存在通过技术手段使其成为跨境访问节点等行为」，刚开始还以为是先发出警告，等我连接服务器的时候发现直接是把服务器给封掉了，连22端口都没得用。幸亏部署的服务都是静态方式存储的，而且大多数还都有备份，这要是没有备份的话，真的要气死人了。&lt;/p&gt;
 &lt;p&gt;没办法只好重新搞一台服务器了，不过这次选用的国外的服务器，服务器拿到手就直接通过脚本部署了一套SSR，刚用了几个小时就被Q了，切换IP同样操作之后还是没过多久就又不行了，于是尝试更换方案，经过了解尝试使用V2Ray+websocket+tls+web的方式来构建服务。&lt;/p&gt;
 &lt;p&gt;V2Ray+websocket+tls+web是目前最稳定的翻Q技术之一，即使在敏感时期也稳如泰山。和SSR的流量混淆不同，V2Ray+ws+tls用真正的https流量FQ，没有必要做任何混淆。在长城看来，流量和不计其数的https流量没有任何区别。但是如果GFW尝试主动嗅探的话，发现流量的目的地没有真正的网站，从而被识破然后被Q。所以要在这个服务外面加一个真正的网站做掩护，从而假装是访问真正的网站。&lt;/p&gt;
@@ -354,14 +354,14 @@
 &lt;li&gt;配置防火墙&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;想要了解的可以自行Google，我太懒了，也没有做这些配置，就不一一赘述了，逃。&lt;/p&gt;
-&lt;p&gt;参考链接：&lt;a href="https://pincong.rocks/article/15493"&gt;https://pincong.rocks/article/15493&lt;/a&gt;&lt;/p&gt;</description><guid isPermaLink="false">ru-he-fq</guid><pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate></item><item><title>你真没意思啊</title><link>https://zoroz.com/post/2022/What-is-fun.html</link><description>&lt;p&gt;无聊之中想到自己的生活怎么这么无趣，要是变得有趣一点就好了。于是就突然想到「有趣」这个词，想了想还觉得挺有意思的，到底什么才算是有趣呢，我们会怎么评价一个人有趣呢？是网上那些人吗？那些有着奇思妙想的人，那些可乐搞笑的人，那些满腹经纶的人，还是那些勇敢自由的人呢。我们好像普遍喜欢称呼这些人就是有趣人的人，喜欢在网上关注这些人，还会时不时的评论一句：「我要是像你一样就好了」&lt;/p&gt;
+&lt;p&gt;参考链接：&lt;a href="https://pincong.rocks/article/15493"&gt;https://pincong.rocks/article/15493&lt;/a&gt;&lt;/p&gt;</description><guid isPermaLink="false">ru-he-fq</guid><pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate></item><item><title>你真没意思啊</title><link>https://zoroz.me/post/2022/What-is-fun.html</link><description>&lt;p&gt;无聊之中想到自己的生活怎么这么无趣，要是变得有趣一点就好了。于是就突然想到「有趣」这个词，想了想还觉得挺有意思的，到底什么才算是有趣呢，我们会怎么评价一个人有趣呢？是网上那些人吗？那些有着奇思妙想的人，那些可乐搞笑的人，那些满腹经纶的人，还是那些勇敢自由的人呢。我们好像普遍喜欢称呼这些人就是有趣人的人，喜欢在网上关注这些人，还会时不时的评论一句：「我要是像你一样就好了」&lt;/p&gt;
 &lt;p&gt;或许是普通人的生活太过规律平淡，三点一线已成为生活的主旋律，吃饭、工作、睡觉。娱乐活动也就那么几个，看剧打球打游戏。我们评价这些为无趣的生活。或许是我们对于习以为常的事情会感到厌倦，又或许是对于目前这操蛋的生活感到疲惫，我们开始抱怨，我们想要改变自己的生活，想要这平淡泛起波澜，想要挣脱这牢笼，想要自由。&lt;/p&gt;
 &lt;p&gt;那些被称作有趣的人满足了我们对于自己该有生活的期望，让精神得以享受，我们喜欢这种感觉。是的，好像这种有趣的人对于我们来说是精神食粮，我们称呼一个人有趣，是因为他们拥有取悦我们的能力。&lt;/p&gt;
 &lt;p&gt;可是还有一些人，他们喜欢打游戏看剧，我们会评价这些人为无趣的人，甚至还会时不时来上一句「你真没意思」，更有甚至「无趣」也终结了很多亲密关系。&lt;/p&gt;
 &lt;p&gt;然而我们评价一个人怎么怎么样，不过是站在自我的角度来看的，就如同上面所说的那样，当这个人没有达到让自己快乐的点的时候，我们是不愿意同这种「没意思」的人打交道的。&lt;/p&gt;
 &lt;p&gt;那么这些人真的是无趣的人吗，我无法进行评价，但是可以知道的是，他们沉浸在自己的小世界中，做着自己喜欢做的事来取悦自己，那么我想对于他们自己来说，自己还是「有趣」的。&lt;/p&gt;
 &lt;p&gt;不知不觉写了这些，也不知道写的主题是啥，大聪明脑袋总是时不时的不聪明，不过刚好今天空闲，就动动手指把想的啥给记下来吧。&lt;/p&gt;
-&lt;p&gt;权当就是胡说八道得了。&lt;/p&gt;</description><guid isPermaLink="false">What-is-fun</guid><pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate></item><item><title>理想主义下的web3</title><link>https://zoroz.com/post/2022/web3.html</link><description>&lt;p&gt;前些日子没事了解到了web3，甚至还有很多人扬言要辍学然后all in web3，不知道他们为何如此疯狂，猜测他们可能为了实现财富自由而选择赌一把，或者是愿意义无反顾的投入到这个在目前看来还是理想主义的虚拟世界中。我想还是前者应该更多一点吧。&lt;/p&gt;
+&lt;p&gt;权当就是胡说八道得了。&lt;/p&gt;</description><guid isPermaLink="false">What-is-fun</guid><pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate></item><item><title>理想主义下的web3</title><link>https://zoroz.me/post/2022/web3.html</link><description>&lt;p&gt;前些日子没事了解到了web3，甚至还有很多人扬言要辍学然后all in web3，不知道他们为何如此疯狂，猜测他们可能为了实现财富自由而选择赌一把，或者是愿意义无反顾的投入到这个在目前看来还是理想主义的虚拟世界中。我想还是前者应该更多一点吧。&lt;/p&gt;
 &lt;h2&gt;web2存在的问题&lt;/h2&gt;
 &lt;p&gt;说到web3，那就不可避免的要谈论web2。在web2时代，人们活跃在诸如微博、知乎之类的大型平台上，将自己的想法发布在平台上，但是这条内容仍然不是归属个人所有，平台可以随意删除这条内容或者封禁自己的账号。&lt;/p&gt;
 &lt;p&gt;平台垄断让言论自由似乎成了笑话。&lt;/p&gt;
@@ -381,7 +381,7 @@
 &lt;p&gt;至少最近几年甚至十几年应该是没有什么大的进展，只是一种乌托邦式的理想主义。&lt;/p&gt;
 &lt;p&gt;也许只有在经过混乱、贪婪、疯狂的情绪之后沉淀下来，才会有新的突破，也许那时候已经不是区块链，而是更先进的技术。&lt;/p&gt;
 &lt;p&gt;web3的未来就交给时间来验证吧，毕竟时代的车轮总是在向前推进。&lt;/p&gt;
-&lt;p&gt;There is no web3 in China.&lt;/p&gt;</description><guid isPermaLink="false">web3</guid><pubDate>Wed, 08 Jun 2022 00:00:00 +0000</pubDate></item><item><title>2021年终总结</title><link>https://zoroz.com/post/2021/2021-summary.html</link><description>&lt;p&gt;马上2021就要结束了，所以又到了该年终总结的时候，坐在电脑桌前回想着这一年，依旧是浑浑噩噩，想不起来自己做过什么了不起的事，对社会更没做什么贡献，只记得生活和工作被乱七八糟的事情搞得一团糟。&lt;/p&gt;
+&lt;p&gt;There is no web3 in China.&lt;/p&gt;</description><guid isPermaLink="false">web3</guid><pubDate>Wed, 08 Jun 2022 00:00:00 +0000</pubDate></item><item><title>2021年终总结</title><link>https://zoroz.me/post/2021/2021-summary.html</link><description>&lt;p&gt;马上2021就要结束了，所以又到了该年终总结的时候，坐在电脑桌前回想着这一年，依旧是浑浑噩噩，想不起来自己做过什么了不起的事，对社会更没做什么贡献，只记得生活和工作被乱七八糟的事情搞得一团糟。&lt;/p&gt;
 &lt;p&gt;有很多想学的东西，到最后也不过是三分钟热度。&lt;/p&gt;
 &lt;p&gt;有一直想去的地方，但是因为疫情和工作，到最后也只是窝在自己的出租屋里。&lt;/p&gt;
 &lt;p&gt;想让自己生活变得有趣，可又拿自己一个人没意思为借口拒绝做了很多事，到最后还感慨生活真是无趣。&lt;/p&gt;
@@ -440,7 +440,7 @@
 &lt;li&gt;拍照技术可以好点，看见别人随手一拍就是美景，真是羡慕&lt;/li&gt;
 &lt;li&gt;疫情赶快过去吧，太特么烦了&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The end, but new beginning.&lt;/p&gt;</description><guid isPermaLink="false">2021-summary</guid><pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate></item><item><title>迷之操作｜Django版静态Note生成器</title><link>https://zoroz.com/post/2021/django-staticize.html</link><description>&lt;h2&gt;Powered by Django&lt;/h2&gt;
+&lt;p&gt;The end, but new beginning.&lt;/p&gt;</description><guid isPermaLink="false">2021-summary</guid><pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate></item><item><title>迷之操作｜Django版静态Note生成器</title><link>https://zoroz.me/post/2021/django-staticize.html</link><description>&lt;h2&gt;Powered by Django&lt;/h2&gt;
 &lt;p&gt;正如这句话而言，目前这个网站是用Django来搭建的，至于当初为什么要选择Django，可能是因为它作为最流行的Web框架之一，开发迅速，以及自带的admin管理，可以迅速成型一个小型站点，YYDS。&lt;/p&gt;
 &lt;h2&gt;Why change&lt;/h2&gt;
 &lt;p&gt;最初这个网站是部署在HK的一个VPS上的，配置也是最低配置，解析是套了一层CF，所以造成国内访问非常慢。不过也可以忍受，就没在这上面折腾。按理说这种网站是用来写的，但我好像不务正业的折腾起来了页面，每换一种风格，用不了多久就觉得看着不舒服，于是又重新改了一套页面，于是又重复于此。&lt;/p&gt;
@@ -613,7 +613,7 @@ nginx -s reload
 &lt;p&gt;其实现在已经有很多很成熟的静态博客生成器，比如Hugo，Jekyll以及Hexo等等，以前搞过一次，后来网站没了，再加上觉得上传方式并不是那么Geek，也有可能是我没找到一些方便的方法，就直接放弃了。&lt;/p&gt;
 &lt;p&gt;后来重新搭建网站的时候，就打算干脆直接搭建一个动态的网站，至少很多东西要比静态的灵活方便。&lt;/p&gt;
 &lt;p&gt;至于现在为什么又变成这样了，那可能是&lt;/p&gt;
-&lt;p&gt;脑子抽风了吧。&lt;/p&gt;</description><guid isPermaLink="false">django-staticize</guid><pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate></item><item><title>Django批量创建时出现bulk_create内存异常</title><link>https://zoroz.com/post/2021/django-bulk-create.html</link><description>&lt;p&gt;&lt;strong&gt;背景&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;脑子抽风了吧。&lt;/p&gt;</description><guid isPermaLink="false">django-staticize</guid><pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate></item><item><title>Django批量创建时出现bulk_create内存异常</title><link>https://zoroz.me/post/2021/django-bulk-create.html</link><description>&lt;p&gt;&lt;strong&gt;背景&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;因为需要往项目数据库上传大量数据，数据是以文件的方式存储，所以采用django的&lt;strong&gt;bulk_create&lt;/strong&gt;批量读取并上传，但是在上传过程中发现，上传程序占用的内存一直在上升，甚至到最后直接把内存占满了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;排查问题&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;刚开始首先怀疑的就是程序代码有问题导致内存没有释放，自己看没发现什么问题，请教同事帮忙看也没有发现什么问题，所以干脆就硬着头皮去试代码。在每次循环之后都加入&lt;code&gt;gc.collect()&lt;/code&gt;,尝试主动释放内存，发现问题仍然存在。&lt;/p&gt;
@@ -780,7 +780,7 @@ nginx -s reload
 &lt;p&gt;所以最终这个问题的解决方案有两个：&lt;/p&gt;
 &lt;p&gt;一、将&lt;code&gt;DEBUG&lt;/code&gt;设置为False&lt;/p&gt;
 &lt;p&gt;二、手动清除，引入&lt;code&gt;django.db.reset_queries&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;就第一种方案而言，只有在生产环境下，DEBUG选项才会为False，所以在自己的电脑上或者测试机上运行，还是第二种方案比较好。&lt;/p&gt;</description><guid isPermaLink="false">django-bulk-create</guid><pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate></item><item><title>Elasticsearch相关汇总</title><link>https://zoroz.com/post/2021/elasticsearch-nested.html</link><description>&lt;p&gt;在使用Elasticsearch的过程中，难免会要去官网翻看文档，由于目前还没有读完文档，以至于在找一些没用过的API时还挺费劲，有时候甚至还可能找不到。因此就把目前已经用到过的地方在这里汇总记录一下，方便以后碰到的话可以直接去查看。&lt;/p&gt;
+&lt;p&gt;就第一种方案而言，只有在生产环境下，DEBUG选项才会为False，所以在自己的电脑上或者测试机上运行，还是第二种方案比较好。&lt;/p&gt;</description><guid isPermaLink="false">django-bulk-create</guid><pubDate>Tue, 14 Dec 2021 00:00:00 +0000</pubDate></item><item><title>Elasticsearch相关汇总</title><link>https://zoroz.me/post/2021/elasticsearch-nested.html</link><description>&lt;p&gt;在使用Elasticsearch的过程中，难免会要去官网翻看文档，由于目前还没有读完文档，以至于在找一些没用过的API时还挺费劲，有时候甚至还可能找不到。因此就把目前已经用到过的地方在这里汇总记录一下，方便以后碰到的话可以直接去查看。&lt;/p&gt;
 &lt;h2&gt;Index&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.16/indices.html#index-management"&gt;https://www.elastic.co/guide/en/elasticsearch/reference/7.16/indices.html#index-management&lt;/a&gt;&lt;/li&gt;
@@ -886,7 +886,7 @@ nginx -s reload
         &lt;span class="nt"&gt;&amp;quot;source&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;double dateScore; try {dateScore = Math.abs(doc[&amp;#39;enforcementDate&amp;#39;].value.toInstant().toEpochMilli()/1e12);} catch (Exception e) {dateScore=0;} return dateScore;&amp;quot;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><guid isPermaLink="false">elasticsearch-nested</guid><pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate></item><item><title>我不报歉｜人间失格</title><link>https://zoroz.com/post/2021/ren-jian-shi-ge.html</link><description>&lt;p&gt;《人间失格》作为著名的“丧”文化代表，其实在读高中的时候就早已耳闻，只不过那时候学校赶的紧，再加上自己也不喜欢看书，就不了了之了。后来随着年纪的增长，虽说已经有大把的时间可以读完这本书，但这时自己又抗拒又害怕那种“丧”，所以也就一直没有去看过。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><guid isPermaLink="false">elasticsearch-nested</guid><pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate></item><item><title>我不报歉｜人间失格</title><link>https://zoroz.me/post/2021/ren-jian-shi-ge.html</link><description>&lt;p&gt;《人间失格》作为著名的“丧”文化代表，其实在读高中的时候就早已耳闻，只不过那时候学校赶的紧，再加上自己也不喜欢看书，就不了了之了。后来随着年纪的增长，虽说已经有大把的时间可以读完这本书，但这时自己又抗拒又害怕那种“丧”，所以也就一直没有去看过。&lt;/p&gt;
 &lt;p&gt;至于为什么又突然看起来这本书了，可能是最近心情低落，而我又偏喜欢在心情不好的时候找些比较致郁的东西来听或者看，这样反而会觉得有那么一丝愉悦......&lt;/p&gt;
 &lt;p&gt;断断续续用了将近两天的时间看完，书的内容确实很阴郁，整篇采用第一人称的方式，就好像一个坐在你面前的人，在絮絮叨叨他的一生。&lt;/p&gt;
 &lt;p&gt;可能是没有什么文学素养，再或者是觉得他人的悲惨与自己无关，总之看的过程很平静，就好像是在观看一场一个人的悲惨演出而已。唯一一次动容的时刻，是在直治自杀之后写给姐姐的遗书里有这一段话。&lt;/p&gt;
@@ -906,7 +906,7 @@ nginx -s reload
 &lt;p&gt;最后附上书中的一句话：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;一切都会过去的&lt;/p&gt;
-&lt;/blockquote&gt;</description><guid isPermaLink="false">ren-jian-shi-ge</guid><pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate></item><item><title>平庸者的崩坏｜绝叫</title><link>https://zoroz.com/post/2021/jue-jiao.html</link><description>&lt;p&gt;最近看了一本日本的悬疑推理小说，讲的是一名出生在昭和年代的女人挣扎的前半生，读的过程一度绝望，甚至一度觉得它就是《被嫌弃的阳子的一生》。泡沫经济，失业，大地震，家庭暴力，校园暴力，自杀率攀升等种种因素结合在一起的日本社会，在这样的社会背景下，平庸的普通人只能一步一步的陷入黑暗。&lt;/p&gt;
+&lt;/blockquote&gt;</description><guid isPermaLink="false">ren-jian-shi-ge</guid><pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate></item><item><title>平庸者的崩坏｜绝叫</title><link>https://zoroz.me/post/2021/jue-jiao.html</link><description>&lt;p&gt;最近看了一本日本的悬疑推理小说，讲的是一名出生在昭和年代的女人挣扎的前半生，读的过程一度绝望，甚至一度觉得它就是《被嫌弃的阳子的一生》。泡沫经济，失业，大地震，家庭暴力，校园暴力，自杀率攀升等种种因素结合在一起的日本社会，在这样的社会背景下，平庸的普通人只能一步一步的陷入黑暗。&lt;/p&gt;
 &lt;p&gt;整本书是由三个线路分别同时叙事，同时也保证了结构安排合理，伏笔也埋的不深，所以整体读下来还是比较流畅的。&lt;/p&gt;
 &lt;p&gt;首先一条线就是以第二人称为叙述方式，仿佛自己就是站在局外人或者是高高在上的审判者的角度一样，评论叙述着铃木阳子的一生，刚开始读的时候还很不习惯，直到最后才觉得这种叙述方式的巧妙之处。&lt;/p&gt;
 &lt;p&gt;另外一条线是以女警官凌乃的角度来写的，作为这场刑事案件的负责人，对案件进行深入调查之后，发现腐烂在房间的死尸就是铃木阳子。同时在调查的过程中，两个人甚至还有了交集。&lt;/p&gt;
@@ -919,7 +919,7 @@ nginx -s reload
 &lt;p&gt;最后阳子虽然发现上司是一个渣男之后，但是他已经无法从这种泥沼中摆脱自我，辞去了保险的工作之后就去做了应召女。在做应召女的过程中，由于身心俱疲，无法辨识牛郎的陷阱，对牛郎的慰问呵护无法自拔。谁能想这个牛郎却也是个烂人，对阳子家暴，无付出一味的索取。&lt;/p&gt;
 &lt;p&gt;突然有一天阳子下班的时候，被神代和其同伙拖上了车，抢走身上所有的钱财，并且强奸了阳子，阳子一度窒息而亡。此刻的阳子也开始觉醒。&lt;/p&gt;
 &lt;p&gt;阳子和神代开始计划杀人骗保，第一个对象就是这个牛郎。之后因为这样来钱快，又寻找新的对象开始杀人骗保。阳子已完全堕入深渊。此刻的阳子已经开始反抗，合伙刺杀神代，独自杀害亲母，诱杀朋友，偷梁换柱，整个过程冰冷的像一个机器人一样。&lt;/p&gt;
-&lt;p&gt;阳子本就是一个平庸的不能再平庸的人了，可奈何时代的灰尘落到普通人的身上竟会像一座山一样，压的人痛苦不堪，只得挣扎绝叫。&lt;/p&gt;</description><guid isPermaLink="false">jue-jiao</guid><pubDate>Sat, 16 Oct 2021 00:00:00 +0000</pubDate></item><item><title>自我绑架</title><link>https://zoroz.com/post/2021/zi-wo-bang-jia.html</link><description>&lt;p&gt;晚上做了一场似乎荒诞又真实的梦。&lt;/p&gt;
+&lt;p&gt;阳子本就是一个平庸的不能再平庸的人了，可奈何时代的灰尘落到普通人的身上竟会像一座山一样，压的人痛苦不堪，只得挣扎绝叫。&lt;/p&gt;</description><guid isPermaLink="false">jue-jiao</guid><pubDate>Sat, 16 Oct 2021 00:00:00 +0000</pubDate></item><item><title>自我绑架</title><link>https://zoroz.me/post/2021/zi-wo-bang-jia.html</link><description>&lt;p&gt;晚上做了一场似乎荒诞又真实的梦。&lt;/p&gt;
 &lt;p&gt;在一栋正在修建的写字楼里，电梯已经布置好了并可以正常使用。我和一群人在电梯里缓缓上行，突然电梯门开了，应该是中途有人乘坐。然而电梯门打开之后，映入眼帘的却是一位老太太因为脚卡到破碎的一块墙体里边，不停的往外拔，旁边的老伴也一直在帮他用力，只是因为年纪大了，似乎并没有什么作用。&lt;/p&gt;
 &lt;p&gt;我看到这一幕，立即就往电梯外走，同时跟电梯里的人说：“咱们去帮帮她吧，那个墙估计很沉，我们一起帮帮她...…”，同时又用手按着点击的闸门，防止它自动关上。&lt;/p&gt;
 &lt;p&gt;可是任凭我怎么说，那些人好像听不到我说话一样，面无表情。僵持了好长一会，终于有一个人动了，本以为那人是要和我一起，哪知道那人就往前走了一步，推开了我的手，紧接着他按了一下关门键，电梯门缓缓关上，只剩我一个人在电梯外边。&lt;/p&gt;
@@ -939,7 +939,7 @@ nginx -s reload
 &lt;p&gt;假如这不是梦，我又会不会后悔自己一个人走出电梯。&lt;/p&gt;
 &lt;p&gt;以前在微博上看到一个博主的视频，他们会组织演员去街头扮演一些弱势群体，看看路人的反应。比如腿脚不利索的大爷过马路，拐卖儿童的贩子等等，视频中总是会有热情的人愿意仗义相助。&lt;/p&gt;
 &lt;p&gt;我看的时候我就在想，假如我真的遇到这种情况，我是否会像他们一样，仗义相助呢？&lt;/p&gt;
-&lt;p&gt;从小接受的教育告诉我们，应该是要这么做的。&lt;/p&gt;</description><guid isPermaLink="false">zi-wo-bang-jia</guid><pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate></item><item><title>7.20暴雨日记</title><link>https://zoroz.com/post/2021/7-20-bao-yu-ri-ji.html</link><description>&lt;p&gt;2021年7月20日，身处中原的郑州，刚经历了一场百年以来难得一遇的特大暴雨。&lt;/p&gt;
+&lt;p&gt;从小接受的教育告诉我们，应该是要这么做的。&lt;/p&gt;</description><guid isPermaLink="false">zi-wo-bang-jia</guid><pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate></item><item><title>7.20暴雨日记</title><link>https://zoroz.me/post/2021/7-20-bao-yu-ri-ji.html</link><description>&lt;p&gt;2021年7月20日，身处中原的郑州，刚经历了一场百年以来难得一遇的特大暴雨。&lt;/p&gt;
 &lt;p&gt;雨刚开始下的时候，还以为只是普通的一场大雨，我还跟朋友说不想去上班，但是拥有超高打工人觉悟的我还是去上了班。&lt;/p&gt;
 &lt;p&gt;哈哈哈，其实是因为这个月的假期已经用完，去上班只是为了不扣工资。&lt;/p&gt;
 &lt;p&gt;结果就是，直到下班的时候雨还在下，此时外边路面上的水已经快到膝盖了，地铁也已经停运，附近酒店也被订满，只剩下一些“天价房”。
@@ -957,17 +957,17 @@ nginx -s reload
 &lt;p&gt;暴雨过后，这座城市变得一片狼藉，也有人不幸罹难，彷佛人类在大自然面前就像渺小的蚂蚁一样。
 但是，一切正在努力恢复，它也正在慢慢变好。&lt;/p&gt;
 &lt;p&gt;暴雨冲刷了房屋街道，同时也冲刷了人们内心的浮躁。&lt;/p&gt;
-&lt;p&gt;珍惜眼前的小确幸！&lt;/p&gt;</description><guid isPermaLink="false">7-20-bao-yu-ri-ji</guid><pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate></item><item><title>半日偷闲，絮絮叨叨</title><link>https://zoroz.com/post/2021/xu-xu-dao-dao.html</link><description>&lt;p&gt;马上就要六月了，代表着今年已经是过完小半年了。虽说夏天还没有正式的到来，可是外面的温度已经高达38℃了，这让人很难想象后面的天气会有多热。躲在空调冷风下的我，像往常周末一样，无聊的刷着短视频，手指不间断的向上滑动。可能是刷视频刷累了吧，突然想通过文字叨叨这半年。回头看这小半年，生活过得像往常一样琐碎忙碌，而且自己也没有干出来什么值得骄傲的成绩。好像也没什么可写的，那既然这样，干脆就写点琐碎吧，毕竟生活都是由琐碎的生活片段拼凑而成的。&lt;/p&gt;
+&lt;p&gt;珍惜眼前的小确幸！&lt;/p&gt;</description><guid isPermaLink="false">7-20-bao-yu-ri-ji</guid><pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate></item><item><title>半日偷闲，絮絮叨叨</title><link>https://zoroz.me/post/2021/xu-xu-dao-dao.html</link><description>&lt;p&gt;马上就要六月了，代表着今年已经是过完小半年了。虽说夏天还没有正式的到来，可是外面的温度已经高达38℃了，这让人很难想象后面的天气会有多热。躲在空调冷风下的我，像往常周末一样，无聊的刷着短视频，手指不间断的向上滑动。可能是刷视频刷累了吧，突然想通过文字叨叨这半年。回头看这小半年，生活过得像往常一样琐碎忙碌，而且自己也没有干出来什么值得骄傲的成绩。好像也没什么可写的，那既然这样，干脆就写点琐碎吧，毕竟生活都是由琐碎的生活片段拼凑而成的。&lt;/p&gt;
 &lt;p&gt;最近正在看科幻小说《三体》，目前只看到大概一半吧，觉得网上对三体的评价果然不是吹的，就是刚开始的部分会让人觉得好像这不是一本科幻小说，如果继续看下去的话真的会觉得这本书真是宝藏。由于还没看完，也并不能对此作出过多的评价，就目前来说，他改变了我对科幻固有的认知，心中会不由得惊叹：“原来还可以这样！”，完全想不到下一页的剧情会是什么。&lt;/p&gt;
 &lt;p&gt;最近也有一件好玩的事，公司的一名翻译王同学，正在学习跟他的专业八竿子打不着的东西：数学和编程。问她为什么想要学习这些东西，她回答说：“我现在掌握的东西都太偏文科了，想学习一下理科的东西”。于是乎我就成了她的一个“老师”，她有时候有不会的问题也会向我请教，但是每次问的问题都很奇怪，有时候都不知道怎么回答，还有每次回答完他还会象征性的给我出五毛的劳务费。。。 真怕他问到我也不会的东西，回答不出来那岂不是很尴尬。&lt;/p&gt;
 &lt;p&gt;这半年下来我们IT部也离职了两个人，目前就剩下两个后端一个前端了，老板最近的打算是不招新人，这我也能理解，因为最近的工作的确不多，三个人足以应付的过来。在第一个跟我同时期来的人离职后，老板也专门找过我问我的情况，我也向他表态说了不会离职，同事也趁此机会向老板提了提加薪的事，最后也是如愿以偿。其实在这个公司两年左右的时间，工作的也蛮舒服的，虽说规模不大，但是却并没有乱七八糟的规章制度，这也是我选择继续留在这里的一部分原因。另外关于技术方面，最近半年除了维护一些旧项目以外，也在开发一个新的检索系统，技术上也不会是重复造轮子。&lt;/p&gt;
 &lt;p&gt;前段时间也看了一部超级好看的连续剧《觉醒年代》，是一部纪念建党一百周年的优秀电视剧展播。电影般的镜头光感、优秀的人物演绎。作为一个理科生，曾经在高一下学期就已经逃离历史的魔爪，所以我可以说是一个历史白痴。但是通过看这部剧，我好像更深入得了解了那段历史，那段我国优秀历史人物的光辉岁月。&lt;/p&gt;
 &lt;p&gt;今年三月份也搬了新家，因为之前一起住的两个朋友今年去别的地方发展了，再加上跟房东也不太合得来，就决定换一个地方住了，最后走的时候押金都没退。不得不说，郑州的租房市场似乎已经全被中介和托管占领了，想找一个房东直租的都要费好大劲，或者也可能是我们找的方式不对吧。另外，搬家真的很累很累！搬家之前是收拾东西，看着房间的东西觉得并没有多少，哪知道越收拾越多，三个人的东西客厅都占满了。到后来把东西搬到新家的时候，大包小包从一楼五楼，最后走路腿都是抖的，，，累坏我了。&lt;/p&gt;
 &lt;p&gt;现在记忆力也不太好，有些事情都已经忘记了，絮絮叨叨的写了一些琐碎的事情，记录这庸碌琐碎的小半年。在接下来的时间里，若是能摆脱一点这种庸碌的状态当然更好，若不能的话，那就这样吧，庸碌但能追求真实其实也挺好。&lt;/p&gt;
-&lt;p&gt;突然想到我的这个网站，已经挺久时间没有更新过文章了，本来给自己定的是一周更新一篇，现在看来也算是食言了。其实对于我个人而言，似乎很少通过文字来记录自己，可能是性格使然，对于生活中的心事经常苦闷心中然后慢慢消化，而对于有趣好玩的事情我也是一个人乐呵完之后就没有然后，手机上的日记同样也只是断断续续的更新；也可能是自认为文笔不行，写出来的东西连自己都觉得丢脸，又何必写出来让人取笑呢。好像文字对于我而言，似乎只是颜如玉与黄金屋吧。&lt;/p&gt;</description><guid isPermaLink="false">xu-xu-dao-dao</guid><pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate></item><item><title>爱上听鲸歌</title><link>https://zoroz.com/post/2021/ting-jing-ge.html</link><description>&lt;p&gt;不知道怎么回事，最近喜欢偷空听鲸鱼的叫声，声音空灵、纯静，可以让人紧绷的神经放松下来。很多次因为工作感到烦躁，亦或是晚上躺床上失眠的时候，都会打开手机听听鲸鱼的叫声，心境瞬间就平和下来了。&lt;/p&gt;
+&lt;p&gt;突然想到我的这个网站，已经挺久时间没有更新过文章了，本来给自己定的是一周更新一篇，现在看来也算是食言了。其实对于我个人而言，似乎很少通过文字来记录自己，可能是性格使然，对于生活中的心事经常苦闷心中然后慢慢消化，而对于有趣好玩的事情我也是一个人乐呵完之后就没有然后，手机上的日记同样也只是断断续续的更新；也可能是自认为文笔不行，写出来的东西连自己都觉得丢脸，又何必写出来让人取笑呢。好像文字对于我而言，似乎只是颜如玉与黄金屋吧。&lt;/p&gt;</description><guid isPermaLink="false">xu-xu-dao-dao</guid><pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate></item><item><title>爱上听鲸歌</title><link>https://zoroz.me/post/2021/ting-jing-ge.html</link><description>&lt;p&gt;不知道怎么回事，最近喜欢偷空听鲸鱼的叫声，声音空灵、纯静，可以让人紧绷的神经放松下来。很多次因为工作感到烦躁，亦或是晚上躺床上失眠的时候，都会打开手机听听鲸鱼的叫声，心境瞬间就平和下来了。&lt;/p&gt;
 &lt;p&gt;其实最开始听到鲸鱼的叫声是某短视频平台听到的，是一只座头鲸的叫声，刚听到的时候真的是让人惊艳且陶醉。于是就在网上寻找更多这样的声音，在搜索的过程中发现也有好多爱听鲸歌的，当然也有一些害怕听见鲸鸣的。&lt;/p&gt;
 &lt;p&gt;喜欢的人觉得这是一种心灵的洗礼，置身事外而又与世无争。害怕的人则大都是有深海恐惧症，深邃浩瀚仿佛置人于汪洋深海而又孤身一人。&lt;/p&gt;
-&lt;p&gt;一首最近经常听的歌：&lt;a href="https://c.y.qq.com/base/fcgi-bin/u?__=oHL1GdU" title="Whale sounds 2 hours"&gt;Whale sounds 2 hours&lt;/a&gt;，两个小时的鲸鱼叫声，欢快、希望、孤独尽在其中。&lt;/p&gt;</description><guid isPermaLink="false">ting-jing-ge</guid><pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate></item><item><title>Run Elasticsearch by docker</title><link>https://zoroz.com/post/2021/docker-elasticsearch.html</link><description>&lt;p&gt;&lt;strong&gt;1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一首最近经常听的歌：&lt;a href="https://c.y.qq.com/base/fcgi-bin/u?__=oHL1GdU" title="Whale sounds 2 hours"&gt;Whale sounds 2 hours&lt;/a&gt;，两个小时的鲸鱼叫声，欢快、希望、孤独尽在其中。&lt;/p&gt;</description><guid isPermaLink="false">ting-jing-ge</guid><pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate></item><item><title>Run Elasticsearch by docker</title><link>https://zoroz.me/post/2021/docker-elasticsearch.html</link><description>&lt;p&gt;&lt;strong&gt;1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    docker pull elasticsearch:7.6.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1007,12 +1007,12 @@ nginx -s reload
 
 
 &lt;p&gt;This plugin provides analyzer and tokenizer named &lt;code&gt;ik_smart&lt;/code&gt; and &lt;code&gt;ik_max_word&lt;/code&gt; where &lt;code&gt;ik_smart&lt;/code&gt; splits by the coarsest granularity, while &lt;code&gt;ik_max_word&lt;/code&gt; will exhaust all kinds of split combinations.&lt;/p&gt;
-&lt;p&gt;Find more info at &lt;a href="https://github.com/medcl/elasticsearch-analysis-ik"&gt;IK&lt;/a&gt;.&lt;/p&gt;</description><guid isPermaLink="false">docker-elasticsearch</guid><pubDate>Fri, 30 Apr 2021 00:00:00 +0000</pubDate></item><item><title>Confession of a salted fish</title><link>https://zoroz.com/post/2021/confession-of-a-salted-fish.html</link><description>&lt;p&gt;Today, I listened to the sound of the drum all day that didn't stop till evening. So I was thinking whose child was training so hard. By contrast, I played all day, which made me feel guilty.&lt;/p&gt;
+&lt;p&gt;Find more info at &lt;a href="https://github.com/medcl/elasticsearch-analysis-ik"&gt;IK&lt;/a&gt;.&lt;/p&gt;</description><guid isPermaLink="false">docker-elasticsearch</guid><pubDate>Fri, 30 Apr 2021 00:00:00 +0000</pubDate></item><item><title>Confession of a salted fish</title><link>https://zoroz.me/post/2021/confession-of-a-salted-fish.html</link><description>&lt;p&gt;Today, I listened to the sound of the drum all day that didn't stop till evening. So I was thinking whose child was training so hard. By contrast, I played all day, which made me feel guilty.&lt;/p&gt;
 &lt;p&gt;I wonder if I've done something like that. I wonder if I study in my spare time like that child. It seems very seldom.&lt;/p&gt;
 &lt;p&gt;Some time ago, I developed this website and wanted to use it to record my coding notes. However, after it was established, I have tossed it many times, such as changing the theme of the website, adding some new features, but have not focused on the content of the website and sticked to writing.&lt;/p&gt;
 &lt;p&gt;So I was wondering why I did this,  why I developed this website at the beginning. It's just for me to take notes in my coding time. I found that I had violated my original intention.&lt;/p&gt;
 &lt;p&gt;Since I started working，taking notes and diary happened only occasionally. When I want to do that, I just do it in the beginning days, hardly to keep the impetus of that. Not only blogging, but aslo learning English. I have wanted to learn English many times, but I never sticked to it, so I don't learn English well, nor can I read computer documentation smoothly.&lt;/p&gt;
-&lt;p&gt;In the end, actually my main purpose of writing this blog is to practice my English, and also to reflect and spur myself，although it's all nonsense.&lt;/p&gt;</description><guid isPermaLink="false">confession-of-a-salted-fish</guid><pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate></item><item><title>Fulltext searching with whoosh and Jieba</title><link>https://zoroz.com/post/2021/fulltext-searching-with-whoosh-and-jieba.html</link><description>&lt;h2&gt;Environment dependencies&lt;/h2&gt;
+&lt;p&gt;In the end, actually my main purpose of writing this blog is to practice my English, and also to reflect and spur myself，although it's all nonsense.&lt;/p&gt;</description><guid isPermaLink="false">confession-of-a-salted-fish</guid><pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate></item><item><title>Fulltext searching with whoosh and Jieba</title><link>https://zoroz.me/post/2021/fulltext-searching-with-whoosh-and-jieba.html</link><description>&lt;h2&gt;Environment dependencies&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;haystack&lt;/span&gt;
 &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;jieba&lt;/span&gt;
 &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;whoosh&lt;/span&gt;
@@ -1119,7 +1119,7 @@ nginx -s reload
 &lt;p&gt;Change the file path of search engine to custom path in &lt;code&gt;settings.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;'ENGINE': 'apps.search.whoosh_cn_backend.WhooshEngine'&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Rebuild index &lt;code&gt;python manage.py rebuild_index&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;It supports Chinese search now.&lt;/p&gt;</description><guid isPermaLink="false">fulltext-searching-with-whoosh-and-jieba</guid><pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate></item><item><title>OAuth2简述</title><link>https://zoroz.com/post/2021/oauth2.html</link><description>&lt;h2&gt;什么是OAuth2&lt;/h2&gt;
+&lt;p&gt;It supports Chinese search now.&lt;/p&gt;</description><guid isPermaLink="false">fulltext-searching-with-whoosh-and-jieba</guid><pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate></item><item><title>OAuth2简述</title><link>https://zoroz.me/post/2021/oauth2.html</link><description>&lt;h2&gt;什么是OAuth2&lt;/h2&gt;
 &lt;p&gt;OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。&lt;/p&gt;
 &lt;h2&gt;OAuth2的应用场景&lt;/h2&gt;
 &lt;p&gt;当你想使用QQ登录的第三方应用时，此时第三方应用需要获取你的QQ信息（昵称、头像、openid等），但是又不能直接用户名和密码等信息。那么此时就需要你登录你的QQ服务器，然后授权给该第三方应用一部分信息。而OAuth2就是为了实现上述目标而制定的一种规范。&lt;/p&gt;
@@ -1173,7 +1173,7 @@ nginx -s reload
 &lt;ol&gt;
 &lt;li&gt;客户端向认证服务器发送一个携带client_id和client_secret的请求&lt;/li&gt;
 &lt;li&gt;认证服务器接收到客户端请求，并验证client_id和client_secret的有效性，如果有效这向客户端提供令牌。&lt;/li&gt;
-&lt;/ol&gt;</description><guid isPermaLink="false">oauth2</guid><pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate></item><item><title>What is JWT?</title><link>https://zoroz.com/post/2021/jwt.html</link><description>&lt;h2&gt;What is JWT?&lt;/h2&gt;
+&lt;/ol&gt;</description><guid isPermaLink="false">oauth2</guid><pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate></item><item><title>What is JWT?</title><link>https://zoroz.me/post/2021/jwt.html</link><description>&lt;h2&gt;What is JWT?&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
 Although JWTs can be encrypted to also provide secrecy between parties, we will focus on signed tokens. Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties. When tokens are signed using public/private key pairs, the signature also certifies that only the party holding the private key is the one that signed it.&lt;/p&gt;
@@ -1234,7 +1234,7 @@ For example:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;reference from https://jwt.io/introduction&lt;/p&gt;
-&lt;/blockquote&gt;</description><guid isPermaLink="false">jwt</guid><pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate></item><item><title>MySQL创建用户和配置远程连接</title><link>https://zoroz.com/post/2020/mysql-remote-connection.html</link><description>&lt;h2&gt;创建远程连接用户&lt;/h2&gt;
+&lt;/blockquote&gt;</description><guid isPermaLink="false">jwt</guid><pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate></item><item><title>MySQL创建用户和配置远程连接</title><link>https://zoroz.me/post/2020/mysql-remote-connection.html</link><description>&lt;h2&gt;创建远程连接用户&lt;/h2&gt;
 &lt;p&gt;在某些情况下，可能别人需要连接你的数据库进行操作，出于安全考虑，我们需要新建一个用户，让该用户只具有一部分的操作权限操作数据库。&lt;/p&gt;
 &lt;p&gt;当然如果只有你一个人使用这个数据库的话，也可以跳过这一步，直接选择root用户来操作。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;创建用户&lt;/strong&gt;&lt;/p&gt;
@@ -1472,7 +1472,7 @@ skip-name-resolve
 &lt;em&gt;connections over TCP/IP, you can do this by starting mysqld with&lt;/em&gt;
 &lt;em&gt;–skip-networking.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;根据文档说明，如果你的mysql主机查询DNS很慢或是有很多客户端主机时会导致连接很慢，由于我们的开发机器是不能够连接外网的，所以DNS解析是不可能完成的，从而也就明白了为什么连接那么慢了。同时，请注意在增加该配置参数后，mysql的授权表中的host字段就不能够使用域名而只能够使用 ip地址了，因为这是禁止了域名解析的结果。&lt;/p&gt;</description><guid isPermaLink="false">mysql-remote-connection</guid><pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate></item><item><title>Linux中的软链接和硬链接</title><link>https://zoroz.com/post/2020/Linux-hardlink-softlink.html</link><description>&lt;h2&gt;Linux文件系统&lt;/h2&gt;
+&lt;p&gt;根据文档说明，如果你的mysql主机查询DNS很慢或是有很多客户端主机时会导致连接很慢，由于我们的开发机器是不能够连接外网的，所以DNS解析是不可能完成的，从而也就明白了为什么连接那么慢了。同时，请注意在增加该配置参数后，mysql的授权表中的host字段就不能够使用域名而只能够使用 ip地址了，因为这是禁止了域名解析的结果。&lt;/p&gt;</description><guid isPermaLink="false">mysql-remote-connection</guid><pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate></item><item><title>Linux中的软链接和硬链接</title><link>https://zoroz.me/post/2020/Linux-hardlink-softlink.html</link><description>&lt;h2&gt;Linux文件系统&lt;/h2&gt;
 &lt;p&gt;在 UNIX 系统中，操作系统为磁盘上的文本与图像、鼠标与键盘等输入设备及网络交互等 I/O 操作设计了一组通用 API，使他们被处理时均可统一使用字节流方式。&lt;/p&gt;
 &lt;p&gt;换言之，&lt;strong&gt;UNIX 系统中除进程之外的一切皆是文件&lt;/strong&gt;，而 Linux 保持了这一特性。为了便于文件的管理，Linux 还引入了目录（有时亦被称为文件夹）这一概念。目录使文件可被分类管理，且目录的引入使 Linux 的文件系统形成一个层级结构的目录树。&lt;/p&gt;
 &lt;h3&gt;Linux 系统的顶层目录结构&lt;/h3&gt;
