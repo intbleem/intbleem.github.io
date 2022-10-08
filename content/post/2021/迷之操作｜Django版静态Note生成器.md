@@ -2,7 +2,7 @@
 title: 迷之操作｜Django版静态Note生成器
 slug: django-staticize
 tags: [Django, 技术笔记, 做过的没意义的事]
-category: Tech
+category: 技术
 date: 2021-12-26
 status: publish
 ---

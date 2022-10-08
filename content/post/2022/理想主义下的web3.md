@@ -2,7 +2,7 @@
 title: 理想主义下的web3
 slug: web3
 tags: [web3, 炒币, 理想主义, 在扯淡]
-category: Thought
+category: 生活
 date: 2022-06-08
 status: publish
 subtitle: 理想是美好的，可现实不允许。

@@ -12,6 +12,7 @@ TEMPLATES_FOLDER = "txt/templates"
 
 LINKS = [
     ['zhanghaoran.ren', 'http://blog.zhanghaoran.ren/'],
+    ['百度一下', 'https://www.baidu.com'],
 ]
 
 #ANALYTICS_CODE = """

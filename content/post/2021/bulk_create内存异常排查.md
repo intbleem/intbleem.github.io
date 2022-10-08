@@ -2,7 +2,7 @@
 title: Django批量创建时出现bulk_create内存异常
 slug: django-bulk-create
 tags: [Django,MySQLdb,技术笔记]
-category: Tech
+category: 技术
 date: 2021-12-14
 status: publish
 ---
