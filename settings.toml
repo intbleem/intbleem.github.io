@@ -1,6 +1,4 @@
-
-
-SITE_NAME = "Zoroz"
+SITE_NAME = "ZOROZ"
 SITE_KEYWORDS = "2Dosth,node,vue,Python,Django,backend,blog,web,mysql,random thoughts,coding"
 SITE_DESCRIPTION = "This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."
 SITE_URL = "https://zoroz.me"
@@ -13,15 +11,5 @@ LINKS = [
     ['zhanghaoran.ren', 'http://blog.zhanghaoran.ren/'],
 ]
 
-ANALYTICS_CODE = """
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?c7f70ec56346e1ef095ec0104e479a46";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-"""
+#ANALYTICS_CODE = """
+#"""
