@@ -1,10 +1,10 @@
-SITE_NAME = "ZOROZ.ME"
-SITE_LOGO_NAME = "ZOROZ.ME"
-SITE_COPYRIGHT_NAME = "ZOROZ"
+SITE_NAME = "ZORO.X"
+SITE_LOGO_NAME = "ZORO.X"
+SITE_COPYRIGHT_NAME = "ZOROX"
 
 SITE_KEYWORDS = "2Dosth,node,vue,Python,Django,backend,blog,web,mysql,random thoughts,coding"
 SITE_DESCRIPTION = "This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."
-SITE_URL = "https://zoroz.me"
+SITE_URL = "https://zorox.me"
 
 STATIC_FOLDER = "txt/static"
 TEMPLATES_FOLDER = "txt/templates"
