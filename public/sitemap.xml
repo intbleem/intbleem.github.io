@@ -1,165 +1,416 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+            <loc>https://zorox.me/post/2022/guo-qing-hui-jia.html</loc>
+            <lastmod>2022-10-05</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2022/ren-sheng.html</loc>
+            <lastmod>2022-08-17</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2022/wu-tiao-jian.html</loc>
+            <lastmod>2022-08-13</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/ru-he-fq.html</loc>
+            <lastmod>2022-07-15</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2022/What-is-fun.html</loc>
+            <lastmod>2022-07-01</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2022/web3.html</loc>
+            <lastmod>2022-06-08</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/2021-summary.html</loc>
+            <lastmod>2021-12-31</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/django-staticize.html</loc>
+            <lastmod>2021-12-26</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/django-bulk-create.html</loc>
+            <lastmod>2021-12-14</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/elasticsearch-nested.html</loc>
+            <lastmod>2021-12-04</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/ren-jian-shi-ge.html</loc>
+            <lastmod>2021-11-14</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/jue-jiao.html</loc>
+            <lastmod>2021-10-16</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/zi-wo-bang-jia.html</loc>
+            <lastmod>2021-10-15</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/7-20-bao-yu-ri-ji.html</loc>
+            <lastmod>2021-07-24</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/xu-xu-dao-dao.html</loc>
+            <lastmod>2021-05-31</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/ting-jing-ge.html</loc>
+            <lastmod>2021-05-28</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/docker-elasticsearch.html</loc>
+            <lastmod>2021-04-30</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/confession-of-a-salted-fish.html</loc>
+            <lastmod>2021-04-10</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/fulltext-searching-with-whoosh-and-jieba.html</loc>
+            <lastmod>2021-03-22</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/jwt.html</loc>
+            <lastmod>2021-03-12</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2021/oauth2.html</loc>
+            <lastmod>2021-03-12</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2020/mysql-remote-connection.html</loc>
+            <lastmod>2020-12-29</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/post/2020/Linux-hardlink-softlink.html</loc>
+            <lastmod>2020-11-24</lastmod>
+            <changefreq>weekly</changefreq>
+        </url>
+    
 
-<url>
-    <loc>https://zorox.me/post/2022/guo-qing-hui-jia.html</loc>
-    <lastmod>2022-10-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
+    
+        <url>
+            <loc>https://zorox.me/tag/放假回家.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/流水账.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/人生的选择.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/在扯淡.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/爱情和前途.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/Eason.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/怀旧.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/翻墙.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/云主机.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/V2Ray.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/web3.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/炒币.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/理想主义.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/总结.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/Django.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/技术笔记.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/做过的没意义的事.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/MySQLdb.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/Elasticsearch.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/丧文化.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/人间不值得.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/日本.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/悬疑小说.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/经济危机.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/立志做好人.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/做梦.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/7.20.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/暴雨.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/音乐.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/鲸鱼.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/Docker.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/英语练习.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/jieba.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/whoosh.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/JWT.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/Single Sign On.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/OAuth2.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/Authorization.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/三方登录.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/MySQL.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/Linux.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/unix.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
 
-<url>
-    <loc>https://zorox.me/post/2022/ren-sheng.html</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2022/wu-tiao-jian.html</loc>
-    <lastmod>2022-08-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/ru-he-fq.html</loc>
-    <lastmod>2022-07-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2022/What-is-fun.html</loc>
-    <lastmod>2022-07-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2022/web3.html</loc>
-    <lastmod>2022-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/2021-summary.html</loc>
-    <lastmod>2021-12-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/django-staticize.html</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/django-bulk-create.html</loc>
-    <lastmod>2021-12-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/elasticsearch-nested.html</loc>
-    <lastmod>2021-12-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/ren-jian-shi-ge.html</loc>
-    <lastmod>2021-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/jue-jiao.html</loc>
-    <lastmod>2021-10-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/zi-wo-bang-jia.html</loc>
-    <lastmod>2021-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/7-20-bao-yu-ri-ji.html</loc>
-    <lastmod>2021-07-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/xu-xu-dao-dao.html</loc>
-    <lastmod>2021-05-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/ting-jing-ge.html</loc>
-    <lastmod>2021-05-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/docker-elasticsearch.html</loc>
-    <lastmod>2021-04-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/confession-of-a-salted-fish.html</loc>
-    <lastmod>2021-04-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/fulltext-searching-with-whoosh-and-jieba.html</loc>
-    <lastmod>2021-03-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/jwt.html</loc>
-    <lastmod>2021-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2021/oauth2.html</loc>
-    <lastmod>2021-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2020/mysql-remote-connection.html</loc>
-    <lastmod>2020-12-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
-<url>
-    <loc>https://zorox.me/post/2020/Linux-hardlink-softlink.html</loc>
-    <lastmod>2020-11-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-</url>
-
+    
+        <url>
+            <loc>https://zorox.me/category/生活.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/category/阅读.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/category/技术.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-12</lastmod>
+        </url>
+    
 </urlset>
