@@ -18,7 +18,7 @@
     <div>
         {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
             {% for article in list %}
-                <time>{{ article.date }}</time>
+                <time>{{ article.date }}</time>&nbsp;
                 <a href="{{ article.url }}">{{ article.title }}</a>
                 <br>
             {% endfor %}
