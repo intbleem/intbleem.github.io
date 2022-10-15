@@ -359,9 +359,12 @@
         <span>
             Date:&nbsp;&nbsp;{{ article.date }}<br>
             Category:&nbsp;&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br>
-            Tags:&nbsp;{% for tag in article.tags %}
-            <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
-        {% endfor %}
+            {% if article.tags %}
+                Tags:&nbsp;
+                {% for tag in article.tags %}
+                    <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
+                {% endfor %}
+            {% endif %}
         </span>
     </article>
 {% endblock %}

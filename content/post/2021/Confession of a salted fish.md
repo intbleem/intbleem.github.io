@@ -1,8 +1,8 @@
 ---
 title: Confession of a salted fish
 slug: confession-of-a-salted-fish
-tags: [英语练习, 在扯淡]
-category: 生活
+tags: []
+category: 扯淡集
 date: 2021-04-10
 status: publish
 subtitle: It's all bullshit. Nothing else.

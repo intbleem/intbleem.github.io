@@ -1,7 +1,7 @@
 ---
 title: MySQL创建用户和配置远程连接
 slug: mysql-remote-connection
-tags: [MySQL, 技术笔记]
+tags: [MySQL, 远程连接]
 category: 技术
 date: 2020-12-29
 status: publish

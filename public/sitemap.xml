@@ -178,7 +178,7 @@
         </url>
     
         <url>
-            <loc>https://zorox.me/tag/人生的选择.html</loc>
+            <loc>https://zorox.me/tag/人生选择.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
         </url>
@@ -226,6 +226,24 @@
         </url>
     
         <url>
+            <loc>https://zorox.me/tag/他人即地狱.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-15</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/自我.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-15</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/胡说八道.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-15</lastmod>
+        </url>
+    
+        <url>
             <loc>https://zorox.me/tag/web3.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
@@ -239,6 +257,12 @@
     
         <url>
             <loc>https://zorox.me/tag/理想主义.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-15</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/tag/去中心化.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
         </url>
@@ -262,7 +286,7 @@
         </url>
     
         <url>
-            <loc>https://zorox.me/tag/做过的没意义的事.html</loc>
+            <loc>https://zorox.me/tag/生成器.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
         </url>
@@ -322,6 +346,12 @@
         </url>
     
         <url>
+            <loc>https://zorox.me/tag/坏人.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-15</lastmod>
+        </url>
+    
+        <url>
             <loc>https://zorox.me/tag/7.20.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
@@ -347,12 +377,6 @@
     
         <url>
             <loc>https://zorox.me/tag/Docker.html</loc>
-            <changefreq>monthly</changefreq>
-            <lastmod>2022-10-15</lastmod>
-        </url>
-    
-        <url>
-            <loc>https://zorox.me/tag/英语练习.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
         </url>
@@ -406,6 +430,12 @@
         </url>
     
         <url>
+            <loc>https://zorox.me/tag/远程连接.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-15</lastmod>
+        </url>
+    
+        <url>
             <loc>https://zorox.me/tag/Linux.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
@@ -433,6 +463,12 @@
     
         <url>
             <loc>https://zorox.me/category/技术.html</loc>
+            <changefreq>monthly</changefreq>
+            <lastmod>2022-10-15</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://zorox.me/category/扯淡集.html</loc>
             <changefreq>monthly</changefreq>
             <lastmod>2022-10-15</lastmod>
         </url>
