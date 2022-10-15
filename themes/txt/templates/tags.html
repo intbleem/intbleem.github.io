@@ -21,7 +21,7 @@
     <div>
         <ul>
             {% for tag in tags|sort(attribute="count", reverse=True) %}
-                <li class="tags-list">
+                <li>
                     <a href="/tag/{{ tag.name }}.html">{{ tag.name }}</a>
                 </li>
             {% endfor %}

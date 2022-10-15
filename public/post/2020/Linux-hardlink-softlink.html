@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="canonical" href="https://zorox.me">
-    <meta property="og:locale" content="zh-Hans">
 
     
     <title>Linux中的软链接和硬链接 | ZORO.X</title>
@@ -361,15 +360,30 @@
 
     <style>
         body {
-            font-family: monospace;
             max-width: 650px;
             margin: 8px auto;
             padding: 0 8px;
-            font-size: 1rem;
+            font-size: large;
         }
 
         img {
             max-width: 100%;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -383,7 +397,7 @@
 
 <main>
     
-    <article class="article">
+    <article>
         <h1>Linux中的软链接和硬链接</h1>
         <h2>Linux文件系统</h2>
 <p>在 UNIX 系统中，操作系统为磁盘上的文本与图像、鼠标与键盘等输入设备及网络交互等 I/O 操作设计了一组通用 API，使他们被处理时均可统一使用字节流方式。</p>
@@ -495,14 +509,14 @@ ln oldfile newfile
 <p>当然软链接的用户数据也可以是另一个软链接的路径，其解析过程是递归的。但需注意：软链接创建时原文件的路径指向使用绝对路径较好。使用相对路径创建的软链接被移动后该软链接文件将成为一个死链接（如下所示的软链接 a 使用了相对路径，因此不宜被移动），因为链接数据块中记录的亦是相对路径指向。</p>
         <hr>
         <span>
-            Date:&nbsp;2020-11-24<br>
-            Category:&nbsp;<a href="/category/技术.html">技术</a><br>
+            Date:&nbsp;&nbsp;2020-11-24<br>
+            Category:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
             Tags:&nbsp;
-            <a href="/tag/Linux.html">Linux</a>&nbsp;
+            <a href="/tag/Linux.html">Linux</a>&nbsp;&nbsp;
         
-            <a href="/tag/unix.html">unix</a>&nbsp;
+            <a href="/tag/unix.html">unix</a>&nbsp;&nbsp;
         
-            <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;
+            <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;&nbsp;
         
         </span>
     </article>
@@ -512,7 +526,7 @@ ln oldfile newfile
 
     <footer>
     <hr>
-    &copy; 2022 ZOROX · CC BY-SA 4.0
+    &copy;  2022 ZOROX · CC BY-SA 4.0
 </footer>
 
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="canonical" href="https://zorox.me">
-    <meta property="og:locale" content="zh-Hans">
 
     
     <title>MySQL创建用户和配置远程连接 | ZORO.X</title>
@@ -361,15 +360,30 @@
 
     <style>
         body {
-            font-family: monospace;
             max-width: 650px;
             margin: 8px auto;
             padding: 0 8px;
-            font-size: 1rem;
+            font-size: large;
         }
 
         img {
             max-width: 100%;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -383,7 +397,7 @@
 
 <main>
     
-    <article class="article">
+    <article>
         <h1>MySQL创建用户和配置远程连接</h1>
         <h2>创建远程连接用户</h2>
 <p>在某些情况下，可能别人需要连接你的数据库进行操作，出于安全考虑，我们需要新建一个用户，让该用户只具有一部分的操作权限操作数据库。</p>
@@ -626,12 +640,12 @@ skip-name-resolve
 <p>根据文档说明，如果你的mysql主机查询DNS很慢或是有很多客户端主机时会导致连接很慢，由于我们的开发机器是不能够连接外网的，所以DNS解析是不可能完成的，从而也就明白了为什么连接那么慢了。同时，请注意在增加该配置参数后，mysql的授权表中的host字段就不能够使用域名而只能够使用 ip地址了，因为这是禁止了域名解析的结果。</p>
         <hr>
         <span>
-            Date:&nbsp;2020-12-29<br>
-            Category:&nbsp;<a href="/category/技术.html">技术</a><br>
+            Date:&nbsp;&nbsp;2020-12-29<br>
+            Category:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
             Tags:&nbsp;
-            <a href="/tag/MySQL.html">MySQL</a>&nbsp;
+            <a href="/tag/MySQL.html">MySQL</a>&nbsp;&nbsp;
         
-            <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;
+            <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;&nbsp;
         
         </span>
     </article>
@@ -641,7 +655,7 @@ skip-name-resolve
 
     <footer>
     <hr>
-    &copy; 2022 ZOROX · CC BY-SA 4.0
+    &copy;  2022 ZOROX · CC BY-SA 4.0
 </footer>
 
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <link rel="canonical" href="https://zorox.me">
-    <meta property="og:locale" content="zh-Hans">
 
     
     <title>Django批量创建时出现bulk_create内存异常 | ZORO.X</title>
@@ -361,15 +360,30 @@
 
     <style>
         body {
-            font-family: monospace;
             max-width: 650px;
             margin: 8px auto;
             padding: 0 8px;
-            font-size: 1rem;
+            font-size: large;
         }
 
         img {
             max-width: 100%;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -383,7 +397,7 @@
 
 <main>
     
-    <article class="article">
+    <article>
         <h1>Django批量创建时出现bulk_create内存异常</h1>
         <p><strong>背景</strong></p>
 <p>因为需要往项目数据库上传大量数据，数据是以文件的方式存储，所以采用django的<strong>bulk_create</strong>批量读取并上传，但是在上传过程中发现，上传程序占用的内存一直在上升，甚至到最后直接把内存占满了。</p>
@@ -555,14 +569,14 @@
 <p>就第一种方案而言，只有在生产环境下，DEBUG选项才会为False，所以在自己的电脑上或者测试机上运行，还是第二种方案比较好。</p>
         <hr>
         <span>
-            Date:&nbsp;2021-12-14<br>
-            Category:&nbsp;<a href="/category/技术.html">技术</a><br>
+            Date:&nbsp;&nbsp;2021-12-14<br>
+            Category:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
             Tags:&nbsp;
-            <a href="/tag/Django.html">Django</a>&nbsp;
+            <a href="/tag/Django.html">Django</a>&nbsp;&nbsp;
         
-            <a href="/tag/MySQLdb.html">MySQLdb</a>&nbsp;
+            <a href="/tag/MySQLdb.html">MySQLdb</a>&nbsp;&nbsp;
         
-            <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;
+            <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;&nbsp;
         
         </span>
     </article>
@@ -572,7 +586,7 @@
 
     <footer>
     <hr>
-    &copy; 2022 ZOROX · CC BY-SA 4.0
+    &copy;  2022 ZOROX · CC BY-SA 4.0
 </footer>
 
 
