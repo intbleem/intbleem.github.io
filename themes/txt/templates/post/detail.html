@@ -337,7 +337,7 @@
         <h1>{{ article.title }}</h1>
         {{ article.body | safe }}
         <ul>
-            <li>{{ article.date.strftime("%Y年%m月%d日") }}</li>
+            <li>{{ article.date.strftime("%Y.%m.%d") }}</li>
             <li>分类:&nbsp;&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br></li>
             {% if article.tags %}
                 <li> 标签:&nbsp;

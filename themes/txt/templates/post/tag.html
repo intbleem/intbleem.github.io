@@ -37,7 +37,9 @@
                 <li>
                     <article>
                         <a href="{{ article.url }}">{{ article.title }}</a>
-                        <time>{{ article.date.strftime("%Y年%m月%d日") }}</time>&nbsp;
+                        <i>
+                            <time>{{ article.date.strftime("%Y.%m.%d") }}</time>&nbsp;
+                        </i>
                     </article>
                 </li>
             {% endfor %}
