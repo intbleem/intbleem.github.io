@@ -22,7 +22,7 @@
         blockquote {
             padding: 0 0 0 15px;
             margin: 0 10px 0 0;
-            border-left: 1px solid #615b5b;
+            border-left: 2px solid #615b5b;
         }
 
         pre {
@@ -39,25 +39,6 @@
             border: 1px solid #ebeaea;
             border-radius: 1px;
         }
-
-        table {
-            margin: auto;
-            border-top: 1px solid #666;
-            border-bottom: 1px solid #666
-        }
-
-        table thead th {
-            border-bottom: 1px solid #ddd
-        }
-
-        td, th {
-            padding: 5px
-        }
-
-        tfoot, thead, tr:nth-child(even) {
-            background: #eee
-        }
-
     </style>
     <style>
         pre {
@@ -355,17 +336,17 @@
     <article>
         <h1>{{ article.title }}</h1>
         {{ article.body | safe }}
-        <hr>
-        <span>
-            Date:&nbsp;&nbsp;{{ article.date }}<br>
-            Category:&nbsp;&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br>
+        <ul>
+            <li>{{ article.date.strftime("%Y年%d月%d日") }}</li>
+            <li>分类:&nbsp;&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br></li>
             {% if article.tags %}
-                Tags:&nbsp;
-                {% for tag in article.tags %}
-                    <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
-                {% endfor %}
+                <li> 标签:&nbsp;
+                    {% for tag in article.tags %}
+                        <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
+                    {% endfor %}
+                </li>
             {% endif %}
-        </span>
+        </ul>
     </article>
 {% endblock %}
 

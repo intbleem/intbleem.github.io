@@ -32,7 +32,7 @@
         blockquote {
             padding: 0 0 0 15px;
             margin: 0 10px 0 0;
-            border-left: 1px solid #615b5b;
+            border-left: 2px solid #615b5b;
         }
 
         pre {
@@ -49,25 +49,6 @@
             border: 1px solid #ebeaea;
             border-radius: 1px;
         }
-
-        table {
-            margin: auto;
-            border-top: 1px solid #666;
-            border-bottom: 1px solid #666
-        }
-
-        table thead th {
-            border-bottom: 1px solid #ddd
-        }
-
-        td, th {
-            padding: 5px
-        }
-
-        tfoot, thead, tr:nth-child(even) {
-            background: #eee
-        }
-
     </style>
     <style>
         pre {
@@ -359,31 +340,18 @@
     
 
     <style>
+        ul {
+            margin: 1.6em 0;
+            padding: 0 0 0 20px;
+        }
+
         body {
-            max-width: 700px;
-            margin: 8px auto;
-            padding: 8px;
-            font-size: large;
+            margin: 10px 4%;
+            font-size: 16px;
         }
 
         img {
             max-width: 100%;
-        }
-
-        a:visited {
-            text-decoration: none;
-        }
-
-        a:link {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        a:active {
-            text-decoration: none;
         }
     </style>
 </head>
@@ -507,27 +475,28 @@ ln oldfile newfile
 
 
 <p>当然软链接的用户数据也可以是另一个软链接的路径，其解析过程是递归的。但需注意：软链接创建时原文件的路径指向使用绝对路径较好。使用相对路径创建的软链接被移动后该软链接文件将成为一个死链接（如下所示的软链接 a 使用了相对路径，因此不宜被移动），因为链接数据块中记录的亦是相对路径指向。</p>
-        <hr>
-        <span>
-            Date:&nbsp;&nbsp;2020-11-24<br>
-            Category:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
+        <ul>
+            <li>2020年24月24日</li>
+            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
             
-                Tags:&nbsp;
-                
-                    <a href="/tag/Linux.html">Linux</a>&nbsp;&nbsp;
-                
-                    <a href="/tag/unix.html">unix</a>&nbsp;&nbsp;
-                
+                <li> 标签:&nbsp;
+                    
+                        <a href="/tag/Linux.html">Linux</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/unix.html">unix</a>&nbsp;&nbsp;
+                    
+                </li>
             
-        </span>
+        </ul>
     </article>
 
 </main>
 
 
     <footer>
-    <hr>
-    &copy;  2022 ZOROX · CC BY-SA 4.0
+    &copy; 2022 ZOROX · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
+    <a href="/links.html">Links</a>&nbsp;&nbsp;·
+    <a href="/feed.xml">RSS</a>
 </footer>
 
 

@@ -32,7 +32,7 @@
         blockquote {
             padding: 0 0 0 15px;
             margin: 0 10px 0 0;
-            border-left: 1px solid #615b5b;
+            border-left: 2px solid #615b5b;
         }
 
         pre {
@@ -49,25 +49,6 @@
             border: 1px solid #ebeaea;
             border-radius: 1px;
         }
-
-        table {
-            margin: auto;
-            border-top: 1px solid #666;
-            border-bottom: 1px solid #666
-        }
-
-        table thead th {
-            border-bottom: 1px solid #ddd
-        }
-
-        td, th {
-            padding: 5px
-        }
-
-        tfoot, thead, tr:nth-child(even) {
-            background: #eee
-        }
-
     </style>
     <style>
         pre {
@@ -359,31 +340,18 @@
     
 
     <style>
+        ul {
+            margin: 1.6em 0;
+            padding: 0 0 0 20px;
+        }
+
         body {
-            max-width: 700px;
-            margin: 8px auto;
-            padding: 8px;
-            font-size: large;
+            margin: 10px 4%;
+            font-size: 16px;
         }
 
         img {
             max-width: 100%;
-        }
-
-        a:visited {
-            text-decoration: none;
-        }
-
-        a:link {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        a:active {
-            text-decoration: none;
         }
     </style>
 </head>
@@ -638,27 +606,28 @@ skip-name-resolve
 <em>–skip-networking.</em></p>
 </blockquote>
 <p>根据文档说明，如果你的mysql主机查询DNS很慢或是有很多客户端主机时会导致连接很慢，由于我们的开发机器是不能够连接外网的，所以DNS解析是不可能完成的，从而也就明白了为什么连接那么慢了。同时，请注意在增加该配置参数后，mysql的授权表中的host字段就不能够使用域名而只能够使用 ip地址了，因为这是禁止了域名解析的结果。</p>
-        <hr>
-        <span>
-            Date:&nbsp;&nbsp;2020-12-29<br>
-            Category:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
+        <ul>
+            <li>2020年29月29日</li>
+            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
             
-                Tags:&nbsp;
-                
-                    <a href="/tag/MySQL.html">MySQL</a>&nbsp;&nbsp;
-                
-                    <a href="/tag/远程连接.html">远程连接</a>&nbsp;&nbsp;
-                
+                <li> 标签:&nbsp;
+                    
+                        <a href="/tag/MySQL.html">MySQL</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/远程连接.html">远程连接</a>&nbsp;&nbsp;
+                    
+                </li>
             
-        </span>
+        </ul>
     </article>
 
 </main>
 
 
     <footer>
-    <hr>
-    &copy;  2022 ZOROX · CC BY-SA 4.0
+    &copy; 2022 ZOROX · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
+    <a href="/links.html">Links</a>&nbsp;&nbsp;·
+    <a href="/feed.xml">RSS</a>
 </footer>
 
 
