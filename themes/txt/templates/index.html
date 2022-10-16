@@ -13,9 +13,6 @@
     <link rel="alternate" type="application/atom+xml" href="/feed.xml">
 {% endblock %}
 
-{% block nav %}
-    <h1>{{ SITE_NAME }}</h1>
-{% endblock %}
 
 
 {% block main_content %}
@@ -25,9 +22,7 @@
                 <li>
                     <article>
                         <a href="{{ article.url }}">{{ article.title }}</a>&nbsp;
-                        <i>
-                            <time>{{ article.date.strftime("%Y.%m.%d") }}</time>&nbsp;
-                        </i>
+                        <time>{{ article.date.strftime("%Y年%m月%d日") }}</time>
                     </article>
                 </li>
             {% endfor %}
