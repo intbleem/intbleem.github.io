@@ -11,13 +11,9 @@
     <meta property="og:site_name" content="{{ SITE_NAME }}">
     <meta property="article:tag" content="{{ (",").join(article.tdk_tags) }}">
     <meta property="article:category" content="{{ article.tdk_category }}">
-    <meta property="article:published_date" content="{{ article.date }}">
+    <meta property="article:date" content="{{ article.date }}">
 
     <link rel="canonical" href="{{ SITE_URL }}{{ article.url }}">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:description" content="{{ article.content | truncate(length=200) }}">
-    <meta name="twitter:title" content="{{ article.title }}">
     <style>
         blockquote {
             padding: 0 0 0 15px;
