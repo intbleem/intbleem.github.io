@@ -166,7 +166,7 @@ done
 
 点击Test Uploader就可以测试一下我们脚本是否可以正常上传
 
-![swQeFOjS](https://static.19961002.xyz/img/2022/swQeFOjS.png)
+<img src="https://static.19961002.xyz/img/2022/swQeFOjS.png" alt="swQeFOjS" style="zoom:25%;" />
 
 现在来看一下效果如何，复制一张图片到Typora。
 
@@ -186,7 +186,7 @@ done
 
 首先在GitHub上开通webhook，并添加secret，选择settings→webhooks
 
-![gWxHhzsb](https://static.19961002.xyz/img/2022/gWxHhzsb.png)
+<img src="https://static.19961002.xyz/img/2022/gWxHhzsb.png" alt="gWxHhzsb" style="zoom:25%;" />
 
 使用Flask搭建一个简易的webhook服务，其中要注意对请求来源做验证，GitHub官方已经提供了验证方法
 

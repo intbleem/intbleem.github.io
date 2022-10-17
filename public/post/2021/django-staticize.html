@@ -475,9 +475,7 @@
 
 
 <p>点击Test Uploader就可以测试一下我们脚本是否可以正常上传</p>
-<p>
-<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/swQeFOjS.png" src="https://static.19961002.xyz/img/2022/swQeFOjS.png" /></div>
-</p>
+<p><img src="https://static.19961002.xyz/img/2022/swQeFOjS.png" alt="swQeFOjS" style="zoom:25%;" /></p>
 <p>现在来看一下效果如何，复制一张图片到Typora。</p>
 <p>
 <div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/LAbunMRk.gif" src="https://static.19961002.xyz/img/2022/LAbunMRk.gif" /></div>
@@ -486,9 +484,7 @@
 <p>所谓webhook，就是用户可以自定义一种回调函数，通过这种回调函数来改变web应用的行为，这些回调函数可以是web应用的开发者，也可以是第三方用户，并且与原始的web应用没有关联。</p>
 <p>这里采用的是Flask搭建一个webhook服务，并通过该服务触发脚本来完成整个流程操作</p>
 <p>首先在GitHub上开通webhook，并添加secret，选择settings→webhooks</p>
-<p>
-<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/gWxHhzsb.png" src="https://static.19961002.xyz/img/2022/gWxHhzsb.png" /></div>
-</p>
+<p><img src="https://static.19961002.xyz/img/2022/gWxHhzsb.png" alt="gWxHhzsb" style="zoom:25%;" /></p>
 <p>使用Flask搭建一个简易的webhook服务，其中要注意对请求来源做验证，GitHub官方已经提供了验证方法</p>
 <blockquote>
 <p><strong>Note:</strong> For backward-compatibility, we also include the <code>X-Hub-Signature</code> header that is generated using the SHA-1 hash function. If possible, we recommend that you use the <code>X-Hub-Signature-256</code> header for improved security. The example below demonstrates using the <code>X-Hub-Signature-256</code> header.</p>
