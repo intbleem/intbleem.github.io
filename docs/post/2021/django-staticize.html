@@ -1,0 +1,589 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <title>迷之操作｜Django版静态Note生成器 | ZORO.X</title>
+    <meta name="description" content="## Powered by Django
+
+正如这句话而言，目前这个网站是用Django来搭建的，至于当初为什么要选择Django，可能是因为它作为最流行的Web框架之一，开发迅速，以及自带的admin管理，可以迅速成型一个小型站点，YYDS。
+
+
+
+## Why..."/>
+    <meta name="keywords" content="Django,技术笔记,生成器"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="迷之操作｜Django版静态Note生成器"/>
+    <meta property="og:description" content="## Powered by Django
+
+正如这句话而言，目前这个网站是用Django来搭建的，至于当初为什么要选择Django，可能是因为它作为最流行的Web框架之一，开发迅速，以及自带的admin管理，可以迅速成型一个小型站点，YYDS。
+
+
+
+## Why..."/>
+    <meta property="og:url" content="https://zorox.me/post/2021/django-staticize.html">
+    <meta property="og:site_name" content="ZORO.X">
+    <meta property="article:tag" content="Django,技术笔记,生成器">
+    <meta property="article:category" content="技术">
+    <meta property="article:date" content="2021-12-26">
+
+    <link rel="canonical" href="https://zorox.me/post/2021/django-staticize.html">
+    <style>
+        blockquote {
+            padding: 0 0 0 15px;
+            margin: 0 10px 0 0;
+            border-left: 2px solid #615b5b;
+        }
+
+        pre {
+            border: 1px solid #ccc;
+            padding: 1em;
+            overflow-x: auto;
+            background: #f7f7f7;
+        }
+
+        p code {
+            padding: 1px 4px;
+            color: #d14;
+            background: #faf9f9;
+            border: 1px solid #ebeaea;
+            border-radius: 1px;
+        }
+    </style>
+    <style>
+        pre {
+            line-height: 125%;
+        }
+
+        td.linenos pre {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        td.linenos pre.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .codehilite .hll {
+            background-color: #ffffcc
+        }
+
+        .codehilite {
+            background: rgb(248, 248, 248);
+        }
+
+        .codehilite .c {
+            color: #177500
+        }
+
+        .codehilite .err {
+            color: #000000
+        }
+
+        .codehilite .k {
+            color: #A90D91
+        }
+
+        .codehilite .l {
+            color: #1C01CE
+        }
+
+        .codehilite .n {
+            color: #000000
+        }
+
+        .codehilite .o {
+            color: #000000
+        }
+
+        .codehilite .ch {
+            color: #177500
+        }
+
+        .codehilite .cm {
+            color: #177500
+        }
+
+        .codehilite .cp {
+            color: #633820
+        }
+
+        .codehilite .cpf {
+            color: #177500
+        }
+
+        .codehilite .c1 {
+            color: #177500
+        }
+
+        .codehilite .cs {
+            color: #177500
+        }
+
+        .codehilite .kc {
+            color: #A90D91
+        }
+
+        .codehilite .kd {
+            color: #A90D91
+        }
+
+        .codehilite .kn {
+            color: #A90D91
+        }
+
+        .codehilite .kp {
+            color: #A90D91
+        }
+
+        .codehilite .kr {
+            color: #A90D91
+        }
+
+        .codehilite .kt {
+            color: #A90D91
+        }
+
+        .codehilite .ld {
+            color: #1C01CE
+        }
+
+        .codehilite .m {
+            color: #1C01CE
+        }
+
+        .codehilite .s {
+            color: #C41A16
+        }
+
+        .codehilite .na {
+            color: #836C28
+        }
+
+        .codehilite .nb {
+            color: #A90D91
+        }
+
+        .codehilite .nc {
+            color: #3F6E75
+        }
+
+        .codehilite .no {
+            color: #000000
+        }
+
+        .codehilite .nd {
+            color: #000000
+        }
+
+        .codehilite .ni {
+            color: #000000
+        }
+
+        .codehilite .ne {
+            color: #000000
+        }
+
+        .codehilite .nf {
+            color: #000000
+        }
+
+        .codehilite .nl {
+            color: #000000
+        }
+
+        .codehilite .nn {
+            color: #000000
+        }
+
+        .codehilite .nx {
+            color: #000000
+        }
+
+        .codehilite .py {
+            color: #000000
+        }
+
+        .codehilite .nt {
+            color: #000000
+        }
+
+        .codehilite .nv {
+            color: #000000
+        }
+
+        .codehilite .ow {
+            color: #000000
+        }
+
+        .codehilite .mb {
+            color: #1C01CE
+        }
+
+        .codehilite .mf {
+            color: #1C01CE
+        }
+
+        .codehilite .mh {
+            color: #1C01CE
+        }
+
+        .codehilite .mi {
+            color: #1C01CE
+        }
+
+        .codehilite .mo {
+            color: #1C01CE
+        }
+
+        .codehilite .sa {
+            color: #C41A16
+        }
+
+        .codehilite .sb {
+            color: #C41A16
+        }
+
+        .codehilite .sc {
+            color: #2300CE
+        }
+
+        .codehilite .dl {
+            color: #C41A16
+        }
+
+        .codehilite .sd {
+            color: #C41A16
+        }
+
+        .codehilite .s2 {
+            color: #C41A16
+        }
+
+        .codehilite .se {
+            color: #C41A16
+        }
+
+        .codehilite .sh {
+            color: #C41A16
+        }
+
+        .codehilite .si {
+            color: #C41A16
+        }
+
+        .codehilite .sx {
+            color: #C41A16
+        }
+
+        .codehilite .sr {
+            color: #C41A16
+        }
+
+        .codehilite .s1 {
+            color: #C41A16
+        }
+
+        .codehilite .ss {
+            color: #C41A16
+        }
+
+        .codehilite .bp {
+            color: #5B269A
+        }
+
+        .codehilite .fm {
+            color: #000000
+        }
+
+        .codehilite .vc {
+            color: #000000
+        }
+
+        .codehilite .vg {
+            color: #000000
+        }
+
+        .codehilite .vi {
+            color: #000000
+        }
+
+        .codehilite .vm {
+            color: #000000
+        }
+
+        .codehilite .il {
+            color: #1C01CE
+        }
+    </style>
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zorox.me/feed.xml">
+
+    
+
+    <style>
+        body {
+            margin: 10px 4%;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+
+        ul {
+            margin: 1.6em 0;
+            padding: 0 0 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a:visited {
+            color: #50c;
+        }
+
+        @media screen and (min-width: 900px) {
+            img {
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="/">..</a>
+    <br>
+
+
+<main>
+    
+    <article>
+        <h1>迷之操作｜Django版静态Note生成器</h1>
+        <h2>Powered by Django</h2>
+<p>正如这句话而言，目前这个网站是用Django来搭建的，至于当初为什么要选择Django，可能是因为它作为最流行的Web框架之一，开发迅速，以及自带的admin管理，可以迅速成型一个小型站点，YYDS。</p>
+<h2>Why change</h2>
+<p>最初这个网站是部署在HK的一个VPS上的，配置也是最低配置，解析是套了一层CF，所以造成国内访问非常慢。不过也可以忍受，就没在这上面折腾。按理说这种网站是用来写的，但我好像不务正业的折腾起来了页面，每换一种风格，用不了多久就觉得看着不舒服，于是又重新改了一套页面，于是又重复于此。</p>
+<p>前段时间正好赶上各大云厂商双11做活动，于是在结束的最后一天在良心云上薅了一台国内的VPS，配置要比之前的好一点，而且在国内速度跟之前比也是起飞一般的速度。</p>
+<p>在迁移项目的时候突然想到，现在的数据都是在当前主机上的，万一哪一天服务器忘记续费的话，等到期的时候数据岂不是就全丢了，要是把数据全上传到Git，这样不就不用担心了，而且切换服务器的时候，直接把项目拉下来直接就能跑，就像Page服务一样，那岂不是妙哉。</p>
+<h2>Ready to go</h2>
+<p><strong>切换数据库从MySQL到SqlLite</strong></p>
+<p>因为SqlLite数据库是一个本地文件数据库，对于这种小型站点来说，十分便携方便，而且还可以直接上传到Git，所以就把数据全导入到这个数据库里边了。</p>
+<p><strong>全站静态化</strong></p>
+<p>首先统计网站的页面都有哪些，每个页面的路由都是什么，通过这些可以组织静态网页存放的目录结构，而且这些在之后的Nginx配置中也十分重要。</p>
+<p>比如我的文章路由为<code>https://itsso.cool/blog/django-staticize.html</code>，那么文章 <strong>django-staticize.html</strong>就应该放在静态文件根目录的 <strong>blog</strong>目录下。</p>
+<p>由于平时写笔记喜欢在Typora上写完之后，在把文章源码复制到在线的编辑器内，再保存上传发布，同时笔记文件也会同时上传到Github以做备份。但是这样就会存在一个问题，假入想要修改其中某一篇内容的话，重复上面的步骤，实在繁琐，要是把笔记文件连同静态文件在项目部署的时候一起打包发布就好了。</p>
+<p>所以就开始改造模型，修改文章内容字段为<strong>FileField</strong>，将笔记文件的相对路径保存到本地数据库内，每次写完就直接把文件上传。</p>
+<p>在构建静态文件的时候，数据来源从本地保存的文件来读取，这样一来既可以将笔记备份，同时在修改内容的时候也可以极大的缩减上传步骤。</p>
+<p><strong>给Typora配置专属图片上传服务器</strong></p>
+<p>在写笔记的时候难免会有一些图片，在上传这些图片的时候就会比较麻烦，因为Typora里边文件存放的只是一个当前主机的绝对路径，直接将笔记发布到线上的时候，图片会因为路径的问题加载不出来。此时就需要将图片保存到一个公网可以访问的一个图床内。</p>
+<p>好多人的做法是将自己的图片上传到微博、知乎、csdn等一些知名网站上，然后再将这些图片链接插入到自己的笔记内。这样做虽然是很方便快速，但是也会存在一些问题，就比如微博在某一天，突然给自己的链接加上了防盗链，导致了所有的图片在自己以外的网站不能继续使用。</p>
+<p>另外的像GitHub/Gitee Page服务，也可以将自己的图片上传到他们的服务器，但是据说会存在不稳定的情况，想了想还是算了。</p>
+<p>自己的东西掌握在自己手里才踏实，于是就自己搞了一个专属于自己的图床服务，这次倒是没有选择Django，而且选择了更合适轻量化的Flask。</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># -*- coding: UTF-8 -*-</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">markupsafe</span> <span class="kn">import</span> <span class="n">escape</span>
+<span class="kn">from</span> <span class="nn">werkzeug.utils</span> <span class="kn">import</span> <span class="n">secure_filename</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">env_path</span> <span class="o">=</span> <span class="s1">&#39;.env&#39;</span>
+<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="n">env_path</span><span class="p">)</span>
+
+<span class="n">STATIC_FOLDER</span> <span class="o">=</span> <span class="s2">&quot;images&quot;</span>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s2">&quot;/img/&quot;</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="n">STATIC_FOLDER</span><span class="p">,</span> <span class="n">static_url_path</span><span class="o">=</span><span class="n">STATIC_URL</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">STATIC_FOLDER</span>
+<span class="n">basedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<span class="n">ALLOWED_EXTENSIONS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;txt&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;xls&#39;</span><span class="p">,</span> <span class="s1">&#39;JPG&#39;</span><span class="p">,</span> <span class="s1">&#39;PNG&#39;</span><span class="p">,</span> <span class="s1">&#39;xlsx&#39;</span><span class="p">,</span> <span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="s1">&#39;GIF&#39;</span><span class="p">}</span>
+
+<span class="n">HOSTNAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HOSTNAME&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># 用于判断文件后缀</span>
+<span class="k">def</span> <span class="nf">allowed_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">filename</span> <span class="ow">and</span> <span class="n">filename</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">ALLOWED_EXTENSIONS</span>
+
+
+<span class="c1"># 上传文件</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/api/upload&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">],</span> <span class="n">strict_slashes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">api_upload</span><span class="p">():</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;access_token&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot; &quot;</span>
+    <span class="k">if</span> <span class="n">access_token</span> <span class="o">!=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ACCESS_TOKEN&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="mi">403</span>
+
+    <span class="n">time_path</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y/%m/&quot;</span><span class="p">)</span>
+    <span class="n">file_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">],</span> <span class="n">time_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">file_dir</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span>  <span class="c1"># 从表单的file字段获取文件，myfile为该表单的name值</span>
+    <span class="k">if</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">allowed_file</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">filename</span><span class="p">):</span>  <span class="c1"># 判断是否是允许上传的文件类型</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">secure_filename</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">ext</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 获取文件后缀</span>
+        <span class="n">ran_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+        <span class="n">new_filename</span> <span class="o">=</span> <span class="n">ran_str</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span>  <span class="c1"># 修改了上传的文件名</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dir</span><span class="p">,</span> <span class="n">new_filename</span><span class="p">))</span>  <span class="c1"># 保存文件到upload目录</span>
+        <span class="k">return</span> <span class="n">HOSTNAME</span> <span class="o">+</span> <span class="n">STATIC_URL</span> <span class="o">+</span> <span class="n">time_path</span> <span class="o">+</span> <span class="n">escape</span><span class="p">(</span><span class="n">new_filename</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;不支持的文件格式！&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>仅需这些代码就可以搭建一个轻量的图片上传服务器，Flask真香～</p>
+<p>接下来就是配置Typora，在图片复制进来的时候自动上传到服务器</p>
+<p>在Typora→Preferences→Image→Image Uploader选择<strong>Custom Command</strong>，同时在When Insert选择<strong>Upload image</strong></p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/kwhpUo4f.png" src="https://static.19961002.xyz/img/2022/kwhpUo4f.png" /></div>
+</p>
+<p>部署到服务器，接下来我们选择使用脚本来上传，那么就需要一个脚本来对接我们的图片服务器</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># 各类配置信息</span>
+<span class="nv">base_url</span><span class="o">=</span><span class="s2">&quot;https://img.itsso.cool/api/upload/&quot;</span>
+<span class="nv">access_token</span><span class="o">=</span><span class="s2">&quot;xxxxxxxxxx&quot;</span>
+
+<span class="c1"># 上传图片</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+    curl -POST <span class="nv">$base_url</span> -H <span class="s2">&quot;Content-Type:multipart/form-data&quot;</span> -F <span class="s2">&quot;file=@</span><span class="nv">$i</span><span class="s2">&quot;</span> -F <span class="s2">&quot;access_token=</span><span class="nv">$access_token</span><span class="s2">&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+
+<p>点击Test Uploader就可以测试一下我们脚本是否可以正常上传</p>
+<p><img src="https://static.19961002.xyz/img/2022/swQeFOjS.png" alt="swQeFOjS" style="zoom:25%;" /></p>
+<p>现在来看一下效果如何，复制一张图片到Typora。</p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/LAbunMRk.gif" src="https://static.19961002.xyz/img/2022/LAbunMRk.gif" /></div>
+</p>
+<p><strong>配置WebHook让远程服务器自动拉取更新代码</strong></p>
+<p>所谓webhook，就是用户可以自定义一种回调函数，通过这种回调函数来改变web应用的行为，这些回调函数可以是web应用的开发者，也可以是第三方用户，并且与原始的web应用没有关联。</p>
+<p>这里采用的是Flask搭建一个webhook服务，并通过该服务触发脚本来完成整个流程操作</p>
+<p>首先在GitHub上开通webhook，并添加secret，选择settings→webhooks</p>
+<p><img src="https://static.19961002.xyz/img/2022/gWxHhzsb.png" alt="gWxHhzsb" style="zoom:25%;" /></p>
+<p>使用Flask搭建一个简易的webhook服务，其中要注意对请求来源做验证，GitHub官方已经提供了验证方法</p>
+<blockquote>
+<p><strong>Note:</strong> For backward-compatibility, we also include the <code>X-Hub-Signature</code> header that is generated using the SHA-1 hash function. If possible, we recommend that you use the <code>X-Hub-Signature-256</code> header for improved security. The example below demonstrates using the <code>X-Hub-Signature-256</code> header.</p>
+</blockquote>
+<p>接下来就是完整的代码：<strong>webhook.py</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">hmac</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="c1"># github中webhooks的secret</span>
+<span class="n">github_secret</span> <span class="o">=</span> <span class="s1">&#39;xxxxxxxx&#39;</span>
+
+<span class="k">def</span> <span class="nf">encryption</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">github_secret</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">digestmod</span><span class="o">=</span><span class="s1">&#39;sha256&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">post_data</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    github加密是将post提交的data和WebHooks的secret通过hmac的sha256加密，放到HTTP headers的</span>
+<span class="sd">    X-Hub-Signature256参数中</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">post_data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">encryption</span><span class="p">(</span><span class="n">post_data</span><span class="p">)</span>
+    <span class="c1"># 认证签名是否有效</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;X-Hub-Signature-256&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">signature</span> <span class="o">!=</span> <span class="n">token</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;token认证无效&quot;</span><span class="p">,</span> <span class="mi">401</span>
+    <span class="c1"># 运行shell脚本，更新代码</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="s2">&quot;auto_deploy.sh&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">})</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>要触发的脚本文件：<strong>auto_deploy.sh</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s1">&#39;--------Git fetch------------&#39;</span>
+git fetch
+<span class="nb">echo</span> <span class="s1">&#39;--------Git merge------------&#39;</span>
+git merge
+<span class="nb">echo</span> <span class="s1">&#39;-----Already up-to-date------&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;----- reload nginx-----&#39;</span>
+nginx -s reload
+</code></pre></div>
+
+
+<p>接下来将webhook服务部署好，在项目文件夹下push代码的时候，就会触发该hook，在远程服务器自动将更新的代码拉取下来。</p>
+<p>到此为止，用了奇奇怪怪的方法实现了自己奇奇怪怪的想法。</p>
+<p>其实现在已经有很多很成熟的静态博客生成器，比如Hugo，Jekyll以及Hexo等等，以前搞过一次，后来网站没了，再加上觉得上传方式并不是那么Geek，也有可能是我没找到一些方便的方法，就直接放弃了。</p>
+<p>后来重新搭建网站的时候，就打算干脆直接搭建一个动态的网站，至少很多东西要比静态的灵活方便。</p>
+<p>至于现在为什么又变成这样了，那可能是</p>
+<p>脑子抽风了吧。</p>
+        <ul>
+            <li>2021年12月26日</li>
+            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
+            
+                <li> 标签:&nbsp;
+                    
+                        <a href="/tag/Django.html">Django</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/生成器.html">生成器</a>&nbsp;&nbsp;
+                    
+                </li>
+            
+        </ul>
+    </article>
+
+</main>
+
+
+    <footer>
+    &copy; 2022 ZOROX · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
+    <a href="/links.html">Links</a>&nbsp;&nbsp;·
+    <a href="/feed.xml">RSS</a>
+    <br>
+    <br>
+</footer>
+
+
+
+
+</body>
+</html>

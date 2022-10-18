@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <title>Fulltext retrieval with whoosh and Jieba | ZORO.X</title>
+    <meta name="description" content="## Environment dependencies
+
+```python
+pip install django-haystack
+pip install jieba
+pip install whoosh
+```
+## Environment configuration
+Add this configuration in..."/>
+    <meta name="keywords" content="jieba,whoosh,技术笔记"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Fulltext retrieval with whoosh and Jieba"/>
+    <meta property="og:description" content="## Environment dependencies
+
+```python
+pip install django-haystack
+pip install jieba
+pip install whoosh
+```
+## Environment configuration
+Add this configuration in..."/>
+    <meta property="og:url" content="https://zorox.me/post/2021/fulltext-retrieval-with-whoosh-and-jieba.html">
+    <meta property="og:site_name" content="ZORO.X">
+    <meta property="article:tag" content="jieba,whoosh,技术笔记">
+    <meta property="article:category" content="技术">
+    <meta property="article:date" content="2021-03-22">
+
+    <link rel="canonical" href="https://zorox.me/post/2021/fulltext-retrieval-with-whoosh-and-jieba.html">
+    <style>
+        blockquote {
+            padding: 0 0 0 15px;
+            margin: 0 10px 0 0;
+            border-left: 2px solid #615b5b;
+        }
+
+        pre {
+            border: 1px solid #ccc;
+            padding: 1em;
+            overflow-x: auto;
+            background: #f7f7f7;
+        }
+
+        p code {
+            padding: 1px 4px;
+            color: #d14;
+            background: #faf9f9;
+            border: 1px solid #ebeaea;
+            border-radius: 1px;
+        }
+    </style>
+    <style>
+        pre {
+            line-height: 125%;
+        }
+
+        td.linenos pre {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        td.linenos pre.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .codehilite .hll {
+            background-color: #ffffcc
+        }
+
+        .codehilite {
+            background: rgb(248, 248, 248);
+        }
+
+        .codehilite .c {
+            color: #177500
+        }
+
+        .codehilite .err {
+            color: #000000
+        }
+
+        .codehilite .k {
+            color: #A90D91
+        }
+
+        .codehilite .l {
+            color: #1C01CE
+        }
+
+        .codehilite .n {
+            color: #000000
+        }
+
+        .codehilite .o {
+            color: #000000
+        }
+
+        .codehilite .ch {
+            color: #177500
+        }
+
+        .codehilite .cm {
+            color: #177500
+        }
+
+        .codehilite .cp {
+            color: #633820
+        }
+
+        .codehilite .cpf {
+            color: #177500
+        }
+
+        .codehilite .c1 {
+            color: #177500
+        }
+
+        .codehilite .cs {
+            color: #177500
+        }
+
+        .codehilite .kc {
+            color: #A90D91
+        }
+
+        .codehilite .kd {
+            color: #A90D91
+        }
+
+        .codehilite .kn {
+            color: #A90D91
+        }
+
+        .codehilite .kp {
+            color: #A90D91
+        }
+
+        .codehilite .kr {
+            color: #A90D91
+        }
+
+        .codehilite .kt {
+            color: #A90D91
+        }
+
+        .codehilite .ld {
+            color: #1C01CE
+        }
+
+        .codehilite .m {
+            color: #1C01CE
+        }
+
+        .codehilite .s {
+            color: #C41A16
+        }
+
+        .codehilite .na {
+            color: #836C28
+        }
+
+        .codehilite .nb {
+            color: #A90D91
+        }
+
+        .codehilite .nc {
+            color: #3F6E75
+        }
+
+        .codehilite .no {
+            color: #000000
+        }
+
+        .codehilite .nd {
+            color: #000000
+        }
+
+        .codehilite .ni {
+            color: #000000
+        }
+
+        .codehilite .ne {
+            color: #000000
+        }
+
+        .codehilite .nf {
+            color: #000000
+        }
+
+        .codehilite .nl {
+            color: #000000
+        }
+
+        .codehilite .nn {
+            color: #000000
+        }
+
+        .codehilite .nx {
+            color: #000000
+        }
+
+        .codehilite .py {
+            color: #000000
+        }
+
+        .codehilite .nt {
+            color: #000000
+        }
+
+        .codehilite .nv {
+            color: #000000
+        }
+
+        .codehilite .ow {
+            color: #000000
+        }
+
+        .codehilite .mb {
+            color: #1C01CE
+        }
+
+        .codehilite .mf {
+            color: #1C01CE
+        }
+
+        .codehilite .mh {
+            color: #1C01CE
+        }
+
+        .codehilite .mi {
+            color: #1C01CE
+        }
+
+        .codehilite .mo {
+            color: #1C01CE
+        }
+
+        .codehilite .sa {
+            color: #C41A16
+        }
+
+        .codehilite .sb {
+            color: #C41A16
+        }
+
+        .codehilite .sc {
+            color: #2300CE
+        }
+
+        .codehilite .dl {
+            color: #C41A16
+        }
+
+        .codehilite .sd {
+            color: #C41A16
+        }
+
+        .codehilite .s2 {
+            color: #C41A16
+        }
+
+        .codehilite .se {
+            color: #C41A16
+        }
+
+        .codehilite .sh {
+            color: #C41A16
+        }
+
+        .codehilite .si {
+            color: #C41A16
+        }
+
+        .codehilite .sx {
+            color: #C41A16
+        }
+
+        .codehilite .sr {
+            color: #C41A16
+        }
+
+        .codehilite .s1 {
+            color: #C41A16
+        }
+
+        .codehilite .ss {
+            color: #C41A16
+        }
+
+        .codehilite .bp {
+            color: #5B269A
+        }
+
+        .codehilite .fm {
+            color: #000000
+        }
+
+        .codehilite .vc {
+            color: #000000
+        }
+
+        .codehilite .vg {
+            color: #000000
+        }
+
+        .codehilite .vi {
+            color: #000000
+        }
+
+        .codehilite .vm {
+            color: #000000
+        }
+
+        .codehilite .il {
+            color: #1C01CE
+        }
+    </style>
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zorox.me/feed.xml">
+
+    
+
+    <style>
+        body {
+            margin: 10px 4%;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+
+        ul {
+            margin: 1.6em 0;
+            padding: 0 0 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a:visited {
+            color: #50c;
+        }
+
+        @media screen and (min-width: 900px) {
+            img {
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="/">..</a>
+    <br>
+
+
+<main>
+    
+    <article>
+        <h1>Fulltext retrieval with whoosh and Jieba</h1>
+        <h2>Environment dependencies</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">haystack</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">jieba</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">whoosh</span>
+</code></pre></div>
+
+
+<h2>Environment configuration</h2>
+<p>Add this configuration in <code>settings.py</code></p>
+<div class="codehilite"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;haystack&#39;</span><span class="p">,</span> <span class="c1">#register fulltext searching framework</span>
+    <span class="p">)</span>
+
+<span class="c1">#the configuration of fulltext searching</span>
+<span class="n">HAYSTACK_CONNECTIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1"># use the whoosh search engine</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;haystack.backends.whoosh_backend.WhooshEngine&#39;</span><span class="p">,</span>
+        <span class="c1"># Specifies the default path of the index files generated by the index data corresponding to the keyword. When using the custom index file, write the custom file path here.</span>
+        <span class="s1">&#39;PATH&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span><span class="s1">&#39;whoosh_index&#39;</span><span class="p">),</span> <span class="c1">#  the file path of the index files.</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Auto generate indexes when add, change and delete data in database tables.</span>
+<span class="n">HAYSTACK_SIGNAL_PROCESSOR</span> <span class="o">=</span> <span class="s1">&#39;haystack.signals.RealtimeSignalProcessor&#39;</span>
+</code></pre></div>
+
+
+<p>Create <code>search_indexs.py</code> in applications which need support searching.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">haystack</span> <span class="kn">import</span> <span class="n">indexes</span>
+<span class="kn">from</span> <span class="nn">apps.blog.models</span> <span class="kn">import</span> <span class="n">Article</span>
+
+
+<span class="k">class</span> <span class="nc">ArticleIndex</span><span class="p">(</span><span class="n">indexes</span><span class="o">.</span><span class="n">SearchIndex</span><span class="p">,</span> <span class="n">indexes</span><span class="o">.</span><span class="n">Indexable</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">indexes</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">document</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_template</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Article</span>
+
+    <span class="k">def</span> <span class="nf">index_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>In the <code>templates</code> folder of the project, create folder structure like <code>search/indexes/article/article_text.txt</code>, where <code>article</code> is the lowercased model name.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Specifies which fields in the table to index</span>
+<span class="p">{{</span> <span class="nb">object</span><span class="o">.</span><span class="n">title</span> <span class="p">}}</span>  <span class="c1"># index Title field</span>
+<span class="p">{{</span> <span class="nb">object</span><span class="o">.</span><span class="n">body</span> <span class="p">}}</span>   <span class="c1"># index Body field</span>
+</code></pre></div>
+
+
+<p>Add search route</p>
+<div class="codehilite"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;haystack.urls&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;search&#39;</span><span class="p">),</span>
+</code></pre></div>
+
+
+<p>Add search form in the template.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/search&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span>
+            {% csrf_token %}
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;searchAria&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;searching()&quot;</span> <span class="na">onblur</span><span class="o">=</span><span class="s">&quot;offsearch()&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;searchInput&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: none; border: none;&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Search&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: none; display: none;&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;submitInput&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;javascript:void(0);&quot;</span>  <span class="na">class</span><span class="o">=</span><span class="s">&quot;navPlugs&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fa fa-search&quot;</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+
+
+<p>tips: there must be an input tag whose attribute named <strong>name</strong> equals <strong>q</strong> in the form.</p>
+<p>The following is the page of search results.</p>
+<div class="codehilite"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;jupe main-body&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-list&quot;</span><span class="p">&gt;</span>
+            {% if query and page.object_list %}
+                {% for result in page.object_list %}
+                    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-item&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-title&quot;</span>
+                           <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ result.object.get_absolute_url }}&quot;</span>
+                           <span class="na">title</span><span class="o">=</span><span class="s">&quot;{{ result.object.title }}&quot;</span><span class="p">&gt;</span>{{ result.object.title | truncatesmart:34 }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-time&quot;</span><span class="p">&gt;</span>{{ result.object.create_time | date:&quot;Y.m.d&quot; }}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                {% empty %}
+                    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Not found<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                {% endfor %}
+
+                {% if is_paginated %}{% load_pages %}{% endif %}
+            {% else %}
+                <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Found nothing. Try to search by another keyword<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            {% endif %}
+
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+
+<p>Build index</p>
+<div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">rebuild_index</span>
+</code></pre></div>
+
+
+<h2>Configure Jieba Chinese Search</h2>
+<p>Because the default engine of whoosh doesn't support Chinese, u need to improve it.</p>
+<p>Copy the default engine file <code>\site-packages\haystack\backends\whoosh_backend.py</code> to the project folder and rename it to <code>whoosh_cn_backend</code>.</p>
+<p>Open it and import Jieba Chinese analyzer <code>from jieba.analyse import ChineseAnalyzer</code>.</p>
+<p>Replace <code>StemmingAnalyzer</code> in the file with <code>ChineseAnalyzer</code></p>
+<p>Change the file path of search engine to custom path in <code>settings.py</code></p>
+<p><code>'ENGINE': 'apps.search.whoosh_cn_backend.WhooshEngine'</code></p>
+<p>Rebuild index <code>python manage.py rebuild_index</code></p>
+<p>It supports Chinese search now.</p>
+        <ul>
+            <li>2021年03月22日</li>
+            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
+            
+                <li> 标签:&nbsp;
+                    
+                        <a href="/tag/jieba.html">jieba</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/whoosh.html">whoosh</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;&nbsp;
+                    
+                </li>
+            
+        </ul>
+    </article>
+
+</main>
+
+
+    <footer>
+    &copy; 2022 ZOROX · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
+    <a href="/links.html">Links</a>&nbsp;&nbsp;·
+    <a href="/feed.xml">RSS</a>
+    <br>
+    <br>
+</footer>
+
+
+
+
+</body>
+</html>

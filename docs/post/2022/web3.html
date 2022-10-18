@@ -1,0 +1,438 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <title>理想主义下的web3 | ZORO.X</title>
+    <meta name="description" content="前些日子没事了解到了web3，甚至还有很多人扬言要辍学然后all in web3，不知道他们为何如此疯狂，猜测他们可能为了实现财富自由而选择赌一把，或者是愿意义无反顾的投入到这个在目前看来还是理想主义的虚拟世界中。我想还是前者应该更多一点吧。
+
+
+
+##..."/>
+    <meta name="keywords" content="web3,炒币,理想主义,去中心化"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="理想主义下的web3"/>
+    <meta property="og:description" content="前些日子没事了解到了web3，甚至还有很多人扬言要辍学然后all in web3，不知道他们为何如此疯狂，猜测他们可能为了实现财富自由而选择赌一把，或者是愿意义无反顾的投入到这个在目前看来还是理想主义的虚拟世界中。我想还是前者应该更多一点吧。
+
+
+
+##..."/>
+    <meta property="og:url" content="https://zorox.me/post/2022/web3.html">
+    <meta property="og:site_name" content="ZORO.X">
+    <meta property="article:tag" content="web3,炒币,理想主义,去中心化">
+    <meta property="article:category" content="扯淡集">
+    <meta property="article:date" content="2022-06-08">
+
+    <link rel="canonical" href="https://zorox.me/post/2022/web3.html">
+    <style>
+        blockquote {
+            padding: 0 0 0 15px;
+            margin: 0 10px 0 0;
+            border-left: 2px solid #615b5b;
+        }
+
+        pre {
+            border: 1px solid #ccc;
+            padding: 1em;
+            overflow-x: auto;
+            background: #f7f7f7;
+        }
+
+        p code {
+            padding: 1px 4px;
+            color: #d14;
+            background: #faf9f9;
+            border: 1px solid #ebeaea;
+            border-radius: 1px;
+        }
+    </style>
+    <style>
+        pre {
+            line-height: 125%;
+        }
+
+        td.linenos pre {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        td.linenos pre.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .codehilite .hll {
+            background-color: #ffffcc
+        }
+
+        .codehilite {
+            background: rgb(248, 248, 248);
+        }
+
+        .codehilite .c {
+            color: #177500
+        }
+
+        .codehilite .err {
+            color: #000000
+        }
+
+        .codehilite .k {
+            color: #A90D91
+        }
+
+        .codehilite .l {
+            color: #1C01CE
+        }
+
+        .codehilite .n {
+            color: #000000
+        }
+
+        .codehilite .o {
+            color: #000000
+        }
+
+        .codehilite .ch {
+            color: #177500
+        }
+
+        .codehilite .cm {
+            color: #177500
+        }
+
+        .codehilite .cp {
+            color: #633820
+        }
+
+        .codehilite .cpf {
+            color: #177500
+        }
+
+        .codehilite .c1 {
+            color: #177500
+        }
+
+        .codehilite .cs {
+            color: #177500
+        }
+
+        .codehilite .kc {
+            color: #A90D91
+        }
+
+        .codehilite .kd {
+            color: #A90D91
+        }
+
+        .codehilite .kn {
+            color: #A90D91
+        }
+
+        .codehilite .kp {
+            color: #A90D91
+        }
+
+        .codehilite .kr {
+            color: #A90D91
+        }
+
+        .codehilite .kt {
+            color: #A90D91
+        }
+
+        .codehilite .ld {
+            color: #1C01CE
+        }
+
+        .codehilite .m {
+            color: #1C01CE
+        }
+
+        .codehilite .s {
+            color: #C41A16
+        }
+
+        .codehilite .na {
+            color: #836C28
+        }
+
+        .codehilite .nb {
+            color: #A90D91
+        }
+
+        .codehilite .nc {
+            color: #3F6E75
+        }
+
+        .codehilite .no {
+            color: #000000
+        }
+
+        .codehilite .nd {
+            color: #000000
+        }
+
+        .codehilite .ni {
+            color: #000000
+        }
+
+        .codehilite .ne {
+            color: #000000
+        }
+
+        .codehilite .nf {
+            color: #000000
+        }
+
+        .codehilite .nl {
+            color: #000000
+        }
+
+        .codehilite .nn {
+            color: #000000
+        }
+
+        .codehilite .nx {
+            color: #000000
+        }
+
+        .codehilite .py {
+            color: #000000
+        }
+
+        .codehilite .nt {
+            color: #000000
+        }
+
+        .codehilite .nv {
+            color: #000000
+        }
+
+        .codehilite .ow {
+            color: #000000
+        }
+
+        .codehilite .mb {
+            color: #1C01CE
+        }
+
+        .codehilite .mf {
+            color: #1C01CE
+        }
+
+        .codehilite .mh {
+            color: #1C01CE
+        }
+
+        .codehilite .mi {
+            color: #1C01CE
+        }
+
+        .codehilite .mo {
+            color: #1C01CE
+        }
+
+        .codehilite .sa {
+            color: #C41A16
+        }
+
+        .codehilite .sb {
+            color: #C41A16
+        }
+
+        .codehilite .sc {
+            color: #2300CE
+        }
+
+        .codehilite .dl {
+            color: #C41A16
+        }
+
+        .codehilite .sd {
+            color: #C41A16
+        }
+
+        .codehilite .s2 {
+            color: #C41A16
+        }
+
+        .codehilite .se {
+            color: #C41A16
+        }
+
+        .codehilite .sh {
+            color: #C41A16
+        }
+
+        .codehilite .si {
+            color: #C41A16
+        }
+
+        .codehilite .sx {
+            color: #C41A16
+        }
+
+        .codehilite .sr {
+            color: #C41A16
+        }
+
+        .codehilite .s1 {
+            color: #C41A16
+        }
+
+        .codehilite .ss {
+            color: #C41A16
+        }
+
+        .codehilite .bp {
+            color: #5B269A
+        }
+
+        .codehilite .fm {
+            color: #000000
+        }
+
+        .codehilite .vc {
+            color: #000000
+        }
+
+        .codehilite .vg {
+            color: #000000
+        }
+
+        .codehilite .vi {
+            color: #000000
+        }
+
+        .codehilite .vm {
+            color: #000000
+        }
+
+        .codehilite .il {
+            color: #1C01CE
+        }
+    </style>
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zorox.me/feed.xml">
+
+    
+
+    <style>
+        body {
+            margin: 10px 4%;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+
+        ul {
+            margin: 1.6em 0;
+            padding: 0 0 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a:visited {
+            color: #50c;
+        }
+
+        @media screen and (min-width: 900px) {
+            img {
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="/">..</a>
+    <br>
+
+
+<main>
+    
+    <article>
+        <h1>理想主义下的web3</h1>
+        <p>前些日子没事了解到了web3，甚至还有很多人扬言要辍学然后all in web3，不知道他们为何如此疯狂，猜测他们可能为了实现财富自由而选择赌一把，或者是愿意义无反顾的投入到这个在目前看来还是理想主义的虚拟世界中。我想还是前者应该更多一点吧。</p>
+<h2>web2存在的问题</h2>
+<p>说到web3，那就不可避免的要谈论web2。在web2时代，人们活跃在诸如微博、知乎之类的大型平台上，将自己的想法发布在平台上，但是这条内容仍然不是归属个人所有，平台可以随意删除这条内容或者封禁自己的账号。</p>
+<p>平台垄断让言论自由似乎成了笑话。</p>
+<p>再比如通过支付宝或者微信转账，我们在手机里输入的金额，只不过是他们数据库里的一条记录，所有的交易都要通过支付宝公司的银行账户，此时支付宝决定着你的财产，当账号被冻结时，财产也随之被冻结。</p>
+<p>诸如此类的还有很多问题，如大数据收割、信息贩卖等。</p>
+<p>俗话说，压迫之下必有革命，web3就是在这个背景下衍生出来，用来对抗web2时代的这些巨头的垄断霸权，人们从那些巨头手里夺回自己所有物的完全控制权，不再受其控制。</p>
+<h2>web3该怎么定义</h2>
+<p>“<strong>去中心化</strong>”是web3发展的灵魂，因其自由和平等的精神令人心驰神往。web3发展至今，仍然还是在非常早期的阶段，人们一听web3就觉得是区块链是炒币，是骗局。其实区块链只是web3的一种解决方式而已，至少目前来看是唯一的解决方式。至于虚拟币和web3的关系，那是因为区块链的每一个节点的搭建是需要发放激励代币的，人们通过将自己的电脑搭建成矿机之后，作为区块链中的一块，这条链会为这个用户发放激励代币，用来奖励该用户，不然人们凭什么要贡献自己的计算资源。</p>
+<p>区块链技术当中的智能合约，是Web3.0的一个基石，其宗旨是“<strong>code is law</strong>”，代码即法律、代码即规定，一切规则被写进协议，一旦开启便不可篡改，代码开源、公开透明，接受所有人的检查，同时区块链节点分布式的协同共识，把信任的需求降到最低，人们不需要信任，只需要代码验证即可。</p>
+<p>所以用户发布的信息，也不再将收到平台的这种审查，因为这里没有一个中心化的管理者，或者说人人都是管理者，从而真正实现言论的自由和平等。</p>
+<h2>web3存在的一些问题</h2>
+<p>就先从虚拟币来看，目前有太多投机者和Ponzi以及赌狗，因为人人都可以发币，只要有打着web3的口号，就可以疯狂炒作自己的币种，致使那些想要暴富的人陷入FOMO的情绪当中而倾家荡产。</p>
+<p>其次就是自由必然带来混乱，比如可以在链上发布一些暴力和Pron的内容，然而这些内容是无法篡改和删除，这种混乱又该如何有一个良好的治理，仍然需要继续探索。还有既然是代码组成的世界，那么也必然就会有漏洞，所以就会被“科学家”通过漏洞盗走财产。</p>
+<p>然后就是与现实的割裂，链上的“无政府主义”始终是虚拟世界的，当肉身处于一个现实世界中，当有关机构一声令下，现实中的人又哪有抵抗的能力呢。</p>
+<h2>web3的未来会是什么样</h2>
+<p>首先web3无疑会是一场革命，至于最终会发展成什么样子，还是一团迷雾，需要人们不断探索。</p>
+<p>至少最近几年甚至十几年应该是没有什么大的进展，只是一种乌托邦式的理想主义。</p>
+<p>也许只有在经过混乱、贪婪、疯狂的情绪之后沉淀下来，才会有新的突破，也许那时候已经不是区块链，而是更先进的技术。</p>
+<p>web3的未来就交给时间来验证吧，毕竟时代的车轮总是在向前推进。</p>
+<p>There is no web3 in China.</p>
+        <ul>
+            <li>2022年06月08日</li>
+            <li>分类:&nbsp;&nbsp;<a href="/category/扯淡集.html">扯淡集</a><br></li>
+            
+                <li> 标签:&nbsp;
+                    
+                        <a href="/tag/web3.html">web3</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/炒币.html">炒币</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/理想主义.html">理想主义</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/去中心化.html">去中心化</a>&nbsp;&nbsp;
+                    
+                </li>
+            
+        </ul>
+    </article>
+
+</main>
+
+
+    <footer>
+    &copy; 2022 ZOROX · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
+    <a href="/links.html">Links</a>&nbsp;&nbsp;·
+    <a href="/feed.xml">RSS</a>
+    <br>
+    <br>
+</footer>
+
+
+
+
+</body>
+</html>

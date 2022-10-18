@@ -1,0 +1,674 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <title>MySQL创建用户和配置远程连接 | ZORO.X</title>
+    <meta name="description" content="## 创建远程连接用户
+
+在某些情况下，可能别人需要连接你的数据库进行操作，出于安全考虑，我们需要新建一个用户，让该用户只具有一部分的操作权限操作数据库。
+
+当然如果只有你一个人使用这个数据库的话，也可以跳过这一步，直接选择root用户来操作。
+
+**创建用户**
+
+使用help命令查看如何创建用户
+
+```bash
+help create user
+```
+
+```bash
+Name:..."/>
+    <meta name="keywords" content="MySQL,远程连接"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="MySQL创建用户和配置远程连接"/>
+    <meta property="og:description" content="## 创建远程连接用户
+
+在某些情况下，可能别人需要连接你的数据库进行操作，出于安全考虑，我们需要新建一个用户，让该用户只具有一部分的操作权限操作数据库。
+
+当然如果只有你一个人使用这个数据库的话，也可以跳过这一步，直接选择root用户来操作。
+
+**创建用户**
+
+使用help命令查看如何创建用户
+
+```bash
+help create user
+```
+
+```bash
+Name:..."/>
+    <meta property="og:url" content="https://zorox.me/post/2020/mysql-remote-connection.html">
+    <meta property="og:site_name" content="ZORO.X">
+    <meta property="article:tag" content="MySQL,远程连接">
+    <meta property="article:category" content="技术">
+    <meta property="article:date" content="2020-12-29">
+
+    <link rel="canonical" href="https://zorox.me/post/2020/mysql-remote-connection.html">
+    <style>
+        blockquote {
+            padding: 0 0 0 15px;
+            margin: 0 10px 0 0;
+            border-left: 2px solid #615b5b;
+        }
+
+        pre {
+            border: 1px solid #ccc;
+            padding: 1em;
+            overflow-x: auto;
+            background: #f7f7f7;
+        }
+
+        p code {
+            padding: 1px 4px;
+            color: #d14;
+            background: #faf9f9;
+            border: 1px solid #ebeaea;
+            border-radius: 1px;
+        }
+    </style>
+    <style>
+        pre {
+            line-height: 125%;
+        }
+
+        td.linenos pre {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        td.linenos pre.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .codehilite .hll {
+            background-color: #ffffcc
+        }
+
+        .codehilite {
+            background: rgb(248, 248, 248);
+        }
+
+        .codehilite .c {
+            color: #177500
+        }
+
+        .codehilite .err {
+            color: #000000
+        }
+
+        .codehilite .k {
+            color: #A90D91
+        }
+
+        .codehilite .l {
+            color: #1C01CE
+        }
+
+        .codehilite .n {
+            color: #000000
+        }
+
+        .codehilite .o {
+            color: #000000
+        }
+
+        .codehilite .ch {
+            color: #177500
+        }
+
+        .codehilite .cm {
+            color: #177500
+        }
+
+        .codehilite .cp {
+            color: #633820
+        }
+
+        .codehilite .cpf {
+            color: #177500
+        }
+
+        .codehilite .c1 {
+            color: #177500
+        }
+
+        .codehilite .cs {
+            color: #177500
+        }
+
+        .codehilite .kc {
+            color: #A90D91
+        }
+
+        .codehilite .kd {
+            color: #A90D91
+        }
+
+        .codehilite .kn {
+            color: #A90D91
+        }
+
+        .codehilite .kp {
+            color: #A90D91
+        }
+
+        .codehilite .kr {
+            color: #A90D91
+        }
+
+        .codehilite .kt {
+            color: #A90D91
+        }
+
+        .codehilite .ld {
+            color: #1C01CE
+        }
+
+        .codehilite .m {
+            color: #1C01CE
+        }
+
+        .codehilite .s {
+            color: #C41A16
+        }
+
+        .codehilite .na {
+            color: #836C28
+        }
+
+        .codehilite .nb {
+            color: #A90D91
+        }
+
+        .codehilite .nc {
+            color: #3F6E75
+        }
+
+        .codehilite .no {
+            color: #000000
+        }
+
+        .codehilite .nd {
+            color: #000000
+        }
+
+        .codehilite .ni {
+            color: #000000
+        }
+
+        .codehilite .ne {
+            color: #000000
+        }
+
+        .codehilite .nf {
+            color: #000000
+        }
+
+        .codehilite .nl {
+            color: #000000
+        }
+
+        .codehilite .nn {
+            color: #000000
+        }
+
+        .codehilite .nx {
+            color: #000000
+        }
+
+        .codehilite .py {
+            color: #000000
+        }
+
+        .codehilite .nt {
+            color: #000000
+        }
+
+        .codehilite .nv {
+            color: #000000
+        }
+
+        .codehilite .ow {
+            color: #000000
+        }
+
+        .codehilite .mb {
+            color: #1C01CE
+        }
+
+        .codehilite .mf {
+            color: #1C01CE
+        }
+
+        .codehilite .mh {
+            color: #1C01CE
+        }
+
+        .codehilite .mi {
+            color: #1C01CE
+        }
+
+        .codehilite .mo {
+            color: #1C01CE
+        }
+
+        .codehilite .sa {
+            color: #C41A16
+        }
+
+        .codehilite .sb {
+            color: #C41A16
+        }
+
+        .codehilite .sc {
+            color: #2300CE
+        }
+
+        .codehilite .dl {
+            color: #C41A16
+        }
+
+        .codehilite .sd {
+            color: #C41A16
+        }
+
+        .codehilite .s2 {
+            color: #C41A16
+        }
+
+        .codehilite .se {
+            color: #C41A16
+        }
+
+        .codehilite .sh {
+            color: #C41A16
+        }
+
+        .codehilite .si {
+            color: #C41A16
+        }
+
+        .codehilite .sx {
+            color: #C41A16
+        }
+
+        .codehilite .sr {
+            color: #C41A16
+        }
+
+        .codehilite .s1 {
+            color: #C41A16
+        }
+
+        .codehilite .ss {
+            color: #C41A16
+        }
+
+        .codehilite .bp {
+            color: #5B269A
+        }
+
+        .codehilite .fm {
+            color: #000000
+        }
+
+        .codehilite .vc {
+            color: #000000
+        }
+
+        .codehilite .vg {
+            color: #000000
+        }
+
+        .codehilite .vi {
+            color: #000000
+        }
+
+        .codehilite .vm {
+            color: #000000
+        }
+
+        .codehilite .il {
+            color: #1C01CE
+        }
+    </style>
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zorox.me/feed.xml">
+
+    
+
+    <style>
+        body {
+            margin: 10px 4%;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+
+        ul {
+            margin: 1.6em 0;
+            padding: 0 0 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a:visited {
+            color: #50c;
+        }
+
+        @media screen and (min-width: 900px) {
+            img {
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="/">..</a>
+    <br>
+
+
+<main>
+    
+    <article>
+        <h1>MySQL创建用户和配置远程连接</h1>
+        <h2>创建远程连接用户</h2>
+<p>在某些情况下，可能别人需要连接你的数据库进行操作，出于安全考虑，我们需要新建一个用户，让该用户只具有一部分的操作权限操作数据库。</p>
+<p>当然如果只有你一个人使用这个数据库的话，也可以跳过这一步，直接选择root用户来操作。</p>
+<p><strong>创建用户</strong></p>
+<p>使用help命令查看如何创建用户</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">help</span> create user
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code>Name: <span class="s1">&#39;CREATE USER&#39;</span>
+Description:
+Syntax:
+CREATE USER user_specification
+    <span class="o">[</span>, user_specification<span class="o">]</span> ...
+
+user_specification:
+    user
+    <span class="o">[</span>
+        IDENTIFIED BY <span class="o">[</span>PASSWORD<span class="o">]</span> <span class="s1">&#39;password&#39;</span>
+      <span class="p">|</span> IDENTIFIED WITH auth_plugin <span class="o">[</span>AS <span class="s1">&#39;auth_string&#39;</span><span class="o">]</span>
+    <span class="o">]</span>
+</code></pre></div>
+
+
+<p>根据帮助说明，接下来我们来创建用户</p>
+<div class="codehilite"><pre><span></span><code>create user <span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;localhost&#39;</span> <span class="c1"># 创建一个用户zjc，不需要密码即可登录，但只可以在本机登录</span>
+create user <span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span>   <span class="c1"># 创建一个用户zjc，不需要密码即可登录，可以在任意主机登录</span>
+create user <span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by <span class="s1">&#39;123456&#39;</span>    <span class="c1"># 创建一个用户zjc，登录时需要密码123456才可以登录，会自动将密码加密</span>
+create user <span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by password <span class="s1">&#39;123456&#39;</span> <span class="c1"># 创建一个用户zjc，登录时需要密码123456才可以登录，会将密码明文存储</span>
+</code></pre></div>
+
+
+<p><strong>修改密码</strong></p>
+<p>命令：</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span> password <span class="k">for</span> <span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;host&#39;</span> <span class="o">=</span> PASSWORD<span class="o">(</span><span class="s1">&#39;newpassword&#39;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>查看帮助命令查看详情</p>
+<div class="codehilite"><pre><span></span><code>&gt; <span class="nb">help</span> <span class="nb">set</span> password
+Name: <span class="s1">&#39;SET PASSWORD&#39;</span>
+Description:
+Syntax:
+SET PASSWORD <span class="o">[</span>FOR user<span class="o">]</span> <span class="o">=</span>
+    <span class="o">{</span>
+        PASSWORD<span class="o">(</span><span class="s1">&#39;cleartext password&#39;</span><span class="o">)</span>
+      <span class="p">|</span> OLD_PASSWORD<span class="o">(</span><span class="s1">&#39;cleartext password&#39;</span><span class="o">)</span>
+      <span class="p">|</span> <span class="s1">&#39;encrypted password&#39;</span>
+    <span class="o">}</span>
+</code></pre></div>
+
+
+<p>修改密码：</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span> password <span class="k">for</span> <span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span> <span class="o">=</span> PASSWORD<span class="o">(</span><span class="s2">&quot;654321&quot;</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p><strong>删除用户</strong></p>
+<p>命令：</p>
+<div class="codehilite"><pre><span></span><code>drop user username
+</code></pre></div>
+
+
+<h2>用户授权</h2>
+<p><strong>查看用户目前的权限</strong></p>
+<div class="codehilite"><pre><span></span><code>&gt; show grants <span class="k">for</span> zjc<span class="p">;</span>
++---------------------------------+
+<span class="p">|</span> Grants <span class="k">for</span> zjc@%                <span class="p">|</span>
++---------------------------------+
+<span class="p">|</span> GRANT USAGE ON *.* TO <span class="sb">`</span>zjc<span class="sb">`</span>@<span class="sb">`</span>%<span class="sb">`</span> <span class="p">|</span>
++---------------------------------+
+</code></pre></div>
+
+
+<p>USAGE相当于一个占位符，表示目前zjc用户什么权限都没有，需要我们给他授予权限</p>
+<p><strong>授权该用户权限</strong></p>
+<p>命令：</p>
+<div class="codehilite"><pre><span></span><code>grant privileges ON databasename.tablename to <span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;host&#39;</span>
+</code></pre></div>
+
+
+<p>同样使用help命令详情</p>
+<div class="codehilite"><pre><span></span><code>&gt; <span class="nb">help</span> grant
+Name: <span class="s1">&#39;GRANT&#39;</span>
+Description:
+Syntax:
+GRANT
+    priv_type <span class="o">[(</span>column_list<span class="o">)]</span>
+      <span class="o">[</span>, priv_type <span class="o">[(</span>column_list<span class="o">)]]</span> ...
+    ON <span class="o">[</span>object_type<span class="o">]</span> priv_level
+    TO user_specification <span class="o">[</span>, user_specification<span class="o">]</span> ...
+    <span class="o">[</span>REQUIRE <span class="o">{</span>NONE <span class="p">|</span> ssl_option <span class="o">[[</span>AND<span class="o">]</span> ssl_option<span class="o">]</span> ...<span class="o">}]</span>
+    <span class="o">[</span>WITH with_option ...<span class="o">]</span>
+
+GRANT PROXY ON user_specification
+    TO user_specification <span class="o">[</span>, user_specification<span class="o">]</span> ...
+    <span class="o">[</span>WITH GRANT OPTION<span class="o">]</span>
+
+object_type:
+    TABLE
+  <span class="p">|</span> FUNCTION
+  <span class="p">|</span> PROCEDURE
+
+priv_level:
+    *
+  <span class="p">|</span> *.*
+  <span class="p">|</span> db_name.*
+  <span class="p">|</span> db_name.tbl_name
+  <span class="p">|</span> tbl_name
+  <span class="p">|</span> db_name.routine_name
+
+user_specification:
+    user
+    <span class="o">[</span>
+        IDENTIFIED BY <span class="o">[</span>PASSWORD<span class="o">]</span> <span class="s1">&#39;password&#39;</span>
+      <span class="p">|</span> IDENTIFIED WITH auth_plugin <span class="o">[</span>AS <span class="s1">&#39;auth_string&#39;</span><span class="o">]</span>
+    <span class="o">]</span>
+
+ssl_option:
+    SSL
+  <span class="p">|</span> X509
+  <span class="p">|</span> CIPHER <span class="s1">&#39;cipher&#39;</span>
+  <span class="p">|</span> ISSUER <span class="s1">&#39;issuer&#39;</span>
+  <span class="p">|</span> SUBJECT <span class="s1">&#39;subject&#39;</span>
+
+with_option:
+    GRANT OPTION
+  <span class="p">|</span> MAX_QUERIES_PER_HOUR count
+  <span class="p">|</span> MAX_UPDATES_PER_HOUR count
+  <span class="p">|</span> MAX_CONNECTIONS_PER_HOUR count
+  <span class="p">|</span> MAX_USER_CONNECTIONS count
+</code></pre></div>
+
+
+<ul>
+<li>privileges：用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所的权限则使用ALL</li>
+<li>databasename：数据库名</li>
+<li>tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示，如</em>.*</li>
+</ul>
+<p>给用户zjc授予权限</p>
+<div class="codehilite"><pre><span></span><code>grant all on *.* to &#39;zjc&#39;@&#39;%&#39;;  
+</code></pre></div>
+
+
+<p>刷新权限</p>
+<div class="codehilite"><pre><span></span><code>flush privileges;
+</code></pre></div>
+
+
+<p><strong>取消该用户的权限</strong></p>
+<p>命令：</p>
+<div class="codehilite"><pre><span></span><code>revoke privilege ON databasename.tablename FROM <span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;host&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>help查看详情</p>
+<div class="codehilite"><pre><span></span><code>&gt; <span class="nb">help</span> revoke
+Name: <span class="s1">&#39;REVOKE&#39;</span>
+Description:
+Syntax:
+REVOKE
+    priv_type <span class="o">[(</span>column_list<span class="o">)]</span>
+      <span class="o">[</span>, priv_type <span class="o">[(</span>column_list<span class="o">)]]</span> ...
+    ON <span class="o">[</span>object_type<span class="o">]</span> priv_level
+    FROM user <span class="o">[</span>, user<span class="o">]</span> ...
+
+REVOKE ALL PRIVILEGES, GRANT OPTION
+    FROM user <span class="o">[</span>, user<span class="o">]</span> ...
+
+REVOKE PROXY ON user
+    FROM user <span class="o">[</span>, user<span class="o">]</span> ...
+</code></pre></div>
+
+
+<p>说明：同上面的授权部分</p>
+<h2>配置远程链接</h2>
+<p>找到配置文件中的[mysqld]一项</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># this is only for the mysqld standalone daemon</span>
+<span class="o">[</span>mysqld<span class="o">]</span>
+
+<span class="c1">#</span>
+<span class="c1"># * Basic Settings</span>
+<span class="c1">#</span>
+<span class="nv">user</span>                    <span class="o">=</span> mysql
+pid-file                <span class="o">=</span> /run/mysqld/mysqld.pid
+<span class="nv">socket</span>                  <span class="o">=</span> /run/mysqld/mysqld.sock
+<span class="c1">#port                   = 3306</span>
+<span class="nv">basedir</span>                 <span class="o">=</span> /usr
+<span class="nv">datadir</span>                 <span class="o">=</span> /var/lib/mysql
+<span class="nv">tmpdir</span>                  <span class="o">=</span> /tmp
+lc-messages-dir         <span class="o">=</span> /usr/share/mysql
+<span class="c1">#skip-external-locking</span>
+skip-name-resolve
+
+<span class="c1"># Instead of skip-networking the default is now to listen only on</span>
+<span class="c1"># localhost which is more compatible and is not less secure.</span>
+<span class="c1"># bind-address            = 127.0.0.1</span>
+</code></pre></div>
+
+
+<p>将<strong>bind-address</strong> 注释掉,，然后重启数据库即可</p>
+<div class="codehilite"><pre><span></span><code>systemctl restart mysql
+</code></pre></div>
+
+
+<p><strong>问题记录</strong></p>
+<p>我在尝试用 navicat连接的时候，出现（2013，XXXXXXXX）的错误，这样是由于mysql在接收到客户端链接的时候需要对dns进行反向解析，由于我实在局域网内，所有反向解析是不可能成功的。</p>
+<p>解决办法有两种：</p>
+<ol>
+<li>把client的ip写在mysql服务器的/etc/hosts文件里，随便给个名字就可以了。</li>
+<li>在 my.cnf 中加入 <strong>skip-name-resolve</strong> 。</li>
+</ol>
+<p>于第一种方法比较笨，也不实用，那么 skip-name-resolve 选项可以禁用dns解析，但是，这样不能在mysql的授权表中使用主机名了，只能使用IP。</p>
+<p>什么是mysql的dns反解析</p>
+<p>mysql接收到连接请求后，获得的是客户端的ip，为了更好的匹配mysql.user里的权限记录（某些是用hostname定义的）。</p>
+<p>如果mysql服务器设置了dns服务器，并且客户端ip在dns上并没有相应的hostname，那么这个过程很慢，导致连接等待。</p>
+<p><strong>官方解释</strong></p>
+<blockquote>
+<p><em>How MySQL</em>
+<em>uses DNS When a new thread connects to mysqld, mysqld will</em>
+<em>spawn a new thread to handle the request. This thread will first check</em>
+<em>if the hostname is in the hostname cache. If not the thread will call</em>
+<em>gethostbyaddr_r() and gethostbyname_r() to resolve the hostname. If</em>
+<em>the operating system doesn’t support the above thread-safe calls, the</em>
+<em>thread will lock a mutex and call gethostbyaddr() and gethostbyname()</em>
+<em>instead. Note that in this case no other thread can resolve other</em>
+<em>hostnames that is not in the hostname cache until the first thread is</em>
+<em>ready. You can disable DNS host lookup by starting mysqld with</em>
+<em>–skip-name-resolve. In this case you can however only use IP names in</em>
+<em>the MySQL privilege tables. If you have a very slow DNS and many</em>
+<em>hosts, you can get more performance by either disabling DNS lookop</em>
+<em>with –skip-name-resolve or by increasing the HOST_CACHE_SIZE define</em>
+<em>(default: 128) and recompile mysqld. You can disable the hostname</em>
+<em>cache with –skip-host-cache. You can clear the hostname cache with</em>
+<em>FLUSH HOSTS or mysqladmin flush-hosts. If you don’t want to allow</em>
+<em>connections over TCP/IP, you can do this by starting mysqld with</em>
+<em>–skip-networking.</em></p>
+</blockquote>
+<p>根据文档说明，如果你的mysql主机查询DNS很慢或是有很多客户端主机时会导致连接很慢，由于我们的开发机器是不能够连接外网的，所以DNS解析是不可能完成的，从而也就明白了为什么连接那么慢了。同时，请注意在增加该配置参数后，mysql的授权表中的host字段就不能够使用域名而只能够使用 ip地址了，因为这是禁止了域名解析的结果。</p>
+        <ul>
+            <li>2020年12月29日</li>
+            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
+            
+                <li> 标签:&nbsp;
+                    
+                        <a href="/tag/MySQL.html">MySQL</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/远程连接.html">远程连接</a>&nbsp;&nbsp;
+                    
+                </li>
+            
+        </ul>
+    </article>
+
+</main>
+
+
+    <footer>
+    &copy; 2022 ZOROX · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
+    <a href="/links.html">Links</a>&nbsp;&nbsp;·
+    <a href="/feed.xml">RSS</a>
+    <br>
+    <br>
+</footer>
+
+
+
+
+</body>
+</html>

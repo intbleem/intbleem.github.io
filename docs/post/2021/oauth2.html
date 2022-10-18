@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <title>OAuth2简述 | ZORO.X</title>
+    <meta name="description" content="## 什么是OAuth2
+
+OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。
+
+##..."/>
+    <meta name="keywords" content="OAuth2,Authorization,三方登录"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="OAuth2简述"/>
+    <meta property="og:description" content="## 什么是OAuth2
+
+OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。
+
+##..."/>
+    <meta property="og:url" content="https://zorox.me/post/2021/oauth2.html">
+    <meta property="og:site_name" content="ZORO.X">
+    <meta property="article:tag" content="OAuth2,Authorization,三方登录">
+    <meta property="article:category" content="技术">
+    <meta property="article:date" content="2021-03-12">
+
+    <link rel="canonical" href="https://zorox.me/post/2021/oauth2.html">
+    <style>
+        blockquote {
+            padding: 0 0 0 15px;
+            margin: 0 10px 0 0;
+            border-left: 2px solid #615b5b;
+        }
+
+        pre {
+            border: 1px solid #ccc;
+            padding: 1em;
+            overflow-x: auto;
+            background: #f7f7f7;
+        }
+
+        p code {
+            padding: 1px 4px;
+            color: #d14;
+            background: #faf9f9;
+            border: 1px solid #ebeaea;
+            border-radius: 1px;
+        }
+    </style>
+    <style>
+        pre {
+            line-height: 125%;
+        }
+
+        td.linenos pre {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos {
+            color: #000000;
+            background-color: #f0f0f0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        td.linenos pre.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        span.linenos.special {
+            color: #000000;
+            background-color: #ffffc0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .codehilite .hll {
+            background-color: #ffffcc
+        }
+
+        .codehilite {
+            background: rgb(248, 248, 248);
+        }
+
+        .codehilite .c {
+            color: #177500
+        }
+
+        .codehilite .err {
+            color: #000000
+        }
+
+        .codehilite .k {
+            color: #A90D91
+        }
+
+        .codehilite .l {
+            color: #1C01CE
+        }
+
+        .codehilite .n {
+            color: #000000
+        }
+
+        .codehilite .o {
+            color: #000000
+        }
+
+        .codehilite .ch {
+            color: #177500
+        }
+
+        .codehilite .cm {
+            color: #177500
+        }
+
+        .codehilite .cp {
+            color: #633820
+        }
+
+        .codehilite .cpf {
+            color: #177500
+        }
+
+        .codehilite .c1 {
+            color: #177500
+        }
+
+        .codehilite .cs {
+            color: #177500
+        }
+
+        .codehilite .kc {
+            color: #A90D91
+        }
+
+        .codehilite .kd {
+            color: #A90D91
+        }
+
+        .codehilite .kn {
+            color: #A90D91
+        }
+
+        .codehilite .kp {
+            color: #A90D91
+        }
+
+        .codehilite .kr {
+            color: #A90D91
+        }
+
+        .codehilite .kt {
+            color: #A90D91
+        }
+
+        .codehilite .ld {
+            color: #1C01CE
+        }
+
+        .codehilite .m {
+            color: #1C01CE
+        }
+
+        .codehilite .s {
+            color: #C41A16
+        }
+
+        .codehilite .na {
+            color: #836C28
+        }
+
+        .codehilite .nb {
+            color: #A90D91
+        }
+
+        .codehilite .nc {
+            color: #3F6E75
+        }
+
+        .codehilite .no {
+            color: #000000
+        }
+
+        .codehilite .nd {
+            color: #000000
+        }
+
+        .codehilite .ni {
+            color: #000000
+        }
+
+        .codehilite .ne {
+            color: #000000
+        }
+
+        .codehilite .nf {
+            color: #000000
+        }
+
+        .codehilite .nl {
+            color: #000000
+        }
+
+        .codehilite .nn {
+            color: #000000
+        }
+
+        .codehilite .nx {
+            color: #000000
+        }
+
+        .codehilite .py {
+            color: #000000
+        }
+
+        .codehilite .nt {
+            color: #000000
+        }
+
+        .codehilite .nv {
+            color: #000000
+        }
+
+        .codehilite .ow {
+            color: #000000
+        }
+
+        .codehilite .mb {
+            color: #1C01CE
+        }
+
+        .codehilite .mf {
+            color: #1C01CE
+        }
+
+        .codehilite .mh {
+            color: #1C01CE
+        }
+
+        .codehilite .mi {
+            color: #1C01CE
+        }
+
+        .codehilite .mo {
+            color: #1C01CE
+        }
+
+        .codehilite .sa {
+            color: #C41A16
+        }
+
+        .codehilite .sb {
+            color: #C41A16
+        }
+
+        .codehilite .sc {
+            color: #2300CE
+        }
+
+        .codehilite .dl {
+            color: #C41A16
+        }
+
+        .codehilite .sd {
+            color: #C41A16
+        }
+
+        .codehilite .s2 {
+            color: #C41A16
+        }
+
+        .codehilite .se {
+            color: #C41A16
+        }
+
+        .codehilite .sh {
+            color: #C41A16
+        }
+
+        .codehilite .si {
+            color: #C41A16
+        }
+
+        .codehilite .sx {
+            color: #C41A16
+        }
+
+        .codehilite .sr {
+            color: #C41A16
+        }
+
+        .codehilite .s1 {
+            color: #C41A16
+        }
+
+        .codehilite .ss {
+            color: #C41A16
+        }
+
+        .codehilite .bp {
+            color: #5B269A
+        }
+
+        .codehilite .fm {
+            color: #000000
+        }
+
+        .codehilite .vc {
+            color: #000000
+        }
+
+        .codehilite .vg {
+            color: #000000
+        }
+
+        .codehilite .vi {
+            color: #000000
+        }
+
+        .codehilite .vm {
+            color: #000000
+        }
+
+        .codehilite .il {
+            color: #1C01CE
+        }
+    </style>
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zorox.me/feed.xml">
+
+    
+
+    <style>
+        body {
+            margin: 10px 4%;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+
+        ul {
+            margin: 1.6em 0;
+            padding: 0 0 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a:visited {
+            color: #50c;
+        }
+
+        @media screen and (min-width: 900px) {
+            img {
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="/">..</a>
+    <br>
+
+
+<main>
+    
+    <article>
+        <h1>OAuth2简述</h1>
+        <h2>什么是OAuth2</h2>
+<p>OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。</p>
+<h2>OAuth2的应用场景</h2>
+<p>当你想使用QQ登录的第三方应用时，此时第三方应用需要获取你的QQ信息（昵称、头像、openid等），但是又不能直接用户名和密码等信息。那么此时就需要你登录你的QQ服务器，然后授权给该第三方应用一部分信息。而OAuth2就是为了实现上述目标而制定的一种规范。</p>
+<h2>Oauth2的授权模式</h2>
+<ul>
+<li>授权码（authorization code）</li>
+<li>隐藏式（implicit）</li>
+<li>密码式（resource owner password credentials）</li>
+<li>客户端凭证（client credentials）</li>
+</ul>
+<h3>授权码</h3>
+<p>授权码模式，指的是第三方应用先申请一个授权码，然后再拿着该授权码获取令牌。</p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" src="https://static.19961002.xyz/img/2022/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" /></div>
+</p>
+<ol>
+<li>用户访问第三方应用客户端，随后该客户端跳转到认证服务器，跳转的过程中附带上重定向URI。</li>
+<li>用户在认证服务器给予授权之后，跳转到事先定义好的redirect_uri，并返回上一个授权码，该授权码是与当前客户端绑定的，无法被其他客户端使用。</li>
+<li>客户端收到该授权码，携带上步骤1中的redirect_uri，向认证服务器申请令牌。请求成功后认证服务器会返回一个令牌，该令牌存在一个有效时间。</li>
+<li>客户端拿到该令牌之后，将该令牌携带在请求中请求资源服务器，资源服务器判断该令牌的有效性，最终判断是否返回有效的资源信息。</li>
+</ol>
+<h3>隐藏式</h3>
+<p>当有些网站时纯前端架构的时候，就无法通过后端来使用上述的授权模式了，令牌必须存在前端。该模式下不通过第三方应用的服务器，直接在浏览器里想认证服务器申请令牌，跳过了授权码的步骤。所有步骤都是在浏览器内完成，令牌对访问者是可见的，并且客户端不需要认证。</p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" src="https://static.19961002.xyz/img/2022/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" /></div>
+</p>
+<ol>
+<li>客户端在页面内放置一个链接，该链接指向认证服务器</li>
+<li>用户点击授权，给该客户端授权</li>
+<li>认证服务器在授权之后将跳转到客户端指定的redirect_uri，并将令牌包含在URI中，其中令牌并不是以查询参数的形式存储在URI中，而是以锚点的形式存储。</li>
+<li>浏览器想服务器发起请求，资源服务器返回一个网页，网页内包含一个可以获取上述令牌的脚本</li>
+<li>浏览器执行脚本，提取令牌，发送给客户端</li>
+<li>客户端拿到令牌向资源服务器请求，资源服务器判断该令牌的有效性，最终判断是否返回有效的资源信息。</li>
+</ol>
+<h3>密码式</h3>
+<p>听名字我们就可以知道，该授权模式需要密码来进行。其实质是，如果你高度信任某个应用，那么可以直接告诉这个应用你的用户名和密码，然后该应用拿到这些信息去申请令牌。</p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/15209061-38d92855ebb979d1_20210312134513088188.webp" src="https://static.19961002.xyz/img/2022/15209061-38d92855ebb979d1_20210312134513088188.webp" /></div>
+</p>
+<ol>
+<li>用户向第三方应用提供用户名和密码</li>
+<li>该应用将用户名和密码发送给认证服务器，然后请求令牌</li>
+<li>认证服务器确认无误后，想客户端提供令牌</li>
+<li>客户端拿到令牌向资源服务器请求，资源服务器判断该令牌的有效性，最终判断是否返回有效的资源信息。</li>
+</ol>
+<h3>客户端凭证</h3>
+<p>客户端凭证模式下，即是通过客户端的名义，而不是用户的名义去获取令牌。该模式下可以在纯后端进行，常见的参数有client_id、client_secret。</p>
+<p>
+<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/15209061-193021c225466558_20210312134535387332.webp" src="https://static.19961002.xyz/img/2022/15209061-193021c225466558_20210312134535387332.webp" /></div>
+</p>
+<ol>
+<li>客户端向认证服务器发送一个携带client_id和client_secret的请求</li>
+<li>认证服务器接收到客户端请求，并验证client_id和client_secret的有效性，如果有效这向客户端提供令牌。</li>
+</ol>
+        <ul>
+            <li>2021年03月12日</li>
+            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
+            
+                <li> 标签:&nbsp;
+                    
+                        <a href="/tag/OAuth2.html">OAuth2</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/Authorization.html">Authorization</a>&nbsp;&nbsp;
+                    
+                        <a href="/tag/三方登录.html">三方登录</a>&nbsp;&nbsp;
+                    
+                </li>
+            
+        </ul>
+    </article>
+
+</main>
+
+
+    <footer>
+    &copy; 2022 ZOROX · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
+    <a href="/links.html">Links</a>&nbsp;&nbsp;·
+    <a href="/feed.xml">RSS</a>
+    <br>
+    <br>
+</footer>
+
+
+
+
+</body>
+</html>
