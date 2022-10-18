@@ -5,6 +5,7 @@ tags: [Elasticsearch, Docker, 技术笔记]
 category: 技术
 date: 2021-04-30
 status: publish
+subtitle: Docker运行ES实例并使用IK分词器。
 ---
 
 

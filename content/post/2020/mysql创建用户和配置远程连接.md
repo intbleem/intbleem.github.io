@@ -5,6 +5,7 @@ tags: [MySQL, 远程连接]
 category: 技术
 date: 2020-12-29
 status: publish
+subtitle: MySQL相关笔记。
 ---
 ## 创建远程连接用户
 

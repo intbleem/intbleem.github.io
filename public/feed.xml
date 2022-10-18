@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ZORO.X</title><link>https://zorox.me</link><description>This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><lastBuildDate>Mon, 17 Oct 2022 16:11:22 +0000</lastBuildDate><item><title>我们都是「乌合之众」</title><link>https://zorox.me/post/2022/wu-he-zhi-zhong.html</link><description>&lt;p&gt;刚刚读完了一本俗称社会心理学的经典著作，就是古斯塔夫·勒庞写的《乌合之众》，其实早在大学读书的时候就已经听说过这本书，但是当时只是随便翻阅了几页，觉得枯燥无味之后就放弃了。那时候对于这些社会心理学以及那些长篇论道的书都不太感冒，只喜欢读一些小说，因为在读小说的时候不用动太多脑筋，讲究所谓的「爽」就行了。&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ZORO.X</title><link>https://zorox.me</link><description>This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><lastBuildDate>Tue, 18 Oct 2022 03:21:46 +0000</lastBuildDate><item><title>我们都是「乌合之众」</title><link>https://zorox.me/post/2022/wu-he-zhi-zhong.html</link><description>&lt;p&gt;刚刚读完了一本俗称社会心理学的经典著作，就是古斯塔夫·勒庞写的《乌合之众》，其实早在大学读书的时候就已经听说过这本书，但是当时只是随便翻阅了几页，觉得枯燥无味之后就放弃了。那时候对于这些社会心理学以及那些长篇论道的书都不太感冒，只喜欢读一些小说，因为在读小说的时候不用动太多脑筋，讲究所谓的「爽」就行了。&lt;/p&gt;
 &lt;p&gt;最近在网上看到有人在推荐这本书，于是又重新耐着性子，断断续续花了6个多小时读完了这本书。这本书提出了一个叫做「群体」的概念，所谓群体，不是指一群人聚集在一起便是群体。而是当&lt;strong&gt;一群人聚集在一起之后，他们的情感和思想方向一致，个性几乎消失，表现出一种短暂的集体心理。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;书中提出了所谓「群体」的特征：&lt;/p&gt;
 &lt;ul&gt;
@@ -963,7 +963,7 @@ nginx -s reload
 &lt;p&gt;假如这不是梦，我又会不会后悔自己一个人走出电梯。&lt;/p&gt;
 &lt;p&gt;以前在微博上看到一个博主的视频，他们会组织演员去街头扮演一些弱势群体，看看路人的反应。比如腿脚不利索的大爷过马路，拐卖儿童的贩子等等，视频中总是会有热情的人愿意仗义相助。&lt;/p&gt;
 &lt;p&gt;我看的时候我就在想，假如我真的遇到这种情况，我是否会像他们一样，仗义相助呢？&lt;/p&gt;
-&lt;p&gt;从小接受的教育告诉我们，应该是要这么做的。&lt;/p&gt;</description><guid isPermaLink="false">zi-wo-bang-jia</guid><pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate></item><item><title>7.20暴雨日记</title><link>https://zorox.me/post/2021/7-20-bao-yu-ri-ji.html</link><description>&lt;p&gt;2021年7月20日，身处中原的郑州，刚经历了一场百年以来难得一遇的特大暴雨。&lt;/p&gt;
+&lt;p&gt;从小接受的教育告诉我们，应该是要这么做的。&lt;/p&gt;</description><guid isPermaLink="false">zi-wo-bang-jia</guid><pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate></item><item><title>7.20暴雨日记</title><link>https://zorox.me/post/2021/7-20-bao-yu-ri-ji.html</link><description>&lt;p&gt;2021年7月20日，地处中原的郑州，刚经历了一场百年以来难得一遇的特大暴雨。&lt;/p&gt;
 &lt;p&gt;雨刚开始下的时候，还以为只是普通的一场大雨，我还跟朋友说不想去上班，但是拥有超高打工人觉悟的我还是去上了班。&lt;/p&gt;
 &lt;p&gt;哈哈哈，其实是因为这个月的假期已经用完，去上班只是为了不扣工资。&lt;/p&gt;
 &lt;p&gt;结果就是，直到下班的时候雨还在下，此时外边路面上的水已经快到膝盖了，地铁也已经停运，附近酒店也被订满，只剩下一些“天价房”。
@@ -1036,7 +1036,7 @@ nginx -s reload
 &lt;p&gt;Some time ago, I developed this website and wanted to use it to record my coding notes. However, after it was established, I have tossed it many times, such as changing the theme of the website, adding some new features, but have not focused on the content of the website and sticked to writing.&lt;/p&gt;
 &lt;p&gt;So I was wondering why I did this,  why I developed this website at the beginning. It's just for me to take notes in my coding time. I found that I had violated my original intention.&lt;/p&gt;
 &lt;p&gt;Since I started working，taking notes and diary happened only occasionally. When I want to do that, I just do it in the beginning days, hardly to keep the impetus of that. Not only blogging, but aslo learning English. I have wanted to learn English many times, but I never sticked to it, so I don't learn English well, nor can I read computer documentation smoothly.&lt;/p&gt;
-&lt;p&gt;In the end, actually my main purpose of writing this blog is to practice my English, and also to reflect and spur myself，although it's all nonsense.&lt;/p&gt;</description><guid isPermaLink="false">confession-of-a-salted-fish</guid><pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate></item><item><title>Fulltext searching with whoosh and Jieba</title><link>https://zorox.me/post/2021/fulltext-searching-with-whoosh-and-jieba.html</link><description>&lt;h2&gt;Environment dependencies&lt;/h2&gt;
+&lt;p&gt;In the end, actually my main purpose of writing this blog is to practice my English, and also to reflect and spur myself，although it's all nonsense.&lt;/p&gt;</description><guid isPermaLink="false">confession-of-a-salted-fish</guid><pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate></item><item><title>Fulltext retrieval with whoosh and Jieba</title><link>https://zorox.me/post/2021/fulltext-retrieval-with-whoosh-and-jieba.html</link><description>&lt;h2&gt;Environment dependencies&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;haystack&lt;/span&gt;
 &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;jieba&lt;/span&gt;
 &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;whoosh&lt;/span&gt;
@@ -1143,7 +1143,7 @@ nginx -s reload
 &lt;p&gt;Change the file path of search engine to custom path in &lt;code&gt;settings.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;'ENGINE': 'apps.search.whoosh_cn_backend.WhooshEngine'&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Rebuild index &lt;code&gt;python manage.py rebuild_index&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;It supports Chinese search now.&lt;/p&gt;</description><guid isPermaLink="false">fulltext-searching-with-whoosh-and-jieba</guid><pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate></item><item><title>OAuth2简述</title><link>https://zorox.me/post/2021/oauth2.html</link><description>&lt;h2&gt;什么是OAuth2&lt;/h2&gt;
+&lt;p&gt;It supports Chinese search now.&lt;/p&gt;</description><guid isPermaLink="false">fulltext-retrieval-with-whoosh-and-jieba</guid><pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate></item><item><title>OAuth2简述</title><link>https://zorox.me/post/2021/oauth2.html</link><description>&lt;h2&gt;什么是OAuth2&lt;/h2&gt;
 &lt;p&gt;OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。&lt;/p&gt;
 &lt;h2&gt;OAuth2的应用场景&lt;/h2&gt;
 &lt;p&gt;当你想使用QQ登录的第三方应用时，此时第三方应用需要获取你的QQ信息（昵称、头像、openid等），但是又不能直接用户名和密码等信息。那么此时就需要你登录你的QQ服务器，然后授权给该第三方应用一部分信息。而OAuth2就是为了实现上述目标而制定的一种规范。&lt;/p&gt;
@@ -1603,4 +1603,4 @@ ln oldfile newfile
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;当然软链接的用户数据也可以是另一个软链接的路径，其解析过程是递归的。但需注意：软链接创建时原文件的路径指向使用绝对路径较好。使用相对路径创建的软链接被移动后该软链接文件将成为一个死链接（如下所示的软链接 a 使用了相对路径，因此不宜被移动），因为链接数据块中记录的亦是相对路径指向。&lt;/p&gt;</description><guid isPermaLink="false">Linux-hardlink-softlink</guid><pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate></item></channel></rss>
+&lt;p&gt;当然软链接的用户数据也可以是另一个软链接的路径，其解析过程是递归的。但需注意：软链接创建时原文件的路径指向使用绝对路径较好。使用相对路径创建的软链接被移动后该软链接文件将成为一个死链接，因为链接数据块中记录的亦是相对路径指向。&lt;/p&gt;</description><guid isPermaLink="false">Linux-hardlink-softlink</guid><pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate></item></channel></rss>

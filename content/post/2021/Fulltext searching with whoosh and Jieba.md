@@ -1,10 +1,11 @@
 ---
-title: Fulltext searching with whoosh and Jieba
-slug: fulltext-searching-with-whoosh-and-jieba
+title: Fulltext retrieval with whoosh and Jieba
+slug: fulltext-retrieval-with-whoosh-and-jieba
 tags: [jieba, whoosh, 技术笔记]
 category: 技术
 date: 2021-03-22
 status: publish
+subtitle: 使用Whoosh和Jieba搭建全文检索服务并提供中文搜索。
 ---
 ## Environment dependencies
 

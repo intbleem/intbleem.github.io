@@ -5,6 +5,7 @@ tags: [Django, 技术笔记, 生成器]
 category: 技术
 date: 2021-12-26
 status: publish
+subtitle: 使用Django框架搭建一个静态博客生成器，也是该网站从动态转为静态的开始。
 ---
 ## Powered by Django
 

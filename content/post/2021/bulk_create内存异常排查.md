@@ -5,6 +5,7 @@ tags: [Django,MySQLdb,技术笔记]
 category: 技术
 date: 2021-12-14
 status: publish
+subtitle: 本地操作Django的ORM批量上传数据时，出现内存只增不减，针对相关源码依次排查。
 ---
 **背景**
 

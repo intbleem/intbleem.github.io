@@ -5,6 +5,7 @@ tags: [OAuth2, Authorization, 三方登录]
 category: 技术
 date: 2021-03-12
 status: publish
+subtitle: 服务开放授权标准，允许用户授权第三方应用访问他们存储在资源服务上受保护的信息，而不需要将用户名和密码提供给第三方应用。
 ---
 ## 什么是OAuth2
 

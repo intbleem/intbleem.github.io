@@ -5,6 +5,7 @@ tags: [JWT, Single Sign On]
 category: 技术
 date: 2021-03-12
 status: publish
+subtitle: JWT相关笔记。
 ---
 ## What is JWT?
 
