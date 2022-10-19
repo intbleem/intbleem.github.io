@@ -394,7 +394,7 @@ OAuth2是一个服务开放（授权）标准，它表示允许用户授权第�
 <h3>授权码</h3>
 <p>授权码模式，指的是第三方应用先申请一个授权码，然后再拿着该授权码获取令牌。</p>
 <p>
-<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" src="https://static.19961002.xyz/img/2022/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" /></div>
+<div style="text-align:center"><img data-src="/img/OAuth2简述/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" src="/img/OAuth2简述/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" /></div>
 </p>
 <ol>
 <li>用户访问第三方应用客户端，随后该客户端跳转到认证服务器，跳转的过程中附带上重定向URI。</li>
@@ -405,7 +405,7 @@ OAuth2是一个服务开放（授权）标准，它表示允许用户授权第�
 <h3>隐藏式</h3>
 <p>当有些网站时纯前端架构的时候，就无法通过后端来使用上述的授权模式了，令牌必须存在前端。该模式下不通过第三方应用的服务器，直接在浏览器里想认证服务器申请令牌，跳过了授权码的步骤。所有步骤都是在浏览器内完成，令牌对访问者是可见的，并且客户端不需要认证。</p>
 <p>
-<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" src="https://static.19961002.xyz/img/2022/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" /></div>
+<div style="text-align:center"><img data-src="/img/OAuth2简述/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" src="/img/OAuth2简述/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" /></div>
 </p>
 <ol>
 <li>客户端在页面内放置一个链接，该链接指向认证服务器</li>
@@ -418,7 +418,7 @@ OAuth2是一个服务开放（授权）标准，它表示允许用户授权第�
 <h3>密码式</h3>
 <p>听名字我们就可以知道，该授权模式需要密码来进行。其实质是，如果你高度信任某个应用，那么可以直接告诉这个应用你的用户名和密码，然后该应用拿到这些信息去申请令牌。</p>
 <p>
-<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/15209061-38d92855ebb979d1_20210312134513088188.webp" src="https://static.19961002.xyz/img/2022/15209061-38d92855ebb979d1_20210312134513088188.webp" /></div>
+<div style="text-align:center"><img data-src="/img/OAuth2简述/15209061-38d92855ebb979d1_20210312134513088188.webp" src="/img/OAuth2简述/15209061-38d92855ebb979d1_20210312134513088188.webp" /></div>
 </p>
 <ol>
 <li>用户向第三方应用提供用户名和密码</li>
@@ -429,7 +429,7 @@ OAuth2是一个服务开放（授权）标准，它表示允许用户授权第�
 <h3>客户端凭证</h3>
 <p>客户端凭证模式下，即是通过客户端的名义，而不是用户的名义去获取令牌。该模式下可以在纯后端进行，常见的参数有client_id、client_secret。</p>
 <p>
-<div style="text-align:center"><img data-src="https://static.19961002.xyz/img/2022/15209061-193021c225466558_20210312134535387332.webp" src="https://static.19961002.xyz/img/2022/15209061-193021c225466558_20210312134535387332.webp" /></div>
+<div style="text-align:center"><img data-src="/img/OAuth2简述/15209061-193021c225466558_20210312134535387332.webp" src="/img/OAuth2简述/15209061-193021c225466558_20210312134535387332.webp" /></div>
 </p>
 <ol>
 <li>客户端向认证服务器发送一个携带client_id和client_secret的请求</li>
