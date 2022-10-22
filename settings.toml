@@ -1,10 +1,10 @@
-SITE_NAME = "ZHAO.X"
-SITE_LOGO_NAME = "ZHAO.X"
-SITE_COPYRIGHT_NAME = "ZHAOX"
+SITE_NAME = "Chenn's Personal Website"
+SITE_LOGO_NAME = "Chenn's Personal Website"
+SITE_COPYRIGHT_NAME = "CHENN"
 
-SITE_KEYWORDS = "ChaoX,Chao,node,vue,Python,Django,backend,blog,web,mysql,random thoughts,coding,One Piece"
-SITE_DESCRIPTION = "This is a salted fish coder developed website which mainly records and shares coding notes, random thoughts."
-SITE_URL = "https://zhaox.me"
+SITE_KEYWORDS = "CHENN,CHEN,Python,Django,backend,web,mysql,random thoughts,coding,One Piece"
+SITE_DESCRIPTION = "Chenn's personal website which mainly records and shares coding notes, as well as life, reading and random thoughts."
+SITE_URL = "https://chenn.me"
 
 STATIC_FOLDER = "txt/static"
 TEMPLATES_FOLDER = "txt/templates"
