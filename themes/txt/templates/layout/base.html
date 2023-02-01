@@ -21,9 +21,13 @@
 
     <style>
         body {
-            margin: 10px 4%;
             line-height: 1.6;
             word-wrap: break-word;
+        }
+
+        body > * {
+            max-width: 46em;
+            margin: auto;
         }
 
         ul {
@@ -35,20 +39,18 @@
             max-width: 100%;
         }
 
-        a:visited {
-            color: #50c;
-        }
-
     </style>
 </head>
 
 <body>
 
-{% block nav %}
-    {% include 'layout/navbar.html' %}
-{% endblock %}
 
 <main>
+
+    {% block nav %}
+        {% include 'layout/navbar.html' %}
+    {% endblock %}
+
     {% block main_content %}
     {% endblock %}
 </main>

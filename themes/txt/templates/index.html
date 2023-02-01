@@ -19,12 +19,16 @@
             {% for article in list %}
                 <li>
                     <article>
-                        <time>{{ article.date.strftime("%Y.%m.%d") }}&nbsp;</time>
-                        <a href="{{ article.url }}">{{ article.title }}&nbsp;</a>
+                        <a href="{{ article.url }}">{{ article.title }}&nbsp;</a>&nbsp;·&nbsp;
+                        <time><i>{{ article.date.strftime("%Y.%m.%d") }}&nbsp;</i></time>
                         {% if article.subtitle %}
-                            <span>-&nbsp;{{ article.subtitle }}</span>
+                            <p>
+
+                                {{ article.subtitle }}</p>
                         {% endif %}
                     </article>
+                    <br>
+
                 </li>
             {% endfor %}
         {% endfor %}
