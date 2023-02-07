@@ -328,6 +328,7 @@
     <article>
         <h1>{{ article.title }}</h1>
         {{ article.body | safe }}
+        <br>
         <b>#</b> {{ article.date.strftime("%Y年%m月%d日") }}<br>
         <b>#</b> 分类:&nbsp;&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br>
         {% if article.tags %}
