@@ -31,22 +31,19 @@
 
 {% block main_content %}
     <h2># {{ tag_name }}</h2>
-    <ul>
-        {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
-            {% for article in list %}
-                <li>
-                    <article>
-                        <a href="{{ article.url }}">{{ article.title }}&nbsp;</a>&nbsp;·&nbsp;
-                        <time><i>{{ article.date.strftime("%Y.%m.%d") }}&nbsp;</i></time>
-                        {% if article.subtitle %}
-                            <p>
-                                {{ article.subtitle }}</p>
-                        {% endif %}
-                    </article>
-                    <br>
-                </li>
-            {% endfor %}
+    <br>
+    {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
+        {% for article in list %}
+            <article>
+                <a href="{{ article.url }}">{{ article.title }}&nbsp;</a>&nbsp;·&nbsp;
+                <time><i>{{ article.date.strftime("%Y.%m.%d") }}&nbsp;</i></time>
+                {% if article.subtitle %}
+                    <p>
+                        {{ article.subtitle }}</p>
+                {% endif %}
+            </article>
+            <br>
         {% endfor %}
-    </ul>
+    {% endfor %}
 {% endblock %}
 

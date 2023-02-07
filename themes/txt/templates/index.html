@@ -15,32 +15,26 @@
 
 {% block main_content %}
     <br>
-    <ul>
-        {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
-            {% for article in list %}
-                <li>
-                    <article>
-                        <a href="{{ article.url }}">{{ article.title }}&nbsp;</a>&nbsp;·&nbsp;
-                        <time><i>{{ article.date.strftime("%Y.%m.%d") }}&nbsp;</i></time>
-                        {% if article.subtitle %}
-                            <p>
-                                {{ article.subtitle }}</p>
-                        {% endif %}
-                    </article>
-                    <br>
-                </li>
-            {% endfor %}
+    <br>
+    {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
+        {% for article in list %}
+            <article>
+                <a href="{{ article.url }}">{{ article.title }}&nbsp;</a>&nbsp;·&nbsp;
+                <time><i>{{ article.date.strftime("%Y.%m.%d") }}&nbsp;</i></time>
+                {% if article.subtitle %}
+                    <p>
+                        {{ article.subtitle }}</p>
+                {% endif %}
+            </article>
+            <br>
         {% endfor %}
-    </ul>
-    <ul>
-        <li>
-            {% if  page.prev_page_path %}
-                <a href="{{ page.prev_page_path }}">上一页</a>&nbsp;&nbsp;&nbsp;
-            {% endif %}
-            {% if page.next_page_path %}
-                <a href="{{ page.next_page_path }}"> 下一页</a>
-            {% endif %}
-        </li>
-    </ul>
+    {% endfor %}
+
+    {% if  page.prev_page_path %}
+        <i>#<a href="{{ page.prev_page_path }}">上一页</a></i>&nbsp;&nbsp;&nbsp;
+    {% endif %}
+    {% if page.next_page_path %}
+        <i>#<a href="{{ page.next_page_path }}">下一页</a></i>
+    {% endif %}
 {% endblock %}
 

@@ -28,8 +28,8 @@
     <link rel="canonical" href="https://chenn.me/post/2020/Linux-hardlink-softlink.html">
     <style>
         blockquote {
-            padding: 0 0 0 15px;
-            margin: 0 10px 0 0;
+            padding: 0 0 0 10px;
+            margin: 0;
             border-left: 2px solid #615b5b;
         }
 
@@ -347,11 +347,6 @@
             margin: auto;
         }
 
-        ul {
-            margin: 1.6em 0;
-            padding: 0 0 0 20px;
-        }
-
         img {
             max-width: 100%;
         }
@@ -480,25 +475,23 @@ ln oldfile newfile
 
 
 <p>当然软链接的用户数据也可以是另一个软链接的路径，其解析过程是递归的。但需注意：软链接创建时原文件的路径指向使用绝对路径较好。使用相对路径创建的软链接被移动后该软链接文件将成为一个死链接，因为链接数据块中记录的亦是相对路径指向。</p>
-        <ul>
-            <li>2020年11月24日</li>
-            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
+        <b>#</b> 2020年11月24日<br>
+        <b>#</b> 分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
+        
+            <b>#</b> 标签:&nbsp;
             
-                <li> 标签:&nbsp;
-                    
-                        <a href="/tag/Linux.html">Linux</a>&nbsp;&nbsp;
-                    
-                        <a href="/tag/unix.html">unix</a>&nbsp;&nbsp;
-                    
-                </li>
+                <a href="/tag/Linux.html">Linux</a>&nbsp;&nbsp;
             
-        </ul>
+                <a href="/tag/unix.html">unix</a>&nbsp;&nbsp;
+            
+        
     </article>
 
 </main>
 
 
     <footer>
+    <br>
     &copy; 2023 CHENN · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
     <a href="/links.html">Links</a>&nbsp;&nbsp;·
     <a href="/feed.xml">RSS</a>

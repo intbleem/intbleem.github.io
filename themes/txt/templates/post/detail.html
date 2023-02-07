@@ -16,8 +16,8 @@
     <link rel="canonical" href="{{ SITE_URL }}{{ article.url }}">
     <style>
         blockquote {
-            padding: 0 0 0 15px;
-            margin: 0 10px 0 0;
+            padding: 0 0 0 10px;
+            margin: 0;
             border-left: 2px solid #615b5b;
         }
 
@@ -328,17 +328,14 @@
     <article>
         <h1>{{ article.title }}</h1>
         {{ article.body | safe }}
-        <ul>
-            <li>{{ article.date.strftime("%Y年%m月%d日") }}</li>
-            <li>分类:&nbsp;&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br></li>
-            {% if article.tags %}
-                <li> 标签:&nbsp;
-                    {% for tag in article.tags %}
-                        <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
-                    {% endfor %}
-                </li>
-            {% endif %}
-        </ul>
+        <b>#</b> {{ article.date.strftime("%Y年%m月%d日") }}<br>
+        <b>#</b> 分类:&nbsp;&nbsp;<a href="{{ article.category.url }}">{{ article.category.name }}</a><br>
+        {% if article.tags %}
+            <b>#</b> 标签:&nbsp;
+            {% for tag in article.tags %}
+                <a href="{{ tag.url }}">{{ tag.name }}</a>&nbsp;&nbsp;
+            {% endfor %}
+        {% endif %}
     </article>
 {% endblock %}
 

@@ -52,8 +52,8 @@ Name:..."/>
     <link rel="canonical" href="https://chenn.me/post/2020/mysql-remote-connection.html">
     <style>
         blockquote {
-            padding: 0 0 0 15px;
-            margin: 0 10px 0 0;
+            padding: 0 0 0 10px;
+            margin: 0;
             border-left: 2px solid #615b5b;
         }
 
@@ -371,11 +371,6 @@ Name:..."/>
             margin: auto;
         }
 
-        ul {
-            margin: 1.6em 0;
-            padding: 0 0 0 20px;
-        }
-
         img {
             max-width: 100%;
         }
@@ -635,25 +630,23 @@ skip-name-resolve
 <em>–skip-networking.</em></p>
 </blockquote>
 <p>根据文档说明，如果你的mysql主机查询DNS很慢或是有很多客户端主机时会导致连接很慢，由于我们的开发机器是不能够连接外网的，所以DNS解析是不可能完成的，从而也就明白了为什么连接那么慢了。同时，请注意在增加该配置参数后，mysql的授权表中的host字段就不能够使用域名而只能够使用 ip地址了，因为这是禁止了域名解析的结果。</p>
-        <ul>
-            <li>2020年12月29日</li>
-            <li>分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br></li>
+        <b>#</b> 2020年12月29日<br>
+        <b>#</b> 分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
+        
+            <b>#</b> 标签:&nbsp;
             
-                <li> 标签:&nbsp;
-                    
-                        <a href="/tag/MySQL.html">MySQL</a>&nbsp;&nbsp;
-                    
-                        <a href="/tag/远程连接.html">远程连接</a>&nbsp;&nbsp;
-                    
-                </li>
+                <a href="/tag/MySQL.html">MySQL</a>&nbsp;&nbsp;
             
-        </ul>
+                <a href="/tag/远程连接.html">远程连接</a>&nbsp;&nbsp;
+            
+        
     </article>
 
 </main>
 
 
     <footer>
+    <br>
     &copy; 2023 CHENN · <a href="mailto:intbleem@gmail.com">Email</a>&nbsp;&nbsp;·
     <a href="/links.html">Links</a>&nbsp;&nbsp;·
     <a href="/feed.xml">RSS</a>
