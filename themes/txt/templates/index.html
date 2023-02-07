@@ -32,5 +32,15 @@
             {% endfor %}
         {% endfor %}
     </ul>
+    <ul>
+        <li>
+            {% if  page.prev_page_path %}
+                <a href="{{ page.prev_page_path }}">上一页</a>&nbsp;&nbsp;&nbsp;
+            {% endif %}
+            {% if page.next_page_path %}
+                <a href="{{ page.next_page_path }}"> 下一页</a>
+            {% endif %}
+        </li>
+    </ul>
 {% endblock %}
 

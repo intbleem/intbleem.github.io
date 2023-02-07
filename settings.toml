@@ -9,7 +9,7 @@ SITE_URL = "https://chenn.me"
 STATIC_FOLDER = "txt/static"
 TEMPLATES_FOLDER = "txt/templates"
 
-
+PAGINATION_NUM=10
 LINKS = [
     ['zhanghaoran.ren', 'http://blog.zhanghaoran.ren/'],
 ]
