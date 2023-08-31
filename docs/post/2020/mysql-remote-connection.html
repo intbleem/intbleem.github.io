@@ -362,8 +362,9 @@ Name:..."/>
     <style>
         body {
             margin: 4% 4%;
-            line-height: 1.68;
+            line-height: 1.7;
             word-wrap: break-word;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
         }
 
         body > * {
@@ -396,124 +397,124 @@ Name:..."/>
 <p>当然如果只有你一个人使用这个数据库的话，也可以跳过这一步，直接选择root用户来操作。</p>
 <p><strong>创建用户</strong></p>
 <p>使用help命令查看如何创建用户</p>
-<pre class="codehilite"><code class="language-bash">help create user
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">help</span><span class="w"> </span>create<span class="w"> </span>user
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-bash">Name: 'CREATE USER'
+<div class="codehilite"><pre><span></span><code>Name:<span class="w"> </span><span class="s1">&#39;CREATE USER&#39;</span>
 Description:
 Syntax:
-CREATE USER user_specification
-    [, user_specification] ...
+CREATE<span class="w"> </span>USER<span class="w"> </span>user_specification
+<span class="w">    </span><span class="o">[</span>,<span class="w"> </span>user_specification<span class="o">]</span><span class="w"> </span>...
 
 user_specification:
-    user
-    [
-        IDENTIFIED BY [PASSWORD] 'password'
-      | IDENTIFIED WITH auth_plugin [AS 'auth_string']
-    ]
-</code></pre>
+<span class="w">    </span>user
+<span class="w">    </span><span class="o">[</span>
+<span class="w">        </span>IDENTIFIED<span class="w"> </span>BY<span class="w"> </span><span class="o">[</span>PASSWORD<span class="o">]</span><span class="w"> </span><span class="s1">&#39;password&#39;</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>IDENTIFIED<span class="w"> </span>WITH<span class="w"> </span>auth_plugin<span class="w"> </span><span class="o">[</span>AS<span class="w"> </span><span class="s1">&#39;auth_string&#39;</span><span class="o">]</span>
+<span class="w">    </span><span class="o">]</span>
+</code></pre></div>
 
 <p>根据帮助说明，接下来我们来创建用户</p>
-<pre class="codehilite"><code class="language-bash">create user 'zjc'@'localhost' # 创建一个用户zjc，不需要密码即可登录，但只可以在本机登录
-create user 'zjc'@'%'   # 创建一个用户zjc，不需要密码即可登录，可以在任意主机登录
-create user 'zjc'@'%' identified by '123456'    # 创建一个用户zjc，登录时需要密码123456才可以登录，会自动将密码加密
-create user 'zjc'@'%' identified by password '123456' # 创建一个用户zjc，登录时需要密码123456才可以登录，会将密码明文存储
-</code></pre>
+<div class="codehilite"><pre><span></span><code>create<span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="c1"># 创建一个用户zjc，不需要密码即可登录，但只可以在本机登录</span>
+create<span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w">   </span><span class="c1"># 创建一个用户zjc，不需要密码即可登录，可以在任意主机登录</span>
+create<span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span><span class="s1">&#39;123456&#39;</span><span class="w">    </span><span class="c1"># 创建一个用户zjc，登录时需要密码123456才可以登录，会自动将密码加密</span>
+create<span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span>identified<span class="w"> </span>by<span class="w"> </span>password<span class="w"> </span><span class="s1">&#39;123456&#39;</span><span class="w"> </span><span class="c1"># 创建一个用户zjc，登录时需要密码123456才可以登录，会将密码明文存储</span>
+</code></pre></div>
 
 <p><strong>修改密码</strong></p>
 <p>命令：</p>
-<pre class="codehilite"><code class="language-bash">set password for 'username'@'host' = PASSWORD('newpassword');
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;host&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>PASSWORD<span class="o">(</span><span class="s1">&#39;newpassword&#39;</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div>
 
 <p>查看帮助命令查看详情</p>
-<pre class="codehilite"><code class="language-bash">&gt; help set password
-Name: 'SET PASSWORD'
+<div class="codehilite"><pre><span></span><code>&gt;<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>password
+Name:<span class="w"> </span><span class="s1">&#39;SET PASSWORD&#39;</span>
 Description:
 Syntax:
-SET PASSWORD [FOR user] =
-    {
-        PASSWORD('cleartext password')
-      | OLD_PASSWORD('cleartext password')
-      | 'encrypted password'
-    }
-</code></pre>
+SET<span class="w"> </span>PASSWORD<span class="w"> </span><span class="o">[</span>FOR<span class="w"> </span>user<span class="o">]</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">        </span>PASSWORD<span class="o">(</span><span class="s1">&#39;cleartext password&#39;</span><span class="o">)</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>OLD_PASSWORD<span class="o">(</span><span class="s1">&#39;cleartext password&#39;</span><span class="o">)</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="s1">&#39;encrypted password&#39;</span>
+<span class="w">    </span><span class="o">}</span>
+</code></pre></div>
 
 <p>修改密码：</p>
-<pre class="codehilite"><code class="language-bash">set password for 'zjc'@'%' = PASSWORD(&quot;654321&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;zjc&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>PASSWORD<span class="o">(</span><span class="s2">&quot;654321&quot;</span><span class="o">)</span>
+</code></pre></div>
 
 <p><strong>删除用户</strong></p>
 <p>命令：</p>
-<pre class="codehilite"><code class="language-bash">drop user username
-</code></pre>
+<div class="codehilite"><pre><span></span><code>drop<span class="w"> </span>user<span class="w"> </span>username
+</code></pre></div>
 
 <h2>用户授权</h2>
 <p><strong>查看用户目前的权限</strong></p>
-<pre class="codehilite"><code class="language-bash">&gt; show grants for zjc;
+<div class="codehilite"><pre><span></span><code>&gt;<span class="w"> </span>show<span class="w"> </span>grants<span class="w"> </span><span class="k">for</span><span class="w"> </span>zjc<span class="p">;</span>
 +---------------------------------+
-| Grants for zjc@%                |
+<span class="p">|</span><span class="w"> </span>Grants<span class="w"> </span><span class="k">for</span><span class="w"> </span>zjc@%<span class="w">                </span><span class="p">|</span>
 +---------------------------------+
-| GRANT USAGE ON *.* TO `zjc`@`%` |
+<span class="p">|</span><span class="w"> </span>GRANT<span class="w"> </span>USAGE<span class="w"> </span>ON<span class="w"> </span>*.*<span class="w"> </span>TO<span class="w"> </span><span class="sb">`</span>zjc<span class="sb">`</span>@<span class="sb">`</span>%<span class="sb">`</span><span class="w"> </span><span class="p">|</span>
 +---------------------------------+
-</code></pre>
+</code></pre></div>
 
 <p>USAGE相当于一个占位符，表示目前zjc用户什么权限都没有，需要我们给他授予权限</p>
 <p><strong>授权该用户权限</strong></p>
 <p>命令：</p>
-<pre class="codehilite"><code class="language-bash">grant privileges ON databasename.tablename to 'username'@'host'
-</code></pre>
+<div class="codehilite"><pre><span></span><code>grant<span class="w"> </span>privileges<span class="w"> </span>ON<span class="w"> </span>databasename.tablename<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;host&#39;</span>
+</code></pre></div>
 
 <p>同样使用help命令详情</p>
-<pre class="codehilite"><code class="language-bash">&gt; help grant
-Name: 'GRANT'
+<div class="codehilite"><pre><span></span><code>&gt;<span class="w"> </span><span class="nb">help</span><span class="w"> </span>grant
+Name:<span class="w"> </span><span class="s1">&#39;GRANT&#39;</span>
 Description:
 Syntax:
 GRANT
-    priv_type [(column_list)]
-      [, priv_type [(column_list)]] ...
-    ON [object_type] priv_level
-    TO user_specification [, user_specification] ...
-    [REQUIRE {NONE | ssl_option [[AND] ssl_option] ...}]
-    [WITH with_option ...]
+<span class="w">    </span>priv_type<span class="w"> </span><span class="o">[(</span>column_list<span class="o">)]</span>
+<span class="w">      </span><span class="o">[</span>,<span class="w"> </span>priv_type<span class="w"> </span><span class="o">[(</span>column_list<span class="o">)]]</span><span class="w"> </span>...
+<span class="w">    </span>ON<span class="w"> </span><span class="o">[</span>object_type<span class="o">]</span><span class="w"> </span>priv_level
+<span class="w">    </span>TO<span class="w"> </span>user_specification<span class="w"> </span><span class="o">[</span>,<span class="w"> </span>user_specification<span class="o">]</span><span class="w"> </span>...
+<span class="w">    </span><span class="o">[</span>REQUIRE<span class="w"> </span><span class="o">{</span>NONE<span class="w"> </span><span class="p">|</span><span class="w"> </span>ssl_option<span class="w"> </span><span class="o">[[</span>AND<span class="o">]</span><span class="w"> </span>ssl_option<span class="o">]</span><span class="w"> </span>...<span class="o">}]</span>
+<span class="w">    </span><span class="o">[</span>WITH<span class="w"> </span>with_option<span class="w"> </span>...<span class="o">]</span>
 
-GRANT PROXY ON user_specification
-    TO user_specification [, user_specification] ...
-    [WITH GRANT OPTION]
+GRANT<span class="w"> </span>PROXY<span class="w"> </span>ON<span class="w"> </span>user_specification
+<span class="w">    </span>TO<span class="w"> </span>user_specification<span class="w"> </span><span class="o">[</span>,<span class="w"> </span>user_specification<span class="o">]</span><span class="w"> </span>...
+<span class="w">    </span><span class="o">[</span>WITH<span class="w"> </span>GRANT<span class="w"> </span>OPTION<span class="o">]</span>
 
 object_type:
-    TABLE
-  | FUNCTION
-  | PROCEDURE
+<span class="w">    </span>TABLE
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>FUNCTION
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>PROCEDURE
 
 priv_level:
-    *
-  | *.*
-  | db_name.*
-  | db_name.tbl_name
-  | tbl_name
-  | db_name.routine_name
+<span class="w">    </span>*
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>*.*
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>db_name.*
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>db_name.tbl_name
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>tbl_name
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>db_name.routine_name
 
 user_specification:
-    user
-    [
-        IDENTIFIED BY [PASSWORD] 'password'
-      | IDENTIFIED WITH auth_plugin [AS 'auth_string']
-    ]
+<span class="w">    </span>user
+<span class="w">    </span><span class="o">[</span>
+<span class="w">        </span>IDENTIFIED<span class="w"> </span>BY<span class="w"> </span><span class="o">[</span>PASSWORD<span class="o">]</span><span class="w"> </span><span class="s1">&#39;password&#39;</span>
+<span class="w">      </span><span class="p">|</span><span class="w"> </span>IDENTIFIED<span class="w"> </span>WITH<span class="w"> </span>auth_plugin<span class="w"> </span><span class="o">[</span>AS<span class="w"> </span><span class="s1">&#39;auth_string&#39;</span><span class="o">]</span>
+<span class="w">    </span><span class="o">]</span>
 
 ssl_option:
-    SSL
-  | X509
-  | CIPHER 'cipher'
-  | ISSUER 'issuer'
-  | SUBJECT 'subject'
+<span class="w">    </span>SSL
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>X509
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>CIPHER<span class="w"> </span><span class="s1">&#39;cipher&#39;</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>ISSUER<span class="w"> </span><span class="s1">&#39;issuer&#39;</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>SUBJECT<span class="w"> </span><span class="s1">&#39;subject&#39;</span>
 
 with_option:
-    GRANT OPTION
-  | MAX_QUERIES_PER_HOUR count
-  | MAX_UPDATES_PER_HOUR count
-  | MAX_CONNECTIONS_PER_HOUR count
-  | MAX_USER_CONNECTIONS count
-</code></pre>
+<span class="w">    </span>GRANT<span class="w"> </span>OPTION
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>MAX_QUERIES_PER_HOUR<span class="w"> </span>count
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>MAX_UPDATES_PER_HOUR<span class="w"> </span>count
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>MAX_CONNECTIONS_PER_HOUR<span class="w"> </span>count
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>MAX_USER_CONNECTIONS<span class="w"> </span>count
+</code></pre></div>
 
 <ul>
 <li>privileges：用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所的权限则使用ALL</li>
@@ -521,64 +522,64 @@ with_option:
 <li>tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示，如</em>.*</li>
 </ul>
 <p>给用户zjc授予权限</p>
-<pre class="codehilite"><code>grant all on *.* to 'zjc'@'%';  
-</code></pre>
+<div class="codehilite"><pre><span></span><code>grant all on *.* to &#39;zjc&#39;@&#39;%&#39;;  
+</code></pre></div>
 
 <p>刷新权限</p>
-<pre class="codehilite"><code>flush privileges;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>flush privileges;
+</code></pre></div>
 
 <p><strong>取消该用户的权限</strong></p>
 <p>命令：</p>
-<pre class="codehilite"><code class="language-bash">revoke privilege ON databasename.tablename FROM 'username'@'host';
-</code></pre>
+<div class="codehilite"><pre><span></span><code>revoke<span class="w"> </span>privilege<span class="w"> </span>ON<span class="w"> </span>databasename.tablename<span class="w"> </span>FROM<span class="w"> </span><span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;host&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <p>help查看详情</p>
-<pre class="codehilite"><code class="language-bash">&gt; help revoke
-Name: 'REVOKE'
+<div class="codehilite"><pre><span></span><code>&gt;<span class="w"> </span><span class="nb">help</span><span class="w"> </span>revoke
+Name:<span class="w"> </span><span class="s1">&#39;REVOKE&#39;</span>
 Description:
 Syntax:
 REVOKE
-    priv_type [(column_list)]
-      [, priv_type [(column_list)]] ...
-    ON [object_type] priv_level
-    FROM user [, user] ...
+<span class="w">    </span>priv_type<span class="w"> </span><span class="o">[(</span>column_list<span class="o">)]</span>
+<span class="w">      </span><span class="o">[</span>,<span class="w"> </span>priv_type<span class="w"> </span><span class="o">[(</span>column_list<span class="o">)]]</span><span class="w"> </span>...
+<span class="w">    </span>ON<span class="w"> </span><span class="o">[</span>object_type<span class="o">]</span><span class="w"> </span>priv_level
+<span class="w">    </span>FROM<span class="w"> </span>user<span class="w"> </span><span class="o">[</span>,<span class="w"> </span>user<span class="o">]</span><span class="w"> </span>...
 
-REVOKE ALL PRIVILEGES, GRANT OPTION
-    FROM user [, user] ...
+REVOKE<span class="w"> </span>ALL<span class="w"> </span>PRIVILEGES,<span class="w"> </span>GRANT<span class="w"> </span>OPTION
+<span class="w">    </span>FROM<span class="w"> </span>user<span class="w"> </span><span class="o">[</span>,<span class="w"> </span>user<span class="o">]</span><span class="w"> </span>...
 
-REVOKE PROXY ON user
-    FROM user [, user] ...
-</code></pre>
+REVOKE<span class="w"> </span>PROXY<span class="w"> </span>ON<span class="w"> </span>user
+<span class="w">    </span>FROM<span class="w"> </span>user<span class="w"> </span><span class="o">[</span>,<span class="w"> </span>user<span class="o">]</span><span class="w"> </span>...
+</code></pre></div>
 
 <p>说明：同上面的授权部分</p>
 <h2>配置远程链接</h2>
 <p>找到配置文件中的[mysqld]一项</p>
-<pre class="codehilite"><code class="language-bash"># this is only for the mysqld standalone daemon
-[mysqld]
+<div class="codehilite"><pre><span></span><code><span class="c1"># this is only for the mysqld standalone daemon</span>
+<span class="o">[</span>mysqld<span class="o">]</span>
 
-#
-# * Basic Settings
-#
-user                    = mysql
-pid-file                = /run/mysqld/mysqld.pid
-socket                  = /run/mysqld/mysqld.sock
-#port                   = 3306
-basedir                 = /usr
-datadir                 = /var/lib/mysql
-tmpdir                  = /tmp
-lc-messages-dir         = /usr/share/mysql
-#skip-external-locking
+<span class="c1">#</span>
+<span class="c1"># * Basic Settings</span>
+<span class="c1">#</span>
+<span class="nv">user</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span>mysql
+pid-file<span class="w">                </span><span class="o">=</span><span class="w"> </span>/run/mysqld/mysqld.pid
+<span class="nv">socket</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span>/run/mysqld/mysqld.sock
+<span class="c1">#port                   = 3306</span>
+<span class="nv">basedir</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span>/usr
+<span class="nv">datadir</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span>/var/lib/mysql
+<span class="nv">tmpdir</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span>/tmp
+lc-messages-dir<span class="w">         </span><span class="o">=</span><span class="w"> </span>/usr/share/mysql
+<span class="c1">#skip-external-locking</span>
 skip-name-resolve
 
-# Instead of skip-networking the default is now to listen only on
-# localhost which is more compatible and is not less secure.
-# bind-address            = 127.0.0.1
-</code></pre>
+<span class="c1"># Instead of skip-networking the default is now to listen only on</span>
+<span class="c1"># localhost which is more compatible and is not less secure.</span>
+<span class="c1"># bind-address            = 127.0.0.1</span>
+</code></pre></div>
 
 <p>将<strong>bind-address</strong> 注释掉,，然后重启数据库即可</p>
-<pre class="codehilite"><code class="language-bash">systemctl restart mysql
-</code></pre>
+<div class="codehilite"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>mysql
+</code></pre></div>
 
 <p><strong>问题记录</strong></p>
 <p>我在尝试用 navicat连接的时候，出现（2013，XXXXXXXX）的错误，这样是由于mysql在接收到客户端链接的时候需要对dns进行反向解析，由于我实在局域网内，所有反向解析是不可能成功的。</p>

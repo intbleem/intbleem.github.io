@@ -336,8 +336,9 @@
     <style>
         body {
             margin: 4% 4%;
-            line-height: 1.68;
+            line-height: 1.7;
             word-wrap: break-word;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
         }
 
         body > * {
@@ -380,11 +381,11 @@ Although JWTs can be encrypted to also provide secrecy between parties, we will 
 <ul>
 <li>The Header consists of two parts: the type of token and the signing algorithm being used, e.g. :</li>
 </ul>
-<pre class="codehilite"><code class="language-json">{
-    'alg': &quot;HS256&quot;,
-    'typ': &quot;JWT&quot;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="err">&#39;alg&#39;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HS256&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;</span><span class="kc">t</span><span class="err">yp&#39;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <ul>
 <li>The Payload is actually a place to store valid information which has three types of claims. </li>
@@ -407,8 +408,8 @@ Although JWTs can be encrypted to also provide secrecy between parties, we will 
 <p>After successful login for the first time, the user will get a JWT. This JWT is the certificate for the user to interact with the server, that is, the server uses this token to determine which user the requester is.
 When the user wants to access the resources on the server, the token was sent, which is usually placed in <code>authorization</code>, using <code>bearer</code> schema.
 For example:</p>
-<pre class="codehilite"><code>Authorization: Bearer token
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">Authorization</span><span class="o">:</span><span class="w"> </span><span class="n">Bearer</span><span class="w"> </span><span class="n">token</span>
+</code></pre></div>
 
 <h2>What are the advantages over traditional session authentication?</h2>
 <h3>Session authentication</h3>

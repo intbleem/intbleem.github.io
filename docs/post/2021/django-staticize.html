@@ -344,8 +344,9 @@
     <style>
         body {
             margin: 4% 4%;
-            line-height: 1.68;
+            line-height: 1.7;
             word-wrap: break-word;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
         }
 
         body > * {
@@ -393,65 +394,65 @@
 <p>好多人的做法是将自己的图片上传到微博、知乎、csdn等一些知名网站上，然后再将这些图片链接插入到自己的笔记内。这样做虽然是很方便快速，但是也会存在一些问题，就比如微博在某一天，突然给自己的链接加上了防盗链，导致了所有的图片在自己以外的网站不能继续使用。</p>
 <p>另外的像GitHub/Gitee Page服务，也可以将自己的图片上传到他们的服务器，但是据说会存在不稳定的情况，想了想还是算了。</p>
 <p>自己的东西掌握在自己手里才踏实，于是就自己搞了一个专属于自己的图床服务，这次倒是没有选择Django，而且选择了更合适轻量化的Flask。</p>
-<pre class="codehilite"><code class="language-python">#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-import os
-import random
-import string
-from datetime import datetime
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># -*- coding: UTF-8 -*-</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-from flask import Flask, request
-from markupsafe import escape
-from werkzeug.utils import secure_filename
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">markupsafe</span> <span class="kn">import</span> <span class="n">escape</span>
+<span class="kn">from</span> <span class="nn">werkzeug.utils</span> <span class="kn">import</span> <span class="n">secure_filename</span>
 
-from dotenv import load_dotenv
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 
-env_path = '.env'
-load_dotenv(dotenv_path=env_path)
+<span class="n">env_path</span> <span class="o">=</span> <span class="s1">&#39;.env&#39;</span>
+<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="n">env_path</span><span class="p">)</span>
 
-STATIC_FOLDER = &quot;images&quot;
-STATIC_URL = &quot;/img/&quot;
+<span class="n">STATIC_FOLDER</span> <span class="o">=</span> <span class="s2">&quot;images&quot;</span>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s2">&quot;/img/&quot;</span>
 
-app = Flask(__name__, static_folder=STATIC_FOLDER, static_url_path=STATIC_URL)
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="n">STATIC_FOLDER</span><span class="p">,</span> <span class="n">static_url_path</span><span class="o">=</span><span class="n">STATIC_URL</span><span class="p">)</span>
 
-app.config['UPLOAD_FOLDER'] = STATIC_FOLDER
-basedir = os.path.abspath(os.path.dirname(__file__))
-ALLOWED_EXTENSIONS = {'txt', 'png', 'jpg', 'xls', 'JPG', 'PNG', 'xlsx', 'gif', 'GIF'}
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">STATIC_FOLDER</span>
+<span class="n">basedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<span class="n">ALLOWED_EXTENSIONS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;txt&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;xls&#39;</span><span class="p">,</span> <span class="s1">&#39;JPG&#39;</span><span class="p">,</span> <span class="s1">&#39;PNG&#39;</span><span class="p">,</span> <span class="s1">&#39;xlsx&#39;</span><span class="p">,</span> <span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="s1">&#39;GIF&#39;</span><span class="p">}</span>
 
-HOSTNAME = os.getenv('HOSTNAME')
-
-
-# 用于判断文件后缀
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+<span class="n">HOSTNAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HOSTNAME&#39;</span><span class="p">)</span>
 
 
-# 上传文件
-@app.route('/api/upload', methods=['POST'], strict_slashes=False)
-def api_upload():
-    access_token = request.form.get(&quot;access_token&quot;) or &quot; &quot;
-    if access_token != os.getenv(&quot;ACCESS_TOKEN&quot;):
-        return &quot;error&quot;, 403
-
-    time_path = datetime.now().strftime(&quot;%Y/%m/&quot;)
-    file_dir = os.path.join(basedir, app.config['UPLOAD_FOLDER'], time_path)
-    if not os.path.exists(file_dir):
-        os.makedirs(file_dir)
-    f = request.files['file']  # 从表单的file字段获取文件，myfile为该表单的name值
-    if f and allowed_file(f.filename):  # 判断是否是允许上传的文件类型
-        filename = secure_filename(f.filename)
-        ext = filename.rsplit('.', 1)[-1]  # 获取文件后缀
-        ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
-        new_filename = ran_str + '.' + ext  # 修改了上传的文件名
-        f.save(os.path.join(file_dir, new_filename))  # 保存文件到upload目录
-        return HOSTNAME + STATIC_URL + time_path + escape(new_filename)
-    else:
-        return &quot;不支持的文件格式！&quot;
+<span class="c1"># 用于判断文件后缀</span>
+<span class="k">def</span> <span class="nf">allowed_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">filename</span> <span class="ow">and</span> <span class="n">filename</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">ALLOWED_EXTENSIONS</span>
 
 
-if __name__ == '__main__':
-    app.run(debug=True, port=8080)
-</code></pre>
+<span class="c1"># 上传文件</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/api/upload&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">],</span> <span class="n">strict_slashes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">api_upload</span><span class="p">():</span>
+    <span class="n">access_token</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;access_token&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot; &quot;</span>
+    <span class="k">if</span> <span class="n">access_token</span> <span class="o">!=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ACCESS_TOKEN&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="mi">403</span>
+
+    <span class="n">time_path</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y/%m/&quot;</span><span class="p">)</span>
+    <span class="n">file_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">],</span> <span class="n">time_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">file_dir</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span>  <span class="c1"># 从表单的file字段获取文件，myfile为该表单的name值</span>
+    <span class="k">if</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">allowed_file</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">filename</span><span class="p">):</span>  <span class="c1"># 判断是否是允许上传的文件类型</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">secure_filename</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">ext</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 获取文件后缀</span>
+        <span class="n">ran_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+        <span class="n">new_filename</span> <span class="o">=</span> <span class="n">ran_str</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span>  <span class="c1"># 修改了上传的文件名</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dir</span><span class="p">,</span> <span class="n">new_filename</span><span class="p">))</span>  <span class="c1"># 保存文件到upload目录</span>
+        <span class="k">return</span> <span class="n">HOSTNAME</span> <span class="o">+</span> <span class="n">STATIC_URL</span> <span class="o">+</span> <span class="n">time_path</span> <span class="o">+</span> <span class="n">escape</span><span class="p">(</span><span class="n">new_filename</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;不支持的文件格式！&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</code></pre></div>
 
 <p>仅需这些代码就可以搭建一个轻量的图片上传服务器，Flask真香～</p>
 <p>接下来就是配置Typora，在图片复制进来的时候自动上传到服务器</p>
@@ -460,18 +461,18 @@ if __name__ == '__main__':
 <div style="text-align:center"><img data-src="/img/迷之操作｜Django版静态Note生成器/kwhpUo4f.png" src="/img/迷之操作｜Django版静态Note生成器/kwhpUo4f.png" /></div>
 </p>
 <p>部署到服务器，接下来我们选择使用脚本来上传，那么就需要一个脚本来对接我们的图片服务器</p>
-<pre class="codehilite"><code class="language-bash">#!/bin/bash
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-# 各类配置信息
-base_url=&quot;https://img.itsso.cool/api/upload/&quot;
-access_token=&quot;xxxxxxxxxx&quot;
+<span class="c1"># 各类配置信息</span>
+<span class="nv">base_url</span><span class="o">=</span><span class="s2">&quot;https://img.itsso.cool/api/upload/&quot;</span>
+<span class="nv">access_token</span><span class="o">=</span><span class="s2">&quot;xxxxxxxxxx&quot;</span>
 
-# 上传图片
-for i in &quot;$@&quot;; do
-    curl -POST $base_url -H &quot;Content-Type:multipart/form-data&quot; -F &quot;file=@$i&quot; -F &quot;access_token=$access_token&quot;
-    echo &quot;&quot;
-done
-</code></pre>
+<span class="c1"># 上传图片</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>curl<span class="w"> </span>-POST<span class="w"> </span><span class="nv">$base_url</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type:multipart/form-data&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;file=@</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;access_token=</span><span class="nv">$access_token</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="k">done</span>
+</code></pre></div>
 
 <p>点击Test Uploader就可以测试一下我们脚本是否可以正常上传</p>
 <p><img src="../../../img/迷之操作｜Django版静态Note生成器/swQeFOjS.png" alt="swQeFOjS" style="zoom:25%;" /></p>
@@ -491,49 +492,49 @@ done
 <p><strong>Note:</strong> For backward-compatibility, we also include the <code>X-Hub-Signature</code> header that is generated using the SHA-1 hash function. If possible, we recommend that you use the <code>X-Hub-Signature-256</code> header for improved security. The example below demonstrates using the <code>X-Hub-Signature-256</code> header.</p>
 </blockquote>
 <p>接下来就是完整的代码：<strong>webhook.py</strong></p>
-<pre class="codehilite"><code class="language-python">import hmac
-from flask import Flask, request, jsonify
-import subprocess
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">hmac</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
 
-app = Flask(__name__)
-# github中webhooks的secret
-github_secret = 'xxxxxxxx'
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="c1"># github中webhooks的secret</span>
+<span class="n">github_secret</span> <span class="o">=</span> <span class="s1">&#39;xxxxxxxx&#39;</span>
 
-def encryption(data):
-    key = github_secret.encode('utf-8')
-    obj = hmac.new(key, msg=data, digestmod='sha256')
-    return obj.hexdigest()
+<span class="k">def</span> <span class="nf">encryption</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">github_secret</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">digestmod</span><span class="o">=</span><span class="s1">&#39;sha256&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
 
-@app.route('/hook', methods=['POST'])
-def post_data():
-    &quot;&quot;&quot;
-    github加密是将post提交的data和WebHooks的secret通过hmac的sha256加密，放到HTTP headers的
-    X-Hub-Signature256参数中
-    &quot;&quot;&quot;
-    post_data = request.data
-    token = encryption(post_data)
-    # 认证签名是否有效
-    signature = request.headers.get('X-Hub-Signature-256', '').split('=')[-1]
-    if signature != token:
-        return &quot;token认证无效&quot;, 401
-    # 运行shell脚本，更新代码
-    subprocess.run([&quot;bash&quot;, &quot;auto_deploy.sh&quot;])
-    return jsonify({&quot;status&quot;: 200})
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">post_data</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    github加密是将post提交的data和WebHooks的secret通过hmac的sha256加密，放到HTTP headers的</span>
+<span class="sd">    X-Hub-Signature256参数中</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">post_data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">encryption</span><span class="p">(</span><span class="n">post_data</span><span class="p">)</span>
+    <span class="c1"># 认证签名是否有效</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;X-Hub-Signature-256&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">signature</span> <span class="o">!=</span> <span class="n">token</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;token认证无效&quot;</span><span class="p">,</span> <span class="mi">401</span>
+    <span class="c1"># 运行shell脚本，更新代码</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="s2">&quot;auto_deploy.sh&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">})</span>
 
-if __name__ == '__main__':
-    app.run(port=9000)
-</code></pre>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">)</span>
+</code></pre></div>
 
 <p>要触发的脚本文件：<strong>auto_deploy.sh</strong></p>
-<pre class="codehilite"><code class="language-bash">cd &quot;$(dirname &quot;$0&quot;)&quot;
-echo '--------Git fetch------------'
-git fetch
-echo '--------Git merge------------'
-git merge
-echo '-----Already up-to-date------'
-echo '----- reload nginx-----'
-nginx -s reload
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;--------Git fetch------------&#39;</span>
+git<span class="w"> </span>fetch
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;--------Git merge------------&#39;</span>
+git<span class="w"> </span>merge
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;-----Already up-to-date------&#39;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;----- reload nginx-----&#39;</span>
+nginx<span class="w"> </span>-s<span class="w"> </span>reload
+</code></pre></div>
 
 <p>接下来将webhook服务部署好，在项目文件夹下push代码的时候，就会触发该hook，在远程服务器自动将更新的代码拉取下来。</p>
 <p>到此为止，用了奇奇怪怪的方法实现了自己奇奇怪怪的想法。</p>

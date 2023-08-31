@@ -340,8 +340,9 @@
     <style>
         body {
             margin: 4% 4%;
-            line-height: 1.68;
+            line-height: 1.7;
             word-wrap: break-word;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
         }
 
         body > * {
@@ -387,126 +388,126 @@
 <p>配置完成之后可以使用 <strong>ping</strong>命令测试是否可以ping通，如果可以，那就说明配置没问题。</p>
 <h2>V2Ray安装和配置</h2>
 <p>网上已经有很多一键安装脚本，这里选用的是 <a href="https://github.com/v2fly/fhs-install-v2ray/blob/master/README.zh-Hans-CN.md">https://github.com/v2fly/fhs-install-v2ray</a>，此脚本需要在root用户下运行，并且会安装如下文件：</p>
-<pre class="codehilite"><code>installed: /usr/local/bin/v2ray
-installed: /usr/local/bin/v2ctl
-installed: /usr/local/share/v2ray/geoip.dat
-installed: /usr/local/share/v2ray/geosite.dat
-installed: /usr/local/etc/v2ray/config.json
-installed: /var/log/v2ray/
-installed: /var/log/v2ray/access.log
-installed: /var/log/v2ray/error.log
-installed: /etc/systemd/system/v2ray.service
-installed: /etc/systemd/system/v2ray@.service
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">v2ray</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">v2ctl</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">geoip</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">geosite</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">json</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">access</span><span class="o">.</span><span class="n">log</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">v2ray</span><span class="o">/</span><span class="n">error</span><span class="o">.</span><span class="n">log</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">v2ray</span><span class="o">.</span><span class="n">service</span>
+<span class="n">installed</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">v2ray</span><span class="err">@</span><span class="o">.</span><span class="n">service</span>
+</code></pre></div>
 
 <p>此脚本会配置自动运行脚本。自动运行脚本会在系统重启之后，自动运行 V2Ray。目前自动运行脚本只支持带有 Systemd 的系统，以及 Debian / Ubuntu 全系列。</p>
 <p>其中路径<code>/usr/local/etc/v2ray/config.json</code>就是配置文件的路径，安装完成之后只用修改这个文件即可。</p>
 <p>关于V2Ray的配置网上已经有很多，我们只需要下载一个，其中需要修改的地方改成我们自己的即可。可以参考我的配置：</p>
-<pre class="codehilite"><code class="language-json">{
-    &quot;inbound&quot;: {
-        &quot;protocol&quot;: &quot;vmess&quot;,
-        &quot;listen&quot;: &quot;127.0.0.1&quot;,
-        &quot;port&quot;: 8080,
-        &quot;settings&quot;: {
-            &quot;clients&quot;: [
-                {
-                    &quot;id&quot;: &quot;◆◆◆◆◆◆◆◆◆◆◆◆&quot;,
-                    &quot;afterId&quot;: 0,
-                }
-            ]
-        },
-        &quot;streamSettings&quot;: {
-            &quot;network&quot;: &quot;ws&quot;,
-            &quot;wsSettings&quot;: {
-                &quot;path&quot;: &quot;/★★★★★★★★★★★★&quot;
-            }
-        }
-    },
-    &quot;outbound&quot;: {
-        &quot;protocol&quot;: &quot;freedom&quot;,
-    &quot;ip&quot;: [&quot;geoip:provate&quot;],
-    &quot;outboundTag&quot;: &quot;blocked&quot;
-    }
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;inbound&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vmess&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;listen&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;clients&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;◆◆◆◆◆◆◆◆◆◆◆◆&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;afterId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;streamSettings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;network&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;wsSettings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/★★★★★★★★★★★★&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;outbound&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;freedom&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;geoip:provate&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;outboundTag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blocked&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>在这个配置文件中，需要将标记的信息换成自己的即可：</p>
 <p>"◆◆◆◆◆◆◆◆◆◆◆◆"：uuid，自己生成或者通过在线网站生成，例如：<code>63c0042a-4a85-4d03-a488-3ba383142461</code></p>
 <p>"★★★★★★★★★★★★"：这个地方填写的则是一个随机字符串，越没有规律越好，越乱越好，可以在键盘上胡乱打一串或者程序生成。其实这个字符串就是websocket路径，在配置客户端的时候需要用到。</p>
 <h2>Nginx配置反代</h2>
 <p>因为上面已经配置了DNS的解析服务，而且也不适合直接用IP，所以这时候就需要用Nginx来代理websocket，配置文件内容如下：</p>
-<pre class="codehilite"><code>server {
-    ### 1:
-    server_name ●●●●●●●●●●●●;
+<div class="codehilite"><pre><span></span><code><span class="nt">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">###</span><span class="w"> </span><span class="err">1:</span>
+<span class="w">    </span><span class="err">server_name</span><span class="w"> </span><span class="err">●●●●●●●●●●●●</span><span class="p">;</span>
 
-    listen 80 reuseport fastopen=10;
-    rewrite ^(.*) https://$server_name$1 permanent;
-    if ($request_method  !~ ^(POST|GET)$) { return  501; }
-    autoindex off;
-    server_tokens off;
-}
+<span class="w">    </span><span class="err">listen</span><span class="w"> </span><span class="err">80</span><span class="w"> </span><span class="err">reuseport</span><span class="w"> </span><span class="err">fastopen=10</span><span class="p">;</span>
+<span class="w">    </span><span class="err">rewrite</span><span class="w"> </span><span class="err">^(.*)</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="n">server_name</span><span class="err">$</span><span class="mi">1</span><span class="w"> </span><span class="n">permanent</span><span class="p">;</span>
+<span class="w">    </span><span class="err">if</span><span class="w"> </span><span class="err">($request_method</span><span class="w">  </span><span class="err">!~</span><span class="w"> </span><span class="err">^(POST|GET)$)</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="err">return</span><span class="w">  </span><span class="err">501</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">autoindex</span><span class="w"> </span><span class="nt">off</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">server_tokens</span><span class="w"> </span><span class="nt">off</span><span class="o">;</span>
+<span class="err">}</span>
 
-server {
-    ### 2:
-    ssl_certificate /etc/letsencrypt/live/●●●●●●●●●●●●/fullchain.pem;
+<span class="nt">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">###</span><span class="w"> </span><span class="err">2:</span>
+<span class="w">    </span><span class="err">ssl_certificate</span><span class="w"> </span><span class="err">/etc/letsencrypt/live/●●●●●●●●●●●●/fullchain.pem</span><span class="p">;</span>
 
-    ### 3:
-    ssl_certificate_key /etc/letsencrypt/live/●●●●●●●●●●●●/privkey.pem;
+<span class="w">    </span><span class="err">###</span><span class="w"> </span><span class="err">3:</span>
+<span class="w">    </span><span class="err">ssl_certificate_key</span><span class="w"> </span><span class="err">/etc/letsencrypt/live/●●●●●●●●●●●●/privkey.pem</span><span class="p">;</span>
 
-    ### 4:
-    location /★★★★★★★★★★★★
-    {
-        proxy_pass http://127.0.0.1:8964;
-        proxy_redirect off;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection &quot;upgrade&quot;;
-        proxy_set_header Host $host;
+<span class="w">    </span><span class="err">###</span><span class="w"> </span><span class="err">4:</span>
+<span class="w">    </span><span class="err">location</span><span class="w"> </span><span class="err">/★★★★★★★★★★★★</span>
+<span class="w">    </span><span class="err">{</span>
+<span class="w">        </span><span class="err">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">8964</span><span class="p">;</span>
+<span class="w">        </span><span class="err">proxy_redirect</span><span class="w"> </span><span class="err">off</span><span class="p">;</span>
+<span class="w">        </span><span class="err">proxy_http_version</span><span class="w"> </span><span class="err">1.1</span><span class="p">;</span>
+<span class="w">        </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">Upgrade</span><span class="w"> </span><span class="err">$http_upgrade</span><span class="p">;</span>
+<span class="w">        </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">Connection</span><span class="w"> </span><span class="err">&quot;upgrade&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">Host</span><span class="w"> </span><span class="err">$host</span><span class="p">;</span>
 
-        sendfile on;
-        tcp_nopush on;
-        tcp_nodelay on;
-        keepalive_requests 10000;
-        keepalive_timeout 2h;
-        proxy_buffering off;
-    }
+<span class="w">        </span><span class="err">sendfile</span><span class="w"> </span><span class="err">on</span><span class="p">;</span>
+<span class="w">        </span><span class="err">tcp_nopush</span><span class="w"> </span><span class="err">on</span><span class="p">;</span>
+<span class="w">        </span><span class="err">tcp_nodelay</span><span class="w"> </span><span class="err">on</span><span class="p">;</span>
+<span class="w">        </span><span class="err">keepalive_requests</span><span class="w"> </span><span class="err">10000</span><span class="p">;</span>
+<span class="w">        </span><span class="err">keepalive_timeout</span><span class="w"> </span><span class="err">2h</span><span class="p">;</span>
+<span class="w">        </span><span class="err">proxy_buffering</span><span class="w"> </span><span class="err">off</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    listen 443 ssl reuseport fastopen=10;
-    server_name $server_name;
-    charset utf-8;
+<span class="w">    </span><span class="nt">listen</span><span class="w"> </span><span class="nt">443</span><span class="w"> </span><span class="nt">ssl</span><span class="w"> </span><span class="nt">reuseport</span><span class="w"> </span><span class="nt">fastopen</span><span class="o">=</span><span class="nt">10</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">server_name</span><span class="w"> </span><span class="o">$</span><span class="nt">server_name</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">charset</span><span class="w"> </span><span class="nt">utf-8</span><span class="o">;</span>
 
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_requests 10000;
-    keepalive_timeout 2h;
+<span class="w">    </span><span class="nt">sendfile</span><span class="w"> </span><span class="nt">on</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">tcp_nopush</span><span class="w"> </span><span class="nt">on</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">tcp_nodelay</span><span class="w"> </span><span class="nt">on</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">keepalive_requests</span><span class="w"> </span><span class="nt">10000</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">keepalive_timeout</span><span class="w"> </span><span class="nt">2h</span><span class="o">;</span>
 
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
-    ssl_ecdh_curve secp384r1;
-    ssl_prefer_server_ciphers off;
+<span class="w">    </span><span class="nt">ssl_protocols</span><span class="w"> </span><span class="nt">TLSv1</span><span class="p">.</span><span class="nc">2</span><span class="w"> </span><span class="nt">TLSv1</span><span class="p">.</span><span class="nc">3</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">ssl_ciphers</span><span class="w"> </span><span class="nt">TLS13-CHACHA20-POLY1305-SHA256</span><span class="p">:</span><span class="nd">TLS13-AES-128-GCM-SHA256</span><span class="p">:</span><span class="nd">TLS13-AES-256-GCM-SHA384</span><span class="p">:</span><span class="nd">ECDHE-ECDSA-AES128-GCM-SHA256</span><span class="p">:</span><span class="nd">ECDHE-RSA-AES128-GCM-SHA256</span><span class="p">:</span><span class="nd">ECDHE-ECDSA-AES256-GCM-SHA384</span><span class="p">:</span><span class="nd">ECDHE-RSA-AES256-GCM-SHA384</span><span class="p">:</span><span class="nd">ECDHE-ECDSA-CHACHA20-POLY1305</span><span class="p">:</span><span class="nd">ECDHE-RSA-CHACHA20-POLY1305</span><span class="p">:</span><span class="nd">DHE-RSA-AES128-GCM-SHA256</span><span class="p">:</span><span class="nd">DHE-RSA-AES256-GCM-SHA384</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">ssl_ecdh_curve</span><span class="w"> </span><span class="nt">secp384r1</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">ssl_prefer_server_ciphers</span><span class="w"> </span><span class="nt">off</span><span class="o">;</span>
 
-    ssl_session_cache shared:SSL:60m;
-    ssl_session_timeout 1d;
-    ssl_session_tickets off;
-    ssl_stapling on;
-    ssl_stapling_verify on;
-    resolver 8.8.8.8 8.8.4.4 valid=300s;
-    resolver_timeout 10s;
+<span class="w">    </span><span class="nt">ssl_session_cache</span><span class="w"> </span><span class="nt">shared</span><span class="p">:</span><span class="nd">SSL</span><span class="p">:</span><span class="nd">60m</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">ssl_session_timeout</span><span class="w"> </span><span class="nt">1d</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">ssl_session_tickets</span><span class="w"> </span><span class="nt">off</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">ssl_stapling</span><span class="w"> </span><span class="nt">on</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">ssl_stapling_verify</span><span class="w"> </span><span class="nt">on</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">resolver</span><span class="w"> </span><span class="nt">8</span><span class="p">.</span><span class="nc">8</span><span class="p">.</span><span class="nc">8</span><span class="p">.</span><span class="nc">8</span><span class="w"> </span><span class="nt">8</span><span class="p">.</span><span class="nc">8</span><span class="p">.</span><span class="nc">4</span><span class="p">.</span><span class="nc">4</span><span class="w"> </span><span class="nt">valid</span><span class="o">=</span><span class="nt">300s</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">resolver_timeout</span><span class="w"> </span><span class="nt">10s</span><span class="o">;</span>
 
-    if ($request_method  !~ ^(POST|GET)$) { return 501; }
-    add_header X-Frame-Options DENY;
-    add_header X-XSS-Protection &quot;1; mode=block&quot;;
-    add_header X-Content-Type-Options nosniff;
-    add_header Strict-Transport-Security max-age=31536000 always;
-    autoindex off;
-    server_tokens off;
+<span class="w">    </span><span class="nt">if</span><span class="w"> </span><span class="o">($</span><span class="nt">request_method</span><span class="w">  </span><span class="o">!~</span><span class="w"> </span><span class="o">^(</span><span class="nt">POST</span><span class="o">|</span><span class="nt">GET</span><span class="o">)$)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="err">501</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">add_header</span><span class="w"> </span><span class="nt">X-Frame-Options</span><span class="w"> </span><span class="nt">DENY</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">add_header</span><span class="w"> </span><span class="nt">X-XSS-Protection</span><span class="w"> </span><span class="s2">&quot;1; mode=block&quot;</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">add_header</span><span class="w"> </span><span class="nt">X-Content-Type-Options</span><span class="w"> </span><span class="nt">nosniff</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">add_header</span><span class="w"> </span><span class="nt">Strict-Transport-Security</span><span class="w"> </span><span class="nt">max-age</span><span class="o">=</span><span class="nt">31536000</span><span class="w"> </span><span class="nt">always</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">autoindex</span><span class="w"> </span><span class="nt">off</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">server_tokens</span><span class="w"> </span><span class="nt">off</span><span class="o">;</span>
 
-    index index.html index.htm  index.php;
-    location ~ .*\.(js|jpg|JPG|jpeg|JPEG|css|bmp|gif|GIF|png)$ { access_log off; }
-    location / { index index.html; }
-}
-</code></pre>
+<span class="w">    </span><span class="nt">index</span><span class="w"> </span><span class="nt">index</span><span class="p">.</span><span class="nc">html</span><span class="w"> </span><span class="nt">index</span><span class="p">.</span><span class="nc">htm</span><span class="w">  </span><span class="nt">index</span><span class="p">.</span><span class="nc">php</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">location</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="o">.*</span><span class="err">\</span><span class="o">.(</span><span class="nt">js</span><span class="o">|</span><span class="nt">jpg</span><span class="o">|</span><span class="nt">JPG</span><span class="o">|</span><span class="nt">jpeg</span><span class="o">|</span><span class="nt">JPEG</span><span class="o">|</span><span class="nt">css</span><span class="o">|</span><span class="nt">bmp</span><span class="o">|</span><span class="nt">gif</span><span class="o">|</span><span class="nt">GIF</span><span class="o">|</span><span class="nt">png</span><span class="o">)$</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">access_log</span><span class="w"> </span><span class="err">off</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">location</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">index</span><span class="w"> </span><span class="err">index.html</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div>
 
 <p>看上去很长，实际上只有四处需要填写，配置文件里用#1，#2，#3，#4标出了位置，把标符号的地方换成你自己的信息。</p>
 <p>●●●●●●●●●●●●：标注“●”的地方填写域名，<strong>注意这里的域名带www</strong></p>
@@ -517,90 +518,90 @@ server {
 <p>这里说的“证书”，实际指的是“数字证书”。当然申请完全是免费的，申请时需要邮箱地址。如有必要，可以使用匿名邮箱。</p>
 <h3>安装certbot</h3>
 <p>由于服务器系统自带的Python环境是v3.7，但是没有安装pip，所以首先安装pip工具。</p>
-<pre class="codehilite"><code class="language-bash">apt install python3-pip
-</code></pre>
+<div class="codehilite"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
+</code></pre></div>
 
 <p>安装好pip之后即可安装certbot</p>
-<pre class="codehilite"><code class="language-bash">pip3 install certbot
-</code></pre>
+<div class="codehilite"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>certbot
+</code></pre></div>
 
 <p>生成证书</p>
-<pre class="codehilite"><code class="language-bash">certbot certonly --standalone --agree-tos -n -d www.●●●●●●●●●●●● -d ●●●●●●●●●●●● -m ●●●●●●●●●●●●@●●●●●●●●●●●●
-</code></pre>
+<div class="codehilite"><pre><span></span><code>certbot<span class="w"> </span>certonly<span class="w"> </span>--standalone<span class="w"> </span>--agree-tos<span class="w"> </span>-n<span class="w"> </span>-d<span class="w"> </span>www.●●●●●●●●●●●●<span class="w"> </span>-d<span class="w"> </span>●●●●●●●●●●●●<span class="w"> </span>-m<span class="w"> </span>●●●●●●●●●●●●@●●●●●●●●●●●●
+</code></pre></div>
 
 <p>第一个-d加一个带www的域名，第二个-d加一个不带www的域名，-m后面加你的电子邮箱。注意前后要带空格。</p>
 <p>运行这条命令后，如果显示：</p>
-<pre class="codehilite"><code>IMPORTANT NOTES:
+<div class="codehilite"><pre><span></span><code><span class="nx">IMPORTANT</span><span class="w"> </span><span class="nx">NOTES</span><span class="p">:</span>
 
-- Congratulations! Your certificate and chain have been saved at:
-  /etc/letsencrypt/live/www.hrw1rdzqa7c5a8u3ibkn.website/fullchain.pem
-  Your key file has been saved at:
-  /etc/letsencrypt/live/www.hrw1rdzqa7c5a8u3ibkn.website/privkey.pem
-  Your cert will expire on 2020-06-04. To obtain a new or tweaked
-  version of this certificate in the future, simply run certbot
-  again. To non-interactively renew *all* of your certificates, run
-  &quot;certbot renew&quot;
+<span class="o">-</span><span class="w"> </span><span class="nx">Congratulations</span><span class="p">!</span><span class="w"> </span><span class="nx">Your</span><span class="w"> </span><span class="nx">certificate</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">chain</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">been</span><span class="w"> </span><span class="nx">saved</span><span class="w"> </span><span class="nx">at</span><span class="p">:</span>
+<span class="w">  </span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">letsencrypt</span><span class="o">/</span><span class="nx">live</span><span class="o">/</span><span class="nx">www</span><span class="p">.</span><span class="nx">hrw1rdzqa7c5a8u3ibkn</span><span class="p">.</span><span class="nx">website</span><span class="o">/</span><span class="nx">fullchain</span><span class="p">.</span><span class="nx">pem</span>
+<span class="w">  </span><span class="nx">Your</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">been</span><span class="w"> </span><span class="nx">saved</span><span class="w"> </span><span class="nx">at</span><span class="p">:</span>
+<span class="w">  </span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">letsencrypt</span><span class="o">/</span><span class="nx">live</span><span class="o">/</span><span class="nx">www</span><span class="p">.</span><span class="nx">hrw1rdzqa7c5a8u3ibkn</span><span class="p">.</span><span class="nx">website</span><span class="o">/</span><span class="nx">privkey</span><span class="p">.</span><span class="nx">pem</span>
+<span class="w">  </span><span class="nx">Your</span><span class="w"> </span><span class="nx">cert</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">expire</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="mi">2020</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">04</span><span class="p">.</span><span class="w"> </span><span class="nx">To</span><span class="w"> </span><span class="nx">obtain</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">tweaked</span>
+<span class="w">  </span><span class="nx">version</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">certificate</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">future</span><span class="p">,</span><span class="w"> </span><span class="nx">simply</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">certbot</span>
+<span class="w">  </span><span class="nx">again</span><span class="p">.</span><span class="w"> </span><span class="nx">To</span><span class="w"> </span><span class="nx">non</span><span class="o">-</span><span class="nx">interactively</span><span class="w"> </span><span class="nx">renew</span><span class="w"> </span><span class="o">*</span><span class="nx">all</span><span class="o">*</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">certificates</span><span class="p">,</span><span class="w"> </span><span class="nx">run</span>
+<span class="w">  </span><span class="s">&quot;certbot renew&quot;</span>
 
-- Your account credentials have been saved in your Certbot
-  configuration directory at /etc/letsencrypt. You should make a
-  secure backup of this folder now. This configuration directory will
-  also contain certificates and private keys obtained by Certbot so
-  making regular backups of this folder is ideal.
+<span class="o">-</span><span class="w"> </span><span class="nx">Your</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="nx">credentials</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">been</span><span class="w"> </span><span class="nx">saved</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">Certbot</span>
+<span class="w">  </span><span class="nx">configuration</span><span class="w"> </span><span class="nx">directory</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">letsencrypt</span><span class="p">.</span><span class="w"> </span><span class="nx">You</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="nx">make</span><span class="w"> </span><span class="nx">a</span>
+<span class="w">  </span><span class="nx">secure</span><span class="w"> </span><span class="nx">backup</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">folder</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">configuration</span><span class="w"> </span><span class="nx">directory</span><span class="w"> </span><span class="nx">will</span>
+<span class="w">  </span><span class="nx">also</span><span class="w"> </span><span class="nx">contain</span><span class="w"> </span><span class="nx">certificates</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="nx">keys</span><span class="w"> </span><span class="nx">obtained</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">Certbot</span><span class="w"> </span><span class="nx">so</span>
+<span class="w">  </span><span class="nx">making</span><span class="w"> </span><span class="nx">regular</span><span class="w"> </span><span class="nx">backups</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">folder</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">ideal</span><span class="p">.</span>
 
-- If you like Certbot, please consider supporting our work by:
+<span class="o">-</span><span class="w"> </span><span class="nx">If</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="nx">Certbot</span><span class="p">,</span><span class="w"> </span><span class="nx">please</span><span class="w"> </span><span class="nx">consider</span><span class="w"> </span><span class="nx">supporting</span><span class="w"> </span><span class="nx">our</span><span class="w"> </span><span class="nx">work</span><span class="w"> </span><span class="nx">by</span><span class="p">:</span>
 
-  Donating to ISRG / Let's Encrypt:  https://letsencrypt.org/donate
-  Donating to EFF:                    https://eff.org
-</code></pre>
+<span class="w">  </span><span class="nx">Donating</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">ISRG</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">Let</span><span class="err">&#39;</span><span class="nx">s</span><span class="w"> </span><span class="nx">Encrypt</span><span class="p">:</span><span class="w">  </span><span class="nx">https</span><span class="p">:</span><span class="c1">//letsencrypt.org/donate</span>
+<span class="w">  </span><span class="nx">Donating</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">EFF</span><span class="p">:</span><span class="w">                    </span><span class="nx">https</span><span class="p">:</span><span class="c1">//eff.org</span>
+</code></pre></div>
 
 <p>表示证书生成成功。</p>
 <p>注意：在生成证书的时候容易出现问题，就比如我在生成证书的时候就出现如下错误：</p>
-<pre class="codehilite"><code class="language-bash">x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-PPrPZj/python2.7-2.7.15=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC -DUSE__THREAD -DHAVE_SYNC_SYNCHRONIZE -I/usr/include/ffi -I/usr/include/libffi -I/usr/include/python2.7 -c c/_cffi_backend.c -o build/temp.linux-x86_64-2.7/c/_cffi_backend.o
-  c/_cffi_backend.c:15:10: fatal error: ffi.h: No such file or directory
-   #include &lt;ffi.h&gt;
-            ^~~~~~~
-  compilation terminated.
-  error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
-</code></pre>
+<div class="codehilite"><pre><span></span><code>x86_64-linux-gnu-gcc<span class="w"> </span>-pthread<span class="w"> </span>-DNDEBUG<span class="w"> </span>-g<span class="w"> </span>-fwrapv<span class="w"> </span>-O2<span class="w"> </span>-Wall<span class="w"> </span>-Wstrict-prototypes<span class="w"> </span>-fno-strict-aliasing<span class="w"> </span>-Wdate-time<span class="w"> </span>-D_FORTIFY_SOURCE<span class="o">=</span><span class="m">2</span><span class="w"> </span>-g<span class="w"> </span>-fdebug-prefix-map<span class="o">=</span>/build/python2.7-PPrPZj/python2.7-2.7.15<span class="o">=</span>.<span class="w"> </span>-fstack-protector-strong<span class="w"> </span>-Wformat<span class="w"> </span>-Werror<span class="o">=</span>format-security<span class="w"> </span>-fPIC<span class="w"> </span>-DUSE__THREAD<span class="w"> </span>-DHAVE_SYNC_SYNCHRONIZE<span class="w"> </span>-I/usr/include/ffi<span class="w"> </span>-I/usr/include/libffi<span class="w"> </span>-I/usr/include/python2.7<span class="w"> </span>-c<span class="w"> </span>c/_cffi_backend.c<span class="w"> </span>-o<span class="w"> </span>build/temp.linux-x86_64-2.7/c/_cffi_backend.o
+<span class="w">  </span>c/_cffi_backend.c:15:10:<span class="w"> </span>fatal<span class="w"> </span>error:<span class="w"> </span>ffi.h:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+<span class="w">   </span><span class="c1">#include &lt;ffi.h&gt;</span>
+<span class="w">            </span>^~~~~~~
+<span class="w">  </span>compilation<span class="w"> </span>terminated.
+<span class="w">  </span>error:<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="s1">&#39;x86_64-linux-gnu-gcc&#39;</span><span class="w"> </span>failed<span class="w"> </span>with<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>status<span class="w"> </span><span class="m">1</span>
+</code></pre></div>
 
 <p>解决办法是安装相关依赖即可。</p>
-<pre class="codehilite"><code class="language-bash">apt install libffi-dev
-</code></pre>
+<div class="codehilite"><pre><span></span><code>apt<span class="w"> </span>install<span class="w"> </span>libffi-dev
+</code></pre></div>
 
 <p>同样的因为这个问题导致的<code>cryptography</code>和<code>pyopenssl</code>版本问题，也可以通过<strong>升级安装包</strong>解决。</p>
 <p>另外通过这种方式生成的证书时限只有三个月，所以我们通过定时任务，让他自从申请证书，从而达到证书的 <strong>自动续命</strong> 。</p>
-<pre class="codehilite"><code class="language-bash">echo &quot;0 0 1 */2 * service nginx stop; certbot renew; service nginx start;&quot; | crontab
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0 0 1 */2 * service nginx stop; certbot renew; service nginx start;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>crontab
+</code></pre></div>
 
 <h2>启动服务</h2>
 <p>测试V2Ray配置是否正常</p>
-<pre class="codehilite"><code class="language-bash">/usr/local/bin/v2ray -test -config=/usr/local/etc/v2ray/config.json
-</code></pre>
+<div class="codehilite"><pre><span></span><code>/usr/local/bin/v2ray<span class="w"> </span>-test<span class="w"> </span>-config<span class="o">=</span>/usr/local/etc/v2ray/config.json
+</code></pre></div>
 
 <p>如果显示：</p>
-<pre class="codehilite"><code>V2Ray 4.x.x (V2Fly, a community-driven edition of V2Ray.)
-A unified platform for anti-censorship.
-Configuration OK.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">V2Ray</span><span class="w"> </span><span class="mi">4</span>.<span class="nv">x</span>.<span class="nv">x</span><span class="w"> </span><span class="ss">(</span><span class="nv">V2Fly</span>,<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">community</span><span class="o">-</span><span class="nv">driven</span><span class="w"> </span><span class="nv">edition</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">V2Ray</span>.<span class="ss">)</span>
+<span class="nv">A</span><span class="w"> </span><span class="nv">unified</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">anti</span><span class="o">-</span><span class="nv">censorship</span>.
+<span class="nv">Configuration</span><span class="w"> </span><span class="nv">OK</span>.
+</code></pre></div>
 
 <p>测试nginx配置是否正常</p>
-<pre class="codehilite"><code class="language-bash">nginx -t
-</code></pre>
+<div class="codehilite"><pre><span></span><code>nginx<span class="w"> </span>-t
+</code></pre></div>
 
 <p>如果显示：</p>
-<pre class="codehilite"><code>nginx: the configuration file /etc/nginx/ngin短网址nf syntax is ok
-nginx: configuration file /etc/nginx/ngin短网址nf test is successful
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">nginx</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="sr">/etc/nginx/</span><span class="n">ngin短网址nf</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">ok</span>
+<span class="n">nginx</span><span class="o">:</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="sr">/etc/nginx/</span><span class="n">ngin短网址nf</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">successful</span>
+</code></pre></div>
 
 <p>说明配置没有问题。</p>
 <p>测试V2Ray和Nginx配置正常之后即可启动服务了。启动服务通过<code>service</code>命令启动</p>
 <p>启动V2Ray：</p>
-<pre class="codehilite"><code class="language-bash">service v2ray start
-</code></pre>
+<div class="codehilite"><pre><span></span><code>service<span class="w"> </span>v2ray<span class="w"> </span>start
+</code></pre></div>
 
 <p>启动Nginx</p>
-<pre class="codehilite"><code class="language-bash">service nginx start
-</code></pre>
+<div class="codehilite"><pre><span></span><code>service<span class="w"> </span>nginx<span class="w"> </span>start
+</code></pre></div>
 
 <p>配置完成后，可以在浏览器里输入网址，如果显示Nginx的欢迎页面，就说明网址配置成功了！
 接下来要做的是上传一个网页模板，这样别人访问你的服务器就会看到一个真的网站。</p>
