@@ -1,5 +1,5 @@
-SITE_NAME = "Chenn's Personal Website"
-SITE_LOGO_NAME = "Chenn's Personal Website"
+SITE_NAME = "CHENN.ME"
+SITE_LOGO_NAME = "CHENN.ME"
 SITE_COPYRIGHT_NAME = "CHENN"
 
 SITE_KEYWORDS = "CHENN,CHEN,Python,Django,backend,web,mysql,random thoughts,coding,One Piece"

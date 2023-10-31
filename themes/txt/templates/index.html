@@ -15,7 +15,6 @@
 
 {% block main_content %}
     <br>
-    <br>
     {% for year, list in articles|groupby('date.year')|sort(attribute="grouper", reverse=True) %}
         {% for article in list %}
             <article>
