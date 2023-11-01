@@ -7,23 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
-    <title>What is JWT? | CHENN.ME</title>
-    <meta name="description" content="## What is JWT?
+    <title>Run Elasticsearch by docker | CHENN.ME</title>
+    <meta name="description" content="**1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example**
 
-> JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This..."/>
-    <meta name="keywords" content="JWT,Single Sign On"/>
+```bash
+	docker pull elasticsearch:7.6.0
+```
+
+**2. Create a container and run it.**
+
+if your command..."/>
+    <meta name="keywords" content="Elasticsearch,Docker,技术笔记"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="What is JWT?"/>
-    <meta property="og:description" content="## What is JWT?
+    <meta property="og:title" content="Run Elasticsearch by docker"/>
+    <meta property="og:description" content="**1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example**
 
-> JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This..."/>
-    <meta property="og:url" content="https://chenn.me/post/2021/jwt.html">
+```bash
+	docker pull elasticsearch:7.6.0
+```
+
+**2. Create a container and run it.**
+
+if your command..."/>
+    <meta property="og:url" content="https://chenn.me/a/docker-elasticsearch.html">
     <meta property="og:site_name" content="CHENN.ME">
-    <meta property="article:tag" content="JWT,Single Sign On">
+    <meta property="article:tag" content="Elasticsearch,Docker,技术笔记">
     <meta property="article:category" content="技术">
-    <meta property="article:date" content="2021-03-12">
+    <meta property="article:date" content="2021-04-30">
 
-    <link rel="canonical" href="https://chenn.me/post/2021/jwt.html">
+    <link rel="canonical" href="https://chenn.me/a/docker-elasticsearch.html">
     <style>
         article p {
             margin: 0 0 20px;
@@ -375,76 +387,53 @@
 
     
     <article>
-        <h1>What is JWT?</h1>
-        <h2>What is JWT?</h2>
-<blockquote>
-<p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
-Although JWTs can be encrypted to also provide secrecy between parties, we will focus on signed tokens. Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties. When tokens are signed using public/private key pairs, the signature also certifies that only the party holding the private key is the one that signed it.</p>
-</blockquote>
-<h2>Application scenarios</h2>
-<h3>Single Sign On</h3>
-<p>This is the most common scenario to use JWT. In a multi-system service architecture, after a user logged in to one system at first time, there is no need to log in repeatedly when using other systems.</p>
-<h3>Authorization</h3>
-<p>After a user logged in, every subsequent request contains JWT. When the JWT is verified, the user is allowed to access the resource he should access.</p>
-<h2>Components of JWT</h2>
-<p>JWT consists of three parts: Header, Payload, Signature, and they are connected with a dot.</p>
-<ul>
-<li>The Header consists of two parts: the type of token and the signing algorithm being used, e.g. :</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="err">&#39;alg&#39;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HS256&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="err">&#39;</span><span class="kc">t</span><span class="err">yp&#39;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
-<span class="p">}</span>
+        <h1>Run Elasticsearch by docker</h1>
+        <p><strong>1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span>docker<span class="w"> </span>pull<span class="w"> </span>elasticsearch:7.6.0
 </code></pre></div>
 
-<ul>
-<li>The Payload is actually a place to store valid information which has three types of claims. </li>
-</ul>
-<p>Registered claims: Predefined claims which are not mandatory but recommended. Such as <code>iss(issuer)</code> and <code>exp(expiration time)</code></p>
-<p>Public claims: They can be defined at will.</p>
-<p>Private claims: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.</p>
-<ul>
-<li>The Signature is a digital signature to prevent data from being tampered.</li>
-</ul>
-<h2>How is JWT generated</h2>
-<p>JWT is divided into three parts. How do these three parts come together to form a completed JWT?</p>
-<ul>
-<li>The Header is encoded by base64 to get the first part.</li>
-<li>The Payload is encoded by base64 to get the second part.</li>
-<li>Through the algorithm in Header with a secret sign that encoded Header and encoded Payload and Connected with dot.</li>
-</ul>
-<p>Tips: Jwt is not encrypted, so it's better not to store some sensitive information directly in JWT.</p>
-<h2>Workflow of JWT</h2>
-<p>After successful login for the first time, the user will get a JWT. This JWT is the certificate for the user to interact with the server, that is, the server uses this token to determine which user the requester is.
-When the user wants to access the resources on the server, the token was sent, which is usually placed in <code>authorization</code>, using <code>bearer</code> schema.
-For example:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Authorization</span><span class="o">:</span><span class="w"> </span><span class="n">Bearer</span><span class="w"> </span><span class="n">token</span>
+<p><strong>2. Create a container and run it.</strong></p>
+<p>if your command is:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>es<span class="w"> </span>-p<span class="w"> </span><span class="m">9200</span>:9200<span class="w"> </span>-p<span class="w"> </span><span class="m">9300</span>:9300<span class="w"> </span>elasticsearch:7.6.0
 </code></pre></div>
 
-<h2>What are the advantages over traditional session authentication?</h2>
-<h3>Session authentication</h3>
-<p>Because HTTP is a stateless protocol, we provide our user name and password for authentication when we first access it. Then, in the second visit, we still need to carry out a user authentication. Because according to the HTTP protocol, we don't know who the originator of the request is, in order to identify which user initiated the request, we can only save a copy of the user's information on the server, and then pass the same information to the user, so that the user can save it in cookies. In the next request, you only need to carry the information in the cookies. According to the submitted cookies, the server can determine which user it is. This is the traditional authentication based on session.</p>
-<h3>Problems in session based authentication</h3>
-<p>Session: after each user has been authenticated by our application, our application needs to make a record on the server to facilitate the authentication of the next request. Generally speaking, the session is saved in memory. With the increase of authenticated users, the cost of the server will increase significantly.</p>
-<p>Scalability: after user authentication, the server makes authentication records. If the authentication records are saved in memory, it means that the next request of the user must be on this server, so that the authorized resources can be obtained. This also means that the expansion ability of the application is limited.</p>
-<p>CSRF: because user identification is based on cookie, if cookie is intercepted, users will be vulnerable to cross site request forgery attack.</p>
-<h3>What are the advantages of JWT based authentication</h3>
-<ul>
-<li>Tokens are stored in the client, completely stateless and scalable.</li>
-<li>Security: token is different from a cookie. Each request will send a token. Since no cookie is sent, it can also prevent CSRF attacks.</li>
-</ul>
-<blockquote>
-<p>reference from https://jwt.io/introduction</p>
-</blockquote>
+<p>It may exit shortly after starting. To find out the reason, view logs by log command:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>logs<span class="w"> </span>es
+</code></pre></div>
+
+<p>Some error message like <code>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</code> may appear. Go the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="c1"># change the variable</span>
+<span class="w">   </span>sysctl<span class="w"> </span>-w<span class="w"> </span>vm.max_map_count<span class="o">=</span><span class="m">262144</span>
+<span class="w">   </span><span class="c1"># check the variable value</span>
+<span class="w">   </span>sysctl<span class="w"> </span>-n<span class="w"> </span>vm.max_map_count
+</code></pre></div>
+
+<p>If the error message is <code>the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured</code>, which means the container has wrong configuration and can be corrected by setting those prompted environment variables or setting to standalone development mode by <code>discovery.type=single-node</code>.</p>
+<p>In short, the correct command is:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>es<span class="w"> </span>-p<span class="w"> </span><span class="m">9200</span>:9200<span class="w"> </span>-p<span class="w"> </span><span class="m">9300</span>:9300<span class="w"> </span>-e<span class="w"> </span>discovery.type<span class="o">=</span>single-node<span class="w"> </span>elasticsearch:7.6.0
+</code></pre></div>
+
+<h2>Using IK Chinese segmentation plugin.</h2>
+<p><strong>1. Download the plugin.</strong></p>
+<p>The plugin version must equal the Elasticsearch version. Version 7.6.0 download link is <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip</a>。</p>
+<p><strong>2. Unzip to an empty directory, which is referred to as  <em><code>$IK</code></em></strong>.</p>
+<p><strong>3. Copy the <em><code>$IK</code></em> into the directory of the container's plugin.</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>cp<span class="w"> </span><span class="nv">$IK</span><span class="w"> </span>es:/usr/share/elasticsearch/plugins/ik
+</code></pre></div>
+
+<p>This plugin provides analyzer and tokenizer named <code>ik_smart</code> and <code>ik_max_word</code> where <code>ik_smart</code> splits by the coarsest granularity, while <code>ik_max_word</code> will exhaust all kinds of split combinations.</p>
+<p>Find more info at <a href="https://github.com/medcl/elasticsearch-analysis-ik">IK</a>.</p>
         <br>
-        <b>#</b> 2021年03月12日<br>
+        <b>#</b> 2021年04月30日<br>
         <b>#</b> 分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
         
             <b>#</b> 标签:&nbsp;
             
-                <a href="/tag/JWT.html">JWT</a>&nbsp;&nbsp;
+                <a href="/tag/Elasticsearch.html">Elasticsearch</a>&nbsp;&nbsp;
             
-                <a href="/tag/Single Sign On.html">Single Sign On</a>&nbsp;&nbsp;
+                <a href="/tag/Docker.html">Docker</a>&nbsp;&nbsp;
+            
+                <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;&nbsp;
             
         
     </article>

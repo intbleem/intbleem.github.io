@@ -7,35 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
-    <title>Run Elasticsearch by docker | CHENN.ME</title>
-    <meta name="description" content="**1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example**
+    <title>当潮流爱新鲜，当旁人爱标签 | CHENN.ME</title>
+    <meta name="description" content="时隔多年，又再一次听到了Eason的歌，回忆在脑海中翻滚。犹记得高中的时候，手机里放的最多的就是Eason的歌，这些俨然已经成为我青春的一部分。
 
-```bash
-	docker pull elasticsearch:7.6.0
-```
 
-**2. Create a container and run it.**
+那时候青春懵懂，不是很懂感情，好不容易遇到喜欢的女孩，终于鼓起勇气向对方表白，收到的却是干脆的拒绝，两个人也因此不再说话，即使说话也是恶意中伤的话。
 
-if your command..."/>
-    <meta name="keywords" content="Elasticsearch,Docker,技术笔记"/>
+
+
+被拒绝的感觉不好受，本来这个年纪就是矫情的年纪。
+
+
+
+对于世上的不管是音乐亦或是电影，..."/>
+    <meta name="keywords" content="Eason,怀旧"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Run Elasticsearch by docker"/>
-    <meta property="og:description" content="**1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example**
+    <meta property="og:title" content="当潮流爱新鲜，当旁人爱标签"/>
+    <meta property="og:description" content="时隔多年，又再一次听到了Eason的歌，回忆在脑海中翻滚。犹记得高中的时候，手机里放的最多的就是Eason的歌，这些俨然已经成为我青春的一部分。
 
-```bash
-	docker pull elasticsearch:7.6.0
-```
 
-**2. Create a container and run it.**
+那时候青春懵懂，不是很懂感情，好不容易遇到喜欢的女孩，终于鼓起勇气向对方表白，收到的却是干脆的拒绝，两个人也因此不再说话，即使说话也是恶意中伤的话。
 
-if your command..."/>
-    <meta property="og:url" content="https://chenn.me/post/2021/docker-elasticsearch.html">
+
+
+被拒绝的感觉不好受，本来这个年纪就是矫情的年纪。
+
+
+
+对于世上的不管是音乐亦或是电影，..."/>
+    <meta property="og:url" content="https://chenn.me/a/wu-tiao-jian.html">
     <meta property="og:site_name" content="CHENN.ME">
-    <meta property="article:tag" content="Elasticsearch,Docker,技术笔记">
-    <meta property="article:category" content="技术">
-    <meta property="article:date" content="2021-04-30">
+    <meta property="article:tag" content="Eason,怀旧">
+    <meta property="article:category" content="生活">
+    <meta property="article:date" content="2022-08-13">
 
-    <link rel="canonical" href="https://chenn.me/post/2021/docker-elasticsearch.html">
+    <link rel="canonical" href="https://chenn.me/a/wu-tiao-jian.html">
     <style>
         article p {
             margin: 0 0 20px;
@@ -387,53 +393,30 @@ if your command..."/>
 
     
     <article>
-        <h1>Run Elasticsearch by docker</h1>
-        <p><strong>1. Download the docker image of Elasticsearch, taking version 7.6.0 as an example</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span>docker<span class="w"> </span>pull<span class="w"> </span>elasticsearch:7.6.0
-</code></pre></div>
-
-<p><strong>2. Create a container and run it.</strong></p>
-<p>if your command is:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>es<span class="w"> </span>-p<span class="w"> </span><span class="m">9200</span>:9200<span class="w"> </span>-p<span class="w"> </span><span class="m">9300</span>:9300<span class="w"> </span>elasticsearch:7.6.0
-</code></pre></div>
-
-<p>It may exit shortly after starting. To find out the reason, view logs by log command:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>logs<span class="w"> </span>es
-</code></pre></div>
-
-<p>Some error message like <code>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</code> may appear. Go the following command:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span><span class="c1"># change the variable</span>
-<span class="w">   </span>sysctl<span class="w"> </span>-w<span class="w"> </span>vm.max_map_count<span class="o">=</span><span class="m">262144</span>
-<span class="w">   </span><span class="c1"># check the variable value</span>
-<span class="w">   </span>sysctl<span class="w"> </span>-n<span class="w"> </span>vm.max_map_count
-</code></pre></div>
-
-<p>If the error message is <code>the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured</code>, which means the container has wrong configuration and can be corrected by setting those prompted environment variables or setting to standalone development mode by <code>discovery.type=single-node</code>.</p>
-<p>In short, the correct command is:</p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>es<span class="w"> </span>-p<span class="w"> </span><span class="m">9200</span>:9200<span class="w"> </span>-p<span class="w"> </span><span class="m">9300</span>:9300<span class="w"> </span>-e<span class="w"> </span>discovery.type<span class="o">=</span>single-node<span class="w"> </span>elasticsearch:7.6.0
-</code></pre></div>
-
-<h2>Using IK Chinese segmentation plugin.</h2>
-<p><strong>1. Download the plugin.</strong></p>
-<p>The plugin version must equal the Elasticsearch version. Version 7.6.0 download link is <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip</a>。</p>
-<p><strong>2. Unzip to an empty directory, which is referred to as  <em><code>$IK</code></em></strong>.</p>
-<p><strong>3. Copy the <em><code>$IK</code></em> into the directory of the container's plugin.</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="w">   </span>docker<span class="w"> </span>cp<span class="w"> </span><span class="nv">$IK</span><span class="w"> </span>es:/usr/share/elasticsearch/plugins/ik
-</code></pre></div>
-
-<p>This plugin provides analyzer and tokenizer named <code>ik_smart</code> and <code>ik_max_word</code> where <code>ik_smart</code> splits by the coarsest granularity, while <code>ik_max_word</code> will exhaust all kinds of split combinations.</p>
-<p>Find more info at <a href="https://github.com/medcl/elasticsearch-analysis-ik">IK</a>.</p>
+        <h1>当潮流爱新鲜，当旁人爱标签</h1>
+        <p>时隔多年，又再一次听到了Eason的歌，回忆在脑海中翻滚。犹记得高中的时候，手机里放的最多的就是Eason的歌，这些俨然已经成为我青春的一部分。</p>
+<p>那时候青春懵懂，不是很懂感情，好不容易遇到喜欢的女孩，终于鼓起勇气向对方表白，收到的却是干脆的拒绝，两个人也因此不再说话，即使说话也是恶意中伤的话。</p>
+<p>被拒绝的感觉不好受，本来这个年纪就是矫情的年纪。</p>
+<p>对于世上的不管是音乐亦或是电影，只要感到特别喜欢，那么一定是与自己的经历、思想、亦或是深藏的感情不谋而合，产生强烈的共振。</p>
+<p>而Eason的歌就是这样，嗓音沙哑且稳定，徐徐道来自己的故事，温柔且坚定。</p>
+<p>有人说他的歌丧，可真的伤心难过时去听他的歌，能感受到的却是温暖和慰藉。</p>
+<p>仔细想想我也好久没有听过Eason的歌了，可能是感情生活过的还算如意，不需要像当时一样寻求慰藉。但就在当时来说，Eason就真像人们称呼的那样，像医生一样治疗人们内心的感情创伤。</p>
+<p>附上这首时隔多日唤起回忆的歌——<strong><em>《无条件》</em></strong></p>
+<blockquote>
+<p><strong>当潮流爱新鲜，当旁人爱标签</strong></p>
+<p><strong>幸得伴着你我，是窝心的自然</strong></p>
+<p><strong>当闲言再尖酸，给他妒忌多点</strong></p>
+<p><strong>因世上的至爱，是不计较条件</strong></p>
+</blockquote>
         <br>
-        <b>#</b> 2021年04月30日<br>
-        <b>#</b> 分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
+        <b>#</b> 2022年08月13日<br>
+        <b>#</b> 分类:&nbsp;&nbsp;<a href="/category/生活.html">生活</a><br>
         
             <b>#</b> 标签:&nbsp;
             
-                <a href="/tag/Elasticsearch.html">Elasticsearch</a>&nbsp;&nbsp;
+                <a href="/tag/Eason.html">Eason</a>&nbsp;&nbsp;
             
-                <a href="/tag/Docker.html">Docker</a>&nbsp;&nbsp;
-            
-                <a href="/tag/技术笔记.html">技术笔记</a>&nbsp;&nbsp;
+                <a href="/tag/怀旧.html">怀旧</a>&nbsp;&nbsp;
             
         
     </article>

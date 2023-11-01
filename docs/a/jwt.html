@@ -7,27 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
-    <title>OAuth2简述 | CHENN.ME</title>
-    <meta name="description" content="## 什么是OAuth2
+    <title>What is JWT? | CHENN.ME</title>
+    <meta name="description" content="## What is JWT?
 
-OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。
-
-##..."/>
-    <meta name="keywords" content="OAuth2,Authorization,三方登录"/>
+> JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This..."/>
+    <meta name="keywords" content="JWT,Single Sign On"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="OAuth2简述"/>
-    <meta property="og:description" content="## 什么是OAuth2
+    <meta property="og:title" content="What is JWT?"/>
+    <meta property="og:description" content="## What is JWT?
 
-OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。
-
-##..."/>
-    <meta property="og:url" content="https://chenn.me/post/2021/oauth2.html">
+> JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This..."/>
+    <meta property="og:url" content="https://chenn.me/a/jwt.html">
     <meta property="og:site_name" content="CHENN.ME">
-    <meta property="article:tag" content="OAuth2,Authorization,三方登录">
+    <meta property="article:tag" content="JWT,Single Sign On">
     <meta property="article:category" content="技术">
     <meta property="article:date" content="2021-03-12">
 
-    <link rel="canonical" href="https://chenn.me/post/2021/oauth2.html">
+    <link rel="canonical" href="https://chenn.me/a/jwt.html">
     <style>
         article p {
             margin: 0 0 20px;
@@ -379,73 +375,76 @@ OAuth2是一个服务开放（授权）标准，它表示允许用户授权第�
 
     
     <article>
-        <h1>OAuth2简述</h1>
-        <h2>什么是OAuth2</h2>
-<p>OAuth2是一个服务开放（授权）标准，它表示允许用户授权第三方应用访问该用户在另外一个服务器存储的用户信息，而不用将存储在该服务器的用户名以及密码或所有用户信息告知给第三方应用。</p>
-<h2>OAuth2的应用场景</h2>
-<p>当你想使用QQ登录的第三方应用时，此时第三方应用需要获取你的QQ信息（昵称、头像、openid等），但是又不能直接用户名和密码等信息。那么此时就需要你登录你的QQ服务器，然后授权给该第三方应用一部分信息。而OAuth2就是为了实现上述目标而制定的一种规范。</p>
-<h2>Oauth2的授权模式</h2>
+        <h1>What is JWT?</h1>
+        <h2>What is JWT?</h2>
+<blockquote>
+<p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
+Although JWTs can be encrypted to also provide secrecy between parties, we will focus on signed tokens. Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties. When tokens are signed using public/private key pairs, the signature also certifies that only the party holding the private key is the one that signed it.</p>
+</blockquote>
+<h2>Application scenarios</h2>
+<h3>Single Sign On</h3>
+<p>This is the most common scenario to use JWT. In a multi-system service architecture, after a user logged in to one system at first time, there is no need to log in repeatedly when using other systems.</p>
+<h3>Authorization</h3>
+<p>After a user logged in, every subsequent request contains JWT. When the JWT is verified, the user is allowed to access the resource he should access.</p>
+<h2>Components of JWT</h2>
+<p>JWT consists of three parts: Header, Payload, Signature, and they are connected with a dot.</p>
 <ul>
-<li>授权码（authorization code）</li>
-<li>隐藏式（implicit）</li>
-<li>密码式（resource owner password credentials）</li>
-<li>客户端凭证（client credentials）</li>
+<li>The Header consists of two parts: the type of token and the signing algorithm being used, e.g. :</li>
 </ul>
-<h3>授权码</h3>
-<p>授权码模式，指的是第三方应用先申请一个授权码，然后再拿着该授权码获取令牌。</p>
-<p>
-<div style="text-align:center"><img data-src="/img/OAuth2简述/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" src="/img/OAuth2简述/v2-ba94a5f1e17b74e8cb8176620997ac27_720w_20210312134440865081.jpg" /></div>
-</p>
-<ol>
-<li>用户访问第三方应用客户端，随后该客户端跳转到认证服务器，跳转的过程中附带上重定向URI。</li>
-<li>用户在认证服务器给予授权之后，跳转到事先定义好的redirect_uri，并返回上一个授权码，该授权码是与当前客户端绑定的，无法被其他客户端使用。</li>
-<li>客户端收到该授权码，携带上步骤1中的redirect_uri，向认证服务器申请令牌。请求成功后认证服务器会返回一个令牌，该令牌存在一个有效时间。</li>
-<li>客户端拿到该令牌之后，将该令牌携带在请求中请求资源服务器，资源服务器判断该令牌的有效性，最终判断是否返回有效的资源信息。</li>
-</ol>
-<h3>隐藏式</h3>
-<p>当有些网站时纯前端架构的时候，就无法通过后端来使用上述的授权模式了，令牌必须存在前端。该模式下不通过第三方应用的服务器，直接在浏览器里想认证服务器申请令牌，跳过了授权码的步骤。所有步骤都是在浏览器内完成，令牌对访问者是可见的，并且客户端不需要认证。</p>
-<p>
-<div style="text-align:center"><img data-src="/img/OAuth2简述/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" src="/img/OAuth2简述/15209061-2d1bb6aa3925ca0d_20210312134459743467.webp" /></div>
-</p>
-<ol>
-<li>客户端在页面内放置一个链接，该链接指向认证服务器</li>
-<li>用户点击授权，给该客户端授权</li>
-<li>认证服务器在授权之后将跳转到客户端指定的redirect_uri，并将令牌包含在URI中，其中令牌并不是以查询参数的形式存储在URI中，而是以锚点的形式存储。</li>
-<li>浏览器想服务器发起请求，资源服务器返回一个网页，网页内包含一个可以获取上述令牌的脚本</li>
-<li>浏览器执行脚本，提取令牌，发送给客户端</li>
-<li>客户端拿到令牌向资源服务器请求，资源服务器判断该令牌的有效性，最终判断是否返回有效的资源信息。</li>
-</ol>
-<h3>密码式</h3>
-<p>听名字我们就可以知道，该授权模式需要密码来进行。其实质是，如果你高度信任某个应用，那么可以直接告诉这个应用你的用户名和密码，然后该应用拿到这些信息去申请令牌。</p>
-<p>
-<div style="text-align:center"><img data-src="/img/OAuth2简述/15209061-38d92855ebb979d1_20210312134513088188.webp" src="/img/OAuth2简述/15209061-38d92855ebb979d1_20210312134513088188.webp" /></div>
-</p>
-<ol>
-<li>用户向第三方应用提供用户名和密码</li>
-<li>该应用将用户名和密码发送给认证服务器，然后请求令牌</li>
-<li>认证服务器确认无误后，想客户端提供令牌</li>
-<li>客户端拿到令牌向资源服务器请求，资源服务器判断该令牌的有效性，最终判断是否返回有效的资源信息。</li>
-</ol>
-<h3>客户端凭证</h3>
-<p>客户端凭证模式下，即是通过客户端的名义，而不是用户的名义去获取令牌。该模式下可以在纯后端进行，常见的参数有client_id、client_secret。</p>
-<p>
-<div style="text-align:center"><img data-src="/img/OAuth2简述/15209061-193021c225466558_20210312134535387332.webp" src="/img/OAuth2简述/15209061-193021c225466558_20210312134535387332.webp" /></div>
-</p>
-<ol>
-<li>客户端向认证服务器发送一个携带client_id和client_secret的请求</li>
-<li>认证服务器接收到客户端请求，并验证client_id和client_secret的有效性，如果有效这向客户端提供令牌。</li>
-</ol>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="err">&#39;alg&#39;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HS256&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;</span><span class="kc">t</span><span class="err">yp&#39;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>The Payload is actually a place to store valid information which has three types of claims. </li>
+</ul>
+<p>Registered claims: Predefined claims which are not mandatory but recommended. Such as <code>iss(issuer)</code> and <code>exp(expiration time)</code></p>
+<p>Public claims: They can be defined at will.</p>
+<p>Private claims: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.</p>
+<ul>
+<li>The Signature is a digital signature to prevent data from being tampered.</li>
+</ul>
+<h2>How is JWT generated</h2>
+<p>JWT is divided into three parts. How do these three parts come together to form a completed JWT?</p>
+<ul>
+<li>The Header is encoded by base64 to get the first part.</li>
+<li>The Payload is encoded by base64 to get the second part.</li>
+<li>Through the algorithm in Header with a secret sign that encoded Header and encoded Payload and Connected with dot.</li>
+</ul>
+<p>Tips: Jwt is not encrypted, so it's better not to store some sensitive information directly in JWT.</p>
+<h2>Workflow of JWT</h2>
+<p>After successful login for the first time, the user will get a JWT. This JWT is the certificate for the user to interact with the server, that is, the server uses this token to determine which user the requester is.
+When the user wants to access the resources on the server, the token was sent, which is usually placed in <code>authorization</code>, using <code>bearer</code> schema.
+For example:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Authorization</span><span class="o">:</span><span class="w"> </span><span class="n">Bearer</span><span class="w"> </span><span class="n">token</span>
+</code></pre></div>
+
+<h2>What are the advantages over traditional session authentication?</h2>
+<h3>Session authentication</h3>
+<p>Because HTTP is a stateless protocol, we provide our user name and password for authentication when we first access it. Then, in the second visit, we still need to carry out a user authentication. Because according to the HTTP protocol, we don't know who the originator of the request is, in order to identify which user initiated the request, we can only save a copy of the user's information on the server, and then pass the same information to the user, so that the user can save it in cookies. In the next request, you only need to carry the information in the cookies. According to the submitted cookies, the server can determine which user it is. This is the traditional authentication based on session.</p>
+<h3>Problems in session based authentication</h3>
+<p>Session: after each user has been authenticated by our application, our application needs to make a record on the server to facilitate the authentication of the next request. Generally speaking, the session is saved in memory. With the increase of authenticated users, the cost of the server will increase significantly.</p>
+<p>Scalability: after user authentication, the server makes authentication records. If the authentication records are saved in memory, it means that the next request of the user must be on this server, so that the authorized resources can be obtained. This also means that the expansion ability of the application is limited.</p>
+<p>CSRF: because user identification is based on cookie, if cookie is intercepted, users will be vulnerable to cross site request forgery attack.</p>
+<h3>What are the advantages of JWT based authentication</h3>
+<ul>
+<li>Tokens are stored in the client, completely stateless and scalable.</li>
+<li>Security: token is different from a cookie. Each request will send a token. Since no cookie is sent, it can also prevent CSRF attacks.</li>
+</ul>
+<blockquote>
+<p>reference from https://jwt.io/introduction</p>
+</blockquote>
         <br>
         <b>#</b> 2021年03月12日<br>
         <b>#</b> 分类:&nbsp;&nbsp;<a href="/category/技术.html">技术</a><br>
         
             <b>#</b> 标签:&nbsp;
             
-                <a href="/tag/OAuth2.html">OAuth2</a>&nbsp;&nbsp;
+                <a href="/tag/JWT.html">JWT</a>&nbsp;&nbsp;
             
-                <a href="/tag/Authorization.html">Authorization</a>&nbsp;&nbsp;
-            
-                <a href="/tag/三方登录.html">三方登录</a>&nbsp;&nbsp;
+                <a href="/tag/Single Sign On.html">Single Sign On</a>&nbsp;&nbsp;
             
         
     </article>
